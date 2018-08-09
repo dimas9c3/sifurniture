@@ -2,6 +2,12 @@ body {
 	overflow-x: hidden;
 }
 
+a,
+a:hover,
+a:focus, {
+	text-decoration: none;
+}
+
 .modal-footer-cst {
 	padding: 10px 10px 10px 10px;
     border-top: 1px solid #DDDDDD;
@@ -15,10 +21,81 @@ body {
 
 .btn-gradient {
 	background: #29A745;
-	color: #FFFFFF;
+	color: #FFFFFF !important;
+	font-weight: 300 !important;
+	letter-spacing: .5px;
 }
 
 .btn-gradient:focus {
 	-webkit-box-shadow: 0 0 0 0.2rem rgba(62, 175, 87, 0.40);
     box-shadow: 0 0 0 0.2rem rgba(62, 175, 87, 0.40);
+}
+
+.thumb-product-title a {
+	text-decoration: none !important;
+}
+
+.box-thumbnails {
+	text-align: center;
+	cursor: pointer;
+}
+
+.thumb-product-caption {
+	padding: 10px;
+}
+
+.box-thumbnails p {
+	font-size: 14px;
+}
+
+.box-thumbnails p,
+.box-thumbnails h6 {
+	color: #444444;
+	line-height: 24px;
+}
+
+@media(max-width: 768px) {
+	.box-thumbnails p {
+		font-size: 13px !important;
+		line-height: 18px;
+	}
+}
+
+.box-thumbnails-footer {
+	padding: 8px 10px;
+	text-align: center;
+	border-top: 1px solid #DDDDDD;
+}
+
+.box-thumbnails-footer a.btn {
+	letter-spacing: 1px;
+}
+
+.apartments-slider .property {
+	box-shadow: none;
+	border: 1px solid #DDDDDD;
+}
+
+.apartments-slider .property:hover {
+	box-shadow: 0 10px 30px #d6dee4;
+}
+
+.apartments-slider .property:before {
+	display: none;
+}
+
+.about .image {
+	height: auto;
+}
+
+.portfolio {
+	margin-bottom: 30px !important;
+}
+
+.portfolio-section {
+	padding: 40px;
+}
+
+.box-thumbnails:last-child {
+	margin-bottom: 0;
 }
