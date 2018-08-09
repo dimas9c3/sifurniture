@@ -1,0 +1,24 @@
+body {
+	overflow-x: hidden;
+}
+
+.modal-footer-cst {
+	padding: 10px 10px 10px 10px;
+    border-top: 1px solid #DDDDDD;
+    text-align: center;
+}
+
+.img-responsive {
+	width: 100%;
+	height: auto;
+}
+
+.btn-gradient {
+	background: #29A745;
+	color: #FFFFFF;
+}
+
+.btn-gradient:focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(62, 175, 87, 0.40);
+    box-shadow: 0 0 0 0.2rem rgba(62, 175, 87, 0.40);
+}

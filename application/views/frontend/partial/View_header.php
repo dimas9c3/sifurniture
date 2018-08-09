@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="<?php echo base_url();?>vendors/frontend/css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="<?php echo base_url();?>vendors/frontend/css/custom.css?version=51">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/new_concept.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="<?php echo base_url();?>vendors/frontend/img/favicon.ico">
     <!-- Modernizr-->
@@ -51,7 +52,7 @@
             </div>
         </div>
     </div>
-    <div class="search-area">                       
+    <div class="search-area">
         <div class="search-inner d-flex align-items-center justify-content-center">
             <div class="close-btn">Close<i class="icon-close-round"></i></div>
                 <form class="search-form">
@@ -76,10 +77,10 @@
 
             <li class="list-inline-item dropdown menu-large"><a id="megamenu" href="#" data-toggle="dropdown" class="nav-link">Produk Barang <i class="fa fa-angle-down"></i></a>
                 <div aria-labelledby="megamenu" class="dropdown-menu megamenu">
-                    <div class="container">                       
+                    <div class="container">
                         <div class="row">
                             <?php foreach($kategori_navbar->result_array() as $i)
-                            { 
+                            {
                                 $id_kategori        = $i['kategori_id'];
                                 $nm_kategori        = $i['kategori_nama'];
                             ?>
@@ -93,7 +94,7 @@
                                             {
                                                 $id_sub_kategori        = $ii['sub_kategori_id'];
                                                 $nm_sub_kategori        = $ii['sub_kategori_nama']; ?>
-                                                
+
                                                 <li><a href="<?php echo base_url().'barang/kategori/'.$id_sub_kategori; ?>"><?php echo $nm_sub_kategori; ?></a></li>
                                     <?php } } ?>
                                 </ul>
@@ -112,7 +113,7 @@
                     <ul aria-labelledby="navbarDropdownMenuLink2" class="dropdown-menu">
                       <li><a href="#" class="dropdown-item nav-link">Action</a></li>
                       <li class="dropdown-submenu"><a id="navbarDropdownMenuLink3" href="http://example.com/" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
-                           
+
                           Another action <i class="fa fa-angle-down"></i></a>
                         <ul aria-labelledby="navbarDropdownMenuLink3" class="dropdown-menu">
                           <li><a href="#" class="dropdown-item nav-link">Action</a></li>
@@ -134,35 +135,10 @@
             <li class="nav-item"><a href="<?php echo base_url();?>auth" class="nav-link"><i class="fa fa-key"></i> Login</a></li>
 
             <li class="nav-item"><a href="<?php echo base_url();?>keranjang" class="nav-link"><i class="fa fa-cart-plus"></i> Keranjang Belanja</a></li>
-              
+
             </ul>
           </div>
         </div>
       </nav>
-            <!-- Top Bar    -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center menu-center">
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><a href="customer-login.html" class="p-2 topbar-atas"><i class="fa fa-heart"></i> <strong class="text-thin"> Garansi 360 Hari</strong></a></li>
-                        <li class="list-inline-item"><a href="customer-login.html" class="p-2 topbar-atas"><i class="fa fa-dollar"></i> <strong class="text-thin">  Custom Design Anda</strong></a></li>
-                        <li class="list-inline-item"><a href="customer-login.html" class="p-2 topbar-atas"><i class="fa fa-truck"></i> <strong class="text-thin"> Free Shipment Untuk Setiap Pembelian</strong></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="search-area">                       
-            <div class="search-inner d-flex align-items-center justify-content-center">
-                <div class="close-btn">Close<i class="icon-close-round"></i></div>
-                    <form class="search-form">
-                        <div class="form-group">
-                            <input type="search" placeholder="What are you searching for...">
-                            <button type="submit" class="submit">Search</button>
-                        </div>
-                    </form>
-            </div>
-        </div>
-    </div>
     </header>
-    <!-- End Header Section --> 
+    <!-- End Header Section -->
