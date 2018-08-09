@@ -132,13 +132,13 @@ $(function () {
     // ready product Slider
     // ------------------------------------------------------ //
     var swiper = new Swiper('.apartments-slider', {
-            loop: true,
+            // loop: true,
             autoHeight : true,
             spaceBetween: 15,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
+            // autoplay: {
+            //     delay: 5000,
+            //     disableOnInteraction: false,
+            // },
             slidesPerView: 5,
             breakpoints: {
                 640: {

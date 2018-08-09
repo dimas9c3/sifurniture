@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="<?php echo base_url();?>vendors/frontend/vendor/bootstrap-select/css/bootstrap-select.css">
     <!-- Google fonts - Poppins-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="<?php echo base_url();?>vendors/plugins/OwlCarousel2/owl.carousel.min.css">
     <!-- swiper carousel-->
     <link rel="stylesheet" href="<?php echo base_url();?>vendors/frontend/vendor/swiper/css/swiper.css">
     <!-- Gallery-->
@@ -25,6 +27,7 @@
     <link rel="stylesheet" href="<?php echo base_url();?>vendors/frontend/css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="<?php echo base_url();?>vendors/frontend/css/custom.css?version=51">
+	<!-- New Concept -->
     <link rel="stylesheet" href="<?php echo base_url();?>assets/new_concept.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="<?php echo base_url();?>vendors/frontend/img/favicon.ico">
@@ -104,29 +107,6 @@
                     </div>
                 </div>
             </li>
-
-                <!--<li class="nav-item dropdown"><a id="navbarDropdownMenuLink" href="http://example.com/" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">Produk Interior <i class="fa fa-angle-down"></i></a>
-                <ul aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-                  <li><a href="#" class="dropdown-item nav-link">Action</a></li>
-                  <li><a href="#" class="dropdown-item nav-link">Another action</a></li>
-                  <li class="dropdown-submenu"><a id="navbarDropdownMenuLink2" href="http://example.com/" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">Dropdown link <i class="fa fa-angle-down"></i></a>
-                    <ul aria-labelledby="navbarDropdownMenuLink2" class="dropdown-menu">
-                      <li><a href="#" class="dropdown-item nav-link">Action</a></li>
-                      <li class="dropdown-submenu"><a id="navbarDropdownMenuLink3" href="http://example.com/" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
-
-                          Another action <i class="fa fa-angle-down"></i></a>
-                        <ul aria-labelledby="navbarDropdownMenuLink3" class="dropdown-menu">
-                          <li><a href="#" class="dropdown-item nav-link">Action</a></li>
-                          <li><a href="#" class="dropdown-item nav-link">Action</a></li>
-                          <li><a href="#" class="dropdown-item nav-link">Action</a></li>
-                          <li><a href="#" class="dropdown-item nav-link">Action</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="#" class="dropdown-item nav-link">Something else here  </a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li> -->
 
             <li class="nav-item"><a href="<?php echo base_url();?>custom/buat_custom" class="nav-link">Custom Design</a></li>
 
