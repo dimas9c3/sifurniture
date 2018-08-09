@@ -1,0 +1,339 @@
+/* your styles go here */
+
+/* STEPWIZARD */
+.stepwizard-step p {
+    margin-top: 10px;
+}
+
+.stepwizard-row {
+    display: table-row;
+}
+
+.stepwizard {
+    display: table;
+    width: 100%;
+    position: relative;
+}
+
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+
+}
+
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+/* FRONTEND */
+
+.filter-section {
+	box-shadow: 0 0 12px 1px black;
+}
+
+.info {
+	background: #fafafa!important;
+}
+
+/* Hero section */
+.hero-section {
+    box-shadow: 0 0 12px 2px black;
+}
+
+/* class property */
+.property {
+	background-color: #fafafa;
+}
+
+/*.property:before {
+	border-color: #48af4a;
+}*/
+
+.property:hover::before {
+    border-color: #ffd41c;
+}
+
+.property-single-details span {
+    color: #0a0a0a;
+    font-size: 1.00rem;
+    margin-bottom: 15px;
+}
+
+/* div white */
+.button-submit-filter {
+	padding-left: 5px!important;
+}
+
+.filter .bootstrap-select .dropdown-toggle {
+	background : #fafafa;
+}
+
+.bg-white-3 {
+	background-color: #fafafa;
+}
+
+.bg-white-5 {
+	background-color: #f0f0f0;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.28);
+}
+
+.border-left-0 {
+	border-right: 3px solid #f0f0f0!important;
+}
+
+.bg-white-3-custom {
+	background-color: #fafafa;
+	bbox-shadow: 0px 0px 10px 0px rgba(0,0,0,0.28);
+}
+
+.gradient-custom-harga {
+	width: 250%;
+}
+
+.price-label-atas {
+	border-radius: 10px;
+}
+
+.price-button {
+	background-color: #f0f0f0;
+}
+
+.custom-price-label {
+	border-radius: 10px;
+}
+
+.price-label-custom-depan {
+	font-size: 10px;
+}
+
+.center-item {
+	margin-left: 45%;
+}
+
+label {
+	color :#d23030;
+}
+
+.bootstrap-select .dropdown-toggle {
+	background: #f0f0f0;
+}
+
+.bootstrap-select .dropdown-menu.open {
+	border-radius: 5px;
+    background: #f0f0f0;
+}
+
+.bootstrap-select.show>.dropdown-menu>.dropdown-menu {
+	background-color: #f0f0f0;
+}
+
+.bootstrap-select .dropdown-toggle span {
+	color: #0a0a0a;
+}
+
+.bootstrap-select .dropdown-menu a {
+	color: #0a0a0a;
+}
+
+.pagination a.page-link {
+	background: #f0f0f0;
+}
+
+/* Template Text */
+.template-text {
+	color: black;
+}
+
+.testimonial {
+	background-color: #fafafa;
+}
+
+.testimonials {
+	    padding: 4.5rem 0;
+}
+
+/* Warna topbar */
+.top-bar {
+    /* background: #28a745; */
+    background-color: #abc545;
+}
+
+/* Warna navbar */
+nav.navbar {
+	/*background: #28ac46;*/
+	background-color:#abc947;
+}
+
+.dropdown-menu a {
+}
+
+nav.navbar .nav-item.active {
+	color: #ffd41c;
+}
+
+nav.navbar .nav-link:hover {
+	color: #ffd41c;
+}
+
+.dropdown-menu {
+	background: #abc545;
+}
+
+.megamenu ul a {
+	color: #fafafa!important;
+}
+
+.modal .modal-content {
+    border-radius: 0;
+    background-color: #fafafa;
+    color: #0a0a0a;
+}
+
+.modal .modal-header {
+    border-bottom-color: #fafafa;
+    background-color: #91c941;
+}
+
+/* Button gradient */
+.btn-gradient {
+    background-image: linear-gradient(to right, #28a745, #FFEB3B);
+}
+
+
+.ready-product {
+	padding-top: 20px!important;
+	padding-bottom: 25px;
+}
+
+.custom-design-bawah {
+	padding-top: 15px;
+	padding-left: 0px;
+	width: 100%;
+}
+
+.cart-button {
+	padding-top: 5px;
+}
+
+.agent {
+	background-color: #fafafa;
+}
+
+.agent .agent-social {
+    background: #f0f0f0;
+}
+
+.about .text {
+    background-color: #fafafa;
+}
+
+.about .text p {
+	color: #0a0a0a;
+}
+
+.custom-design-atas {
+	padding-bottom: 15px;
+}
+
+/* Garis bawah custom design */
+.has-line::after {
+    width: 100%;
+    background: #28ac46;
+}
+
+.has-line {
+	color: #5989e5;
+}
+
+.has-overlay-dark::before {
+	background: rgba(17,17,17,0.5);
+}
+
+.text-thin {
+	color: #0a0a0a!important;
+}
+
+.text-black {
+	color: #0a0a0a;
+}
+
+/* tombol diskon */
+#style-switch-button {
+    top: 80%;
+}
+
+#style-switch {
+	top : 24%;
+}
+
+/* text harga home */
+.property .price {
+	font-size: 1.1rem;
+	color: #0a0a0a;
+	text-align: center;
+	text-decoration: underline;
+}
+
+.price-label {
+	color: #0a0a0a;
+}
+
+.footer.footer {
+	padding-top: 50px;
+    box-shadow: 0 0 10px black;
+}
+
+.footer.footer .copyrights {
+	margin-top: 50px;
+    padding-top: 25px;
+}
+
+.form-control {
+	background-color: #f0f0f0;
+	color : #0a0a0a!important;
+}
+
+.form-control:focus {
+	background: #fafafa !important;
+}
+
+section {
+    padding: 4.5rem 0;
+}
+
+.preview-design {
+	padding: 1.5rem 0;
+}
+
+.topbar-atas {
+	font-size: 12px;
+}
+
+.about .image img {
+	width: 100%;
+}
+
+
