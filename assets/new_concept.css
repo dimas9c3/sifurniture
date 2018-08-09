@@ -88,8 +88,12 @@ a:focus, {
 	height: auto;
 }
 
-.box-thumbnails {
-	margin-bottom: 30px;
+.portfolio {
+	margin-bottom: 30px !important;
+}
+
+.portfolio-section {
+	padding: 40px;
 }
 
 .box-thumbnails:last-child {

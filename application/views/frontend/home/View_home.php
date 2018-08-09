@@ -127,7 +127,7 @@
     </section>
 
     <!-- Custom Section-->
-    <section class="about pt-0 bg-white-3">
+    <section class="about pt-0 bg-white-3 portfolio-section">
         <header class="text-center">
             <span><a href="<?php echo base_url();?>home/custom" class="btn btn-gradient"><strong>Produk Interior</strong></a></span>
             <div class="row mt-2">
@@ -146,7 +146,7 @@
                         $foto               = $i['sub_1_kategori_interior_foto'];
                 ?>
                 <div class="col-lg-4 col-xs-4 pr-lg-0">
-                    <div class="box-thumbnails">
+                    <div class="box-thumbnails portfolio">
                         <div class="image mb-3">
 							<a href="<?php echo base_url().'interior/kategori/'.$id_interior;?>">
 								<img src="<?php echo base_url().'assets/images/sub_1_kategori_interior/'.$foto;?>" class="img-fluid">
