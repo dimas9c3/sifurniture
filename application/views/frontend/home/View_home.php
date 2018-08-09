@@ -61,12 +61,12 @@
                 </div>
             </header>
             <!-- Barang Ready Stock Atas Section-->
-            
+
             <div class="swiper-container apartments-slider">
                 <div class="swiper-wrapper pt-2 pb-5">
 
                     <?php foreach($populer->result_array() as $i)
-                    { 
+                    {
                         $foto           = $i['foto_barang_nama'];
                         $nama           = $i['barang_nama'];
                         $jual           = $i['barang_harga_jual'];
@@ -138,7 +138,7 @@
         </header>
         <div class="container">
             <div class="row d-flex align-items-stretch">
-                <?php 
+                <?php
                     foreach($interior->result_array() as $i)
                     {
                         $id_interior        = $i['sub_1_kategori_interior_id'];
@@ -160,7 +160,7 @@
                 ?>
 
             </div>
-            
+
         </div>
     </section>
 
@@ -176,9 +176,9 @@
         </header>
         <div class="container">
             <div class="row d-flex align-items-stretch">
-                <?php 
+                <?php
                     foreach($style->result_array() as $i)
-                    {   
+                    {
                         $id_style           = $i['style_id'];
                         $des_style          = $i['style_deskripsi'];
                         $foto_style         = $i['style_foto'];
@@ -214,7 +214,7 @@
       <div class="container">
         <header class="text-center">
           <h2><span class="text-primary">Testimoni Konsumen</span></h2>
-        </header> 
+        </header>
         <div class="swiper-container testimonials-slider">
           <div class="swiper-wrapper pt-2 pb-5">
             <div class="swiper-slide">
@@ -224,9 +224,9 @@
                         $id_ulasan          = $i['ulasan_id'];
                         $text_length        = strlen($i['ulasan_isi']);
                         $isi                = substr($i['ulasan_isi'],1,200);
-                        if ($text_length>200) 
+                        if ($text_length>200)
                         {
-                            $add_text       = '.....';    
+                            $add_text       = '.....';
                         }else
                         {
                             $add_text       = '';
@@ -242,7 +242,7 @@
                 </div>
                 <?php } ?>
             </div>
-            
+
           <!-- Add Pagination-->
           <div class="swiper-pagination"></div>
         </div>
@@ -294,13 +294,13 @@
     <!-- Clients Section -->
     <section class="clients bg-white-3">
         <header class="text-center">
-                <h2><span class="text-primary">Pembayaran</span></h2>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <p class="template-text">Pembayaran pada transaksi kami bisa dilakukan melalui pembayaran bank dibawah.</p>
-                    </div>
+            <h2><span class="text-primary">Pembayaran</span></h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p class="template-text">Pembayaran pada transaksi kami bisa dilakukan melalui pembayaran bank dibawah.</p>
                 </div>
-            </header>
+            </div>
+        </header>
         <div class="container">
             <div class="swiper-container clients-slider">
                 <div class="swiper-wrapper">
@@ -332,30 +332,27 @@
 
     <!-- Modal diskon -->
     <div class="modal fade" id="modal_diskon" tabindex="-1" role="dialog" aria-labelledby="ModalProduk">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog modal-md" role="document">
             <div class="modal-content modal_diskon" >
                 <div class="modal-header">
                     <h3 class="modal-title">Penawaran menarik !</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    
                 </div>
-                <div class="modal-body">        
-                    <div class="row">
-                        <div class="col-md-7">
-                            <h1 class="text-thin">Diskon up to 50% untuk anda !</h1>
+                <div class="modal-body text-center">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
                             <h5 class="text-thin">
                                 silahkan belanja ditoko kami!
                             </h5>
-                            <br/>
                             <h5 class="text-thin">Jangan sampai telat&hellip; !!</h5>
                         </div>
-                        <div class="col-md-5">
-                            <img style="width: 250px;height: 200px;" src="<?php echo base_url();?>vendors/frontend/img/property-single-1.jpg">                      
+                        <div class="col-md-6">
+                            <img class="img-responsive" src="<?php echo base_url();?>vendors/frontend/img/property-single-1.jpg">
                         </div>
-                    </div>                              
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" id="modal_diskon_set_cookie" class="btn btn-gradient btn-sm" data-dismiss="modal">Jangan tampilkan hari ini.</button>
+                <div class="modal-footer-cst">
+                    <button type="button" id="modal_diskon_set_cookie" class="btn btn-gradient btn-sm mr-2" data-dismiss="modal">Jangan tampilkan hari ini.</button>
                     <a class="btn btn-gradient btn-sm" data-dismiss="modal" href="#">OK</a>
                 </div>
             </div>
@@ -416,7 +413,6 @@
         </div>
       </div>
     </footer>
-   <button type="button" data-toggle="collapse" data-target="#style-switch" id="style-switch-button" class="btn btn-primary btn-sm hidden-xs hidden-sm"><!--<i class="fa fa-cog fa-2x"></i>--><span> Diskon <br>Up to 50%</span></button>
     <div id="style-switch" class="collapse">
       <h4 class="text-uppercase">Dapatkan diskon menarik setiap hari!!</h4>
       <!--<form class="mb-3">
@@ -463,7 +459,7 @@
         {
             $.cookie('modal_diskon', 'yes', { expires: 1, path: '/' });
         })
-        
+
 
     </script>
     </body>
