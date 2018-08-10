@@ -60,7 +60,8 @@
                     </div>
                 </div>
             </header>
-            <!-- Barang Ready Stock Atas Section-->
+
+            <!-- Produk Populer -->
 
             <div class="swiper-container apartments-slider">
                 <div class="swiper-wrapper pt-2 pb-5">
@@ -74,12 +75,12 @@
                     <div class="swiper-slide">
                         <div class="property">
                             <div class="image"><img src="<?php echo base_url().'assets/images/barang/'.$foto; ?>" alt="Condo with pool view" class="img-fluid">
-                                <div class="overlay d-flex align-items-center justify-content-center"><a href="<?php echo base_url().'home/detail/'.$i['barang_id']; ?>" class="btn btn-gradient btn-sm">View Details</a></div>
+                                <div class="overlay d-flex align-items-center justify-content-center"><a href="<?php echo base_url().'barang/detail/'.$i['barang_id']; ?>" class="btn btn-gradient btn-sm">View Details</a></div>
                             </div>
                             <div class="box-thumbnails">
 								<div class="thumb-product-caption">
 									<div class="thumb-product-title">
-										<a href="<?php echo base_url().'home/detail/'.$i['barang_id']; ?>">
+										<a href="<?php echo base_url().'barang/detail/'.$i['barang_id']; ?>">
 											<p class="mb-0"><?php echo $nama; ?></p>
 										</a>
 									</div>
@@ -89,7 +90,8 @@
 								</div>
                             </div>
 							<div class="box-thumbnails-footer text-center">
-								<a href="#" class="btn btn-gradient btn-sm"><i class="fa fa-cart-plus"></i> Beli</a>
+								<a href="#" class="btn btn-gradient btn-sm mb-1"><i class="fa fa-cart-plus"></i></a>
+                                <a href="#" class="btn btn-gradient btn-sm"><i class="fa fa-heart"></i></a>
 							</div>
                         </div>
                     </div>
@@ -270,7 +272,7 @@
                 <h2><span class="text-primary">Artikel Terbaru</span></h2>
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
-                        <p class="template-text">Ini adalah postingan blog atau artikel website anda yang terbaru.</p>
+                        <p class="template-text">Ini adalah artikel website anda yang terbaru.</p>
                     </div>
                 </div>
             </header>
@@ -278,20 +280,25 @@
             <div class="swiper-container artikel-slider">
                 <div class="swiper-wrapper pt-2 pb-5">
 
-                    <?php for($i=1;$i<=10;$i++)
-                    { ?>
+                    <?php foreach($artikel->result_array() as $art)
+                    { 
+                        $id_artikel         = $art['artikel_id'];
+                        $judul              = $art['artikel_judul'];
+                        $gb_artikel         = $art['artikel_foto'];
+                    ?>
                     <div class="swiper-slide">
+                        <a href="<?php echo base_url().'artikel/detail/'.$id_artikel;?>" class="no-anchor-style">
                         <div class="artikel">
-                            <div class="image"><img src="<?php echo base_url();?>vendors/frontend/img/blog_1.jpeg" alt="Condo with pool view" class="img-fluid">
+                            <div class="image"><img src="<?php echo base_url().'assets/images/artikel/'.$gb_artikel; ?>" class="img-responsive ">
                             </div>
                             <div class="info">
                                 <div class="d-flex align-items-center justify-content-center align-content-center p-1">
-                                    <a href="<?php echo base_url();?>home/detail" class="no-anchor-style">
-                                        <p class="h5 text-thin text-uppercase text-center">Tips Memilih Meja</p>
-                                    </a>
+                                    
+                                        <p class="h5 text-thin text-uppercase text-center"><?php echo $judul; ?></p>
                                 </div>
                             </div>
                         </div>
+                        </a>
                     </div>
                     <?php } ?>
 
@@ -347,78 +354,7 @@
 
     <!-- Modal diskon -->
 
-
-    <!-- Scroll Top Button        -->
-    <div id="scrollTopButton"><i class="fa fa-long-arrow-up"></i></div>
-    <footer class="footer bg-black-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 brief">
-                    <div class="logo"><img src="<?php echo base_url();?>vendors/frontend/img/logo-light.png" alt="..." width="170"></div>
-                        <p>property murah namun dengan bahan dan kualitas terbaik itulah kami, segera order furniture pada gerai kami di kota anda. dapatkan diskon besar besaran setiap hari.</p>
-                        <ul class="social list-inline">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        </ul>
-                </div>
-                <div class="col-lg-2 links">
-                    <h3 class="h4 text-thin text-uppercase">Company</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Properties</a></li>
-                        <li><a href="#">Landlords</a></li>
-                        <li><a href="#">Renters</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Pricing</a></li>
-                    </ul>
-                </div>
-          <div class="col-lg-2 links">
-            <h3 class="h4 text-thin text-uppercase">Support</h3>
-            <ul class="list-unstyled">
-              <li><a href="#">Help & FAQ</a></li>
-              <li><a href="#">Policy Privacy</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Our Partners</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-4 newsletter">
-            <h3 class="h4 text-thin text-uppercase">Newsletter</h3>
-            <p>property murah namun dengan bahan dan kualitas terbaik itulah kami, segera order furniture pada gerai kami di kota anda. dapatkan diskon besar besaran setiap hari.</p>
-            <form class="newsletter-form">
-              <div class="form-group">
-                <input type="email" name="email" placeholder="Enter your email address" class="form-control newsletter-form">
-                <button type="submit" class="btn btn-gradient submit"><i class="icon-email-plane"></i></button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="copyrights bg-black-5">
-        <div class="container text-center">
-          <p>&copy; Copyrights 2018. Template by <a href="https://bootstrapious.com/">dimas9c3@gmail.com</a></p>
-        </div>
-      </div>
-    </footer>
-    <div id="style-switch" class="collapse">
-      <h4 class="text-uppercase">Dapatkan diskon menarik setiap hari!!</h4>
-      <!--<form class="mb-3">
-        <select name="colour" id="colour" class="form-control">
-          <option value="">select colour variant</option>
-          <option value="red">red</option>
-          <option value="pink">pink</option>
-          <option value="green">green</option>
-          <option value="violet">violet</option>
-          <option value="sea">sea</option>
-          <option value="default">blue</option>
-        </select>
-      </form>-->
-      <p><img src="<?php echo base_url();?>vendors/frontend/img/template-mac.png" alt="" class="img-fluid"></p>
-      <p class="text-muted text-small">Dapatkan keuntungan menarik membeli di toko kami setiap hari untuk semua produk!!</p>
-    </div>
-    	<?php $this->load->view('frontend/partial/view_footer'); ?>
+    <?php $this->load->view('frontend/partial/view_footer'); ?>
 
 		<script>
 			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

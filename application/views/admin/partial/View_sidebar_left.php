@@ -156,17 +156,10 @@
                     </ul>
                 </li>
 
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-link"></i>
-                        <span>Pengaturan</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
+               <li>
+                    <a href="<?php echo base_url();?>admin/pengaturan">
+                        <i class="fa fa-gear"></i> <span>Pengaturan</span>
                     </a>
-                    <ul class="treeview-menu">
-                       
-                    </ul>
                 </li>
         </ul>
         <!-- / .sidebar-menu -->
