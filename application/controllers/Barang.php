@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Barang extends CI_Controller 
+class Barang extends CI_Controller
 {
 
 	public function __construct()
@@ -21,28 +21,35 @@ class Barang extends CI_Controller
 		$id_subkategori 			= $this->uri->segment('3');
 		$data['title'] 				= 'Produk Barang';
 		$data['kategori_navbar'] 	= $this->Model_barang->get_kategori_navbar();
-		
+
 		$config['base_url'] 		= base_url().'barang/kategori/'.$id_subkategori;
 		$config['total_rows'] 		= $this->Model_barang->count_barang_by_subkategori($id_subkategori);
 		$config['per_page'] 		= 2;
 		$config['uri_segment'] 		= 4;
 		$config['query_string_segment'] = 'start';
-		$config['full_tag_open'] 	= '<ul class="pagination m-0">';
+
+		$config['full_tag_open'] 	= '<ul class="pagination pull-right m-0">';
 		$config['full_tag_close'] 	= '</ul>';
+
 		$config['first_link'] 		= 'First';
-		$config['first_tag_open'] 	= '<li>';
+		$config['first_tag_open'] 	= '<li class="page-item page-link">';
 		$config['first_tag_close'] 	= '</li>';
+
 		$config['last_link'] 		= 'Last';
 		$config['last_tag_open'] 	= '<li>';
 		$config['last_tag_close'] 	= '</li>';
+
 		$config['next_link'] 		= 'Next';
 		$config['next_tag_open'] 	= '<li class="page-item page-link">';
 		$config['next_tag_close'] 	= '</li>';
+
 		$config['prev_link'] 		= 'Prev';
 		$config['prev_tag_open'] 	= '<li class="page-item page-link">';
-		$config['prev_tag_close'] 	= '</li>'; 
-		$config['cur_tag_open'] 	= '<li class="page-item"><a class="page-link active">';
+		$config['prev_tag_close'] 	= '</li>';
+
+		$config['cur_tag_open'] 	= '<li class="page-item page-link active"><a class="active">';
 		$config['cur_tag_close'] 	= '</a></li>';
+
 		$config['num_tag_open'] 	= '<li class="page-item page-link">';
 		$config['num_tag_close'] 	= '</li>';
 		$pagination = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
@@ -92,7 +99,7 @@ class Barang extends CI_Controller
 		$config['next_tag_close'] 	= '</li>';
 		$config['prev_link'] 		= 'Prev';
 		$config['prev_tag_open'] 	= '<li class="page-item page-link">';
-		$config['prev_tag_close'] 	= '</li>'; 
+		$config['prev_tag_close'] 	= '</li>';
 		$config['cur_tag_open'] 	= '<li class="page-item"><a class="page-link active">';
 		$config['cur_tag_close'] 	= '</a></li>';
 		$config['num_tag_open'] 	= '<li class="page-item page-link">';
@@ -111,7 +118,7 @@ class Barang extends CI_Controller
 			$data['barang']			= $this->Model_barang->get_barang_by_subkategori_front_ASC($id_subkategori,$config['per_page'],$pagination);
 				$data['jenis_filter'] 	= 2;
 		}
-			
+
 		$data['total_row'] 			= $this->Model_barang->count_barang_by_subkategori($id_subkategori);
 
 		$this->load->view('frontend/barang/View_barang',$data);

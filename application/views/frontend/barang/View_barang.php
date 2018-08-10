@@ -1,88 +1,230 @@
 <?php $this->load->view('frontend/partial/View_header'); ?>
     <!-- Hero Section-->
-    <?php 
-        $row        = $barang->row_array();
+    <?php
+        $row                    = $barang->row_array();
         $nm_kategori            = $row['kategori_nama'];
         $id_sub_kategori        = $row['sub_kategori_id'];
         $nm_sub_kategori        = $row['sub_kategori_nama'];
     ?>
-    <section class="property-grid-sidebar bg-white-3">
-      <div class="container">
-        <h2><span class="text-primary">List Produk</span></h2>
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?php echo base_url();?>home">Home</a></li>
-            <li class="breadcrumb-item"><a href="#"><?php echo $nm_kategori; ?></a></li>
-            <li aria-current="page" class="breadcrumb-item active"><?php echo $nm_sub_kategori; ?></li>
-          </ol>
-        </nav>
-        <!-- Filters-->
-        <form action="<?php echo base_url();?>barang/filter/<?php echo $id_sub_kategori; ?>" method="post" enctype="multipart/form-data">
-        <div class="filter filter-section d-flex justify-content-between align-items-center flex-wrap bg-white-5">
-          <div class="sort d-flex align-items-left"><strong>Sorting Produk</strong>
-            <select id="propertyFilter" name="filter_barang" class="selectpicker" required>
-              <option value="#" disabled selected>Pilih Jenis Filter</option>
-              <option value="1">Harga Tinggi Ke Rendah</option>
-              <option value="2">Harga Rendah Ke Tinggi</option>
-            </select>
-          </div>
-        </div>
-        </form>
-        <div class="row"> 
-          <!-- Property Listings-->
-          <div class="property-listing col-lg-12">
-            <div class="row">
-                <?php 
-                $no         = 0;
-                foreach($barang->result_array() as $i)
-                {
-                    $no++;
-                    $id_barang          = $i['barang_id'];
-                    $nm_barang          = $i['barang_nama'];
-                    $hrg_jual           = $i['barang_harga_jual'];
-                    $diskon             = $i['barang_diskon']." %";
-                    $hrg_akhir          = "Rp. ".number_format($i['barang_harga_jual']-($i['barang_harga_jual']*($i['barang_diskon']/100)));
-                    $foto_utama         = $i['foto_barang_nama'];
-                    ?>
-              <div class="col-lg-3">
-                <div class="property-listing-item">
-                  <div class="image"><a href="<?php echo base_url().'barang/detail/'.$id_barang; ?>" class="no-anchor-style"><img src="<?php echo base_url().'assets/images/barang/'.$foto_utama; ?>" alt=" The Chalet Estate" class="img-fluid"></a>
-                     <div class="price"><?php echo $diskon."</br>"; ?> </div>
-                     <div class="price"><?php echo "<strike>Rp. ".number_format($hrg_jual)."</strike> ".$hrg_akhir; ?> </div>
-                  </div>
-                  <div class="col-md-12">
-                  <div class="info">
-                    <a href="<?php echo base_url().'barang/detail/'.$id_barang; ?>" class="no-anchor-style">
-                      <h2 class="h4 text-primary"> <?php echo $nm_barang; ?></h2></a>
-                        <button id="button_keranjang<?php echo $id_barang; ?>" data-id="<?php echo $id_barang; ?>" data-nama="<?php echo $nm_barang; ?>" data-harga="<?php echo $hrg_akhir; ?>" class="btn-primary"><i class="fa fa-cart-plus"></i></button>
-                        <button id="button_favorit<?php echo $id_barang; ?>" data-id="<?php echo $id_barang; ?>" class="btn-primary"><i class="fa fa-heart"></i></button>
-                        <button class="btn-primary"><a class="btn-primary" href="<?php echo base_url();?>custom/buat_custom">Custom</a></button>
-                  </div>
-              </div>
-                </div>
-              </div>
-          <?php } ?>
-              
-                 
-                </div>
-              </div>
-            </div>
-            <div class="property-listing-footer">
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="left mt-5">
-                  <p class="mb-0">Showing  <span class="text-primary"><?php echo $no; ?> </span> of  <span class="text-primary"><?php echo $total_row; ?></span></p>
-                </div>
-                <div class="right mt-5">
-                  <nav aria-label="Page navigation example">
-                    <?php echo $page; ?>
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+	<div class="product-page">
+		<section class="page-heading">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="main-page">
+							<h2 class="text-primary">List Produk</h2>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="<?php echo base_url();?>home">Home</a></li>
+								<li class="breadcrumb-item"><a href="#"><?php echo $nm_kategori; ?></a></li>
+								<li aria-current="page" class="breadcrumb-item active"><?php echo $nm_sub_kategori; ?></li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="product-filter">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-md-2">
+						<p class="mb-0 filter-title">Sorting Produk :</p>
+					</div>
+					<div class="col-md-8">
+						<form method="post" enctype="multipart/form-data" class="form-filter">
+							<select id="propertyFilter" name="filter_barang" class="selectpicker" required>
+								<option value="#" disabled selected>Pilih Jenis Filter</option>
+								<option value="1">Harga Tinggi Ke Rendah</option>
+								<option value="2">Harga Rendah Ke Tinggi</option>
+							</select>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="product-list pt-5">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-6">
+						<a href="#">
+							<div class="main-product-thumb">
+								<div class="product-thumbnail">
+									<figure>
+										<img class="img-responsive" src="<?php echo base_url('assets/images/barang/9f11cf77253b6d47bff0e2f465187636.png'); ?>" alt="">
+										<figcaption class="text-center">
+											<h6 class="product-thumbnails-title">Lorem Ipsum Dolor</h6>
+											<h5 class="product-thumbnails-price">Rp 500.000
+												<span><del>&nbsp; Rp 550.000</del></span>
+											</h5>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="footer-product-thumbnails text-center">
+									<button type="button" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-cart-plus"></i></button>
+									<button type="button" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-heart"></i></button>
+									<button type="button" class="btn btn-sm btn-gradient btn-sm" name="button">Custom</button>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6">
+						<a href="#">
+							<div class="main-product-thumb">
+								<div class="product-thumbnail">
+									<figure>
+										<img class="img-responsive" src="<?php echo base_url('assets/images/barang/9f11cf77253b6d47bff0e2f465187636.png'); ?>" alt="">
+										<figcaption class="text-center">
+											<h6 class="product-thumbnails-title">Lorem Ipsum Dolor</h6>
+											<h5 class="product-thumbnails-price">Rp 500.000
+												<span><del>&nbsp; Rp 550.000</del></span>
+											</h5>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="footer-product-thumbnails text-center">
+									<button type="button" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-cart-plus"></i></button>
+									<button type="button" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-heart"></i></button>
+									<button type="button" class="btn btn-sm btn-gradient btn-sm" name="button">Custom</button>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6">
+						<a href="#">
+							<div class="main-product-thumb">
+								<div class="product-thumbnail">
+									<figure>
+										<img class="img-responsive" src="<?php echo base_url('assets/images/barang/9f11cf77253b6d47bff0e2f465187636.png'); ?>" alt="">
+										<figcaption class="text-center">
+											<h6 class="product-thumbnails-title">Lorem Ipsum Dolor</h6>
+											<h5 class="product-thumbnails-price">Rp 500.000
+												<span><del>&nbsp; Rp 550.000</del></span>
+											</h5>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="footer-product-thumbnails text-center">
+									<button type="button" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-cart-plus"></i></button>
+									<button type="button" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-heart"></i></button>
+									<button type="button" class="btn btn-sm btn-gradient btn-sm" name="button">Custom</button>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6">
+						<a href="#">
+							<div class="main-product-thumb">
+								<div class="product-thumbnail">
+									<figure>
+										<img class="img-responsive" src="<?php echo base_url('assets/images/barang/9f11cf77253b6d47bff0e2f465187636.png'); ?>" alt="">
+										<figcaption class="text-center">
+											<h6 class="product-thumbnails-title">Lorem Ipsum Dolor</h6>
+											<h5 class="product-thumbnails-price">Rp 500.000
+												<span><del>&nbsp; Rp 550.000</del></span>
+											</h5>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="footer-product-thumbnails text-center">
+									<button type="button" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-cart-plus"></i></button>
+									<button type="button" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-heart"></i></button>
+									<button type="button" class="btn btn-sm btn-gradient btn-sm" name="button">Custom</button>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-md-6">
+						Showing paer page in here
+					</div>
+					<div class="col-md-6">
+						<?php echo $page; ?>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	    <section class="property-grid-sidebar bg-white-3">
+	      <div class="container">
+	        <!-- <h2><span class="text-primary">List Produk</span></h2>
+	        <nav aria-label="breadcrumb">
+	          <ol class="breadcrumb">
+	            <li class="breadcrumb-item"><a href="<?php echo base_url();?>home">Home</a></li>
+	            <li class="breadcrumb-item"><a href="#"><?php echo $nm_kategori; ?></a></li>
+	            <li aria-current="page" class="breadcrumb-item active"><?php echo $nm_sub_kategori; ?></li>
+	          </ol>
+	        </nav> -->
+	        <!-- Filters-->
+			<!-- <form method="post" enctype="multipart/form-data">
+				<div class="filter filter-section d-flex justify-content-between align-items-center flex-wrap bg-white-5">
+					<div class="sort d-flex align-items-left"><strong>Sorting Produk</strong>
+						<select id="propertyFilter" name="filter_barang" class="selectpicker" required>
+							<option value="#" disabled selected>Pilih Jenis Filter</option>
+							<option value="1">Harga Tinggi Ke Rendah</option>
+							<option value="2">Harga Rendah Ke Tinggi</option>
+						</select>
+					</div>
+				</div>
+			</form> -->
+	        <div class="row">
+	          <!-- Property Listings-->
+	          <div class="property-listing col-lg-12">
+	            <div class="row">
+	                <?php
+	                $no         = 0;
+	                foreach($barang->result_array() as $i)
+	                {
+	                    $no++;
+	                    $id_barang          = $i['barang_id'];
+	                    $nm_barang          = $i['barang_nama'];
+	                    $hrg_jual           = $i['barang_harga_jual'];
+	                    $diskon             = $i['barang_diskon']." %";
+	                    $hrg_akhir          = "Rp. ".number_format($i['barang_harga_jual']-($i['barang_harga_jual']*($i['barang_diskon']/100)));
+	                    $foto_utama         = $i['foto_barang_nama'];
+	                    ?>
+	              <div class="col-lg-3">
+	                <div class="property-listing-item">
+	                  <div class="image"><a href="<?php echo base_url().'barang/detail/'.$id_barang; ?>" class="no-anchor-style"><img src="<?php echo base_url().'assets/images/barang/'.$foto_utama; ?>" alt=" The Chalet Estate" class="img-fluid"></a>
+	                     <div class="price"><?php echo $diskon."</br>"; ?> </div>
+	                     <div class="price"><?php echo "<strike>Rp. ".number_format($hrg_jual)."</strike> ".$hrg_akhir; ?> </div>
+	                  </div>
+	                  <div class="col-md-12">
+	                  <div class="info">
+	                    <a href="<?php echo base_url().'barang/detail/'.$id_barang; ?>" class="no-anchor-style">
+	                      <h2 class="h4 text-primary"> <?php echo $nm_barang; ?></h2></a>
+	                        <button id="button_keranjang<?php echo $id_barang; ?>" data-id="<?php echo $id_barang; ?>" data-nama="<?php echo $nm_barang; ?>" data-harga="<?php echo $hrg_akhir; ?>" class="btn-primary"><i class="fa fa-cart-plus"></i></button>
+	                        <button id="button_favorit<?php echo $id_barang; ?>" data-id="<?php echo $id_barang; ?>" class="btn-primary"><i class="fa fa-heart"></i></button>
+	                        <button class="btn-primary"><a class="btn-primary" href="<?php echo base_url();?>custom/buat_custom">Custom</a></button>
+	                  </div>
+	              </div>
+	                </div>
+	              </div>
+	          <?php } ?>
+
+
+	                </div>
+	              </div>
+	            </div>
+	            <div class="property-listing-footer">
+	              <div class="d-flex justify-content-between align-items-center">
+	                <div class="left mt-5">
+	                  <p class="mb-0">Showing  <span class="text-primary"><?php echo $no; ?> </span> of  <span class="text-primary"><?php echo $total_row; ?></span></p>
+	                </div>
+	                <div class="right mt-5">
+	                  <nav aria-label="Page navigation example">
+	                    <?php echo $page; ?>
+	                  </nav>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </section>
+	</div>
+
     <!-- Scroll Top Button        -->
     <div id="scrollTopButton"><i class="fa fa-long-arrow-up"></i></div>
     <footer class="footer bg-black-3">
@@ -137,7 +279,6 @@
         </div>
       </div>
     </footer>
-   <button type="button" data-toggle="collapse" data-target="#style-switch" id="style-switch-button" class="btn btn-primary btn-sm hidden-xs hidden-sm"><!--<i class="fa fa-cog fa-2x"></i>--><span> Diskon <br>Up to 50%</span></button>
     <div id="style-switch" class="collapse">
       <h4 class="text-uppercase">Dapatkan diskon menarik setiap hari!!</h4>
       <!--<form class="mb-3">
@@ -182,8 +323,8 @@
     </script>
     <script type="text/javascript">
     <?php foreach($barang->result_array() as $i)
-        { 
-            $id_brg             = $i['barang_id']; 
+        {
+            $id_brg             = $i['barang_id'];
     ?>
     $('#button_keranjang<?php echo $id_brg; ?>').on('click',function()
     {
