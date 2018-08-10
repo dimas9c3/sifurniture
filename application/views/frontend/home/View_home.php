@@ -346,7 +346,34 @@
     </section>
 
     <!-- Modal diskon -->
-
+	<!-- Modal diskon -->
+    <div class="modal fade" id="modal_diskon" tabindex="-1" role="dialog" aria-labelledby="ModalProduk">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content modal_diskon" >
+                <div class="modal-header">
+                    <h3 class="modal-title">Penawaran menarik !</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h5 class="text-thin">
+                                silahkan belanja ditoko kami!
+                            </h5>
+                            <h5 class="text-thin">Jangan sampai telat&hellip; !!</h5>
+                        </div>
+                        <div class="col-md-6">
+                            <img class="img-responsive" src="<?php echo base_url();?>vendors/frontend/img/property-single-1.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer-cst">
+                    <button type="button" id="modal_diskon_set_cookie" class="btn btn-gradient btn-sm mr-2" data-dismiss="modal">Jangan tampilkan hari ini.</button>
+                    <a class="btn btn-gradient btn-sm" data-dismiss="modal" href="#">OK</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Scroll Top Button        -->
     <div id="scrollTopButton"><i class="fa fa-long-arrow-up"></i></div>
