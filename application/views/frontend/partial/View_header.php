@@ -46,11 +46,17 @@
 <div class="top-bar">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-center menu-center">
+            <div class="col-lg-12 menu-center">
                 <ul class="list-inline">
-                    <li class="list-inline-item"><a href="customer-login.html" class="p-2 topbar-atas"><i class="fa fa-envelope"></i> <strong> Email : email@email.com</strong></a></li>
-                    <li class="list-inline-item"><a href="customer-login.html" class="p-2 topbar-atas"><i class="fa fa-phone"></i> <strong>  Telepon : +6298292929299</strong></a></li>
+                    <li class="list-inline-item show-lg"><a href="customer-login.html" class="p-2 topbar-atas"><i class="fa fa-envelope"></i> <strong> email@email.com</strong></a></li>
+                    <li class="list-inline-item"><a href="customer-login.html" class="p-2 topbar-atas"><i class="fa fa-phone"></i> <strong> +6298292929299</strong></a></li>
                     <li class="list-inline-item"><a href="customer-login.html" class="p-2 topbar-atas"><i class="fa fa-clock-o"></i> <strong> Senin - Jumat (08.00-17.00)</strong></a></li>
+                </ul>
+				<ul class="social-icon show-lg">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -71,8 +77,13 @@
 
 <!-- Navbar-->
 <nav class="navbar navbar-expand-lg">
-<div class="container"><a href="<?php echo base_url();?>home" class="navbar-brand"><img src="<?php echo base_url();?>vendors/frontend/img/logo-light.png" alt="..." width="90" class="img-fluid"></a>
-    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><span></span><span></span><span></span></button>
+<div class="container">
+	<div class="main-header">
+		<a href="<?php echo base_url();?>home" class="navbar-brand">
+			<img src="<?php echo base_url();?>vendors/frontend/img/logo-light.png" alt="..." width="90" class="img-fluid">
+		</a>
+	    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><span></span><span></span><span></span></button>
+	</div>
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
         <ul class="navbar-nav mx-auto">
 
