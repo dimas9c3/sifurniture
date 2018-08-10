@@ -15,7 +15,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> 
 
                 <div class="swiper-slide">
                     <div style="background: url(<?php echo base_url();?>vendors/frontend/img/hero-bg-2.jpg);" class="hero-content has-overlay-dark">
@@ -283,7 +283,7 @@
                 <div class="swiper-wrapper pt-2 pb-5">
 
                     <?php foreach($artikel->result_array() as $art)
-                    { 
+                    {
                         $id_artikel         = $art['artikel_id'];
                         $judul              = $art['artikel_judul'];
                         $gb_artikel         = $art['artikel_foto'];
@@ -295,7 +295,7 @@
                             </div>
                             <div class="info">
                                 <div class="d-flex align-items-center justify-content-center align-content-center p-1">
-                                    
+
                                         <p class="h5 text-thin text-uppercase text-center"><?php echo $judul; ?></p>
                                 </div>
                             </div>
@@ -357,7 +357,7 @@
     <!-- Modal diskon -->
 
     <?php $this->load->view('frontend/partial/view_footer'); ?>
-    
+
 		<script>
 			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
 			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
