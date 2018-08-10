@@ -19,6 +19,27 @@ a:focus, {
 	background-color: #24943D;
 }
 
+.top-bar li a {
+	font-weight: 300;
+}
+
+.top-bar ul.list-inline {
+	float: left;
+}
+
+.top-bar ul.social-icon {
+	float: right;
+}
+
+.top-bar .social-icon li {
+	display: inline-block;
+	padding: 5px 8px;
+}
+
+nav.navbar ul.mx-auto {
+	margin-right: 0 !important;
+}
+
 nav.navbar {
 	background-color: #29A745;
 }
@@ -128,6 +149,10 @@ nav.navbar {
 @media (max-width: 768px) {
 	.show-lg {
 		display: none;
+	}
+
+	.top-bar {
+		text-align: center;
 	}
 
 	.top-bar .col-lg-12 {
