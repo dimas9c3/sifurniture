@@ -1,4 +1,4 @@
- 	<!-- Scroll Top Button        -->
+    <!-- Scroll Top Button        -->
     <div id="scrollTopButton"><i class="fa fa-long-arrow-up"></i></div>
 
     <footer class="footer bg-black-3">
@@ -43,6 +43,7 @@
             </div>
         </div>
     </footer>
+    
 <!-- Javascript files-->
 <script src="<?php echo base_url();?>vendors/frontend/vendor/jquery/jquery.min.js"></script>
 <script src="<?php echo base_url();?>vendors/frontend/vendor/popper.js/umd/popper.min.js"> </script>

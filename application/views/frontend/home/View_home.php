@@ -75,7 +75,9 @@
                     <div class="swiper-slide">
                         <div class="property">
                             <div class="image"><img src="<?php echo base_url().'assets/images/barang/'.$foto; ?>" alt="Condo with pool view" class="img-fluid">
+
                                 <div class="overlay d-flex align-items-center justify-content-center"><a href="<?php echo base_url().'barang/detail/'.$i['barang_id']; ?>" class="btn btn-gradient btn-sm">View Details</a></div>
+
                             </div>
                             <div class="box-thumbnails">
 								<div class="thumb-product-caption">
@@ -355,7 +357,7 @@
     <!-- Modal diskon -->
 
     <?php $this->load->view('frontend/partial/view_footer'); ?>
-
+    
 		<script>
 			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
 			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
