@@ -10,6 +10,7 @@ class Home extends CI_Controller
 		$this->load->model('Model_interior');
 		$this->load->model('Model_custom');
 		$this->load->model('Model_ulasan');
+		$this->load->model('Model_artikel');
 	}
 
 	public function index()
@@ -20,6 +21,7 @@ class Home extends CI_Controller
 		$data['interior']			= $this->Model_interior->get_interior_front();
 		$data['style']			 	= $this->Model_custom->get_style_front();
 		$data['ulasan']				= $this->Model_ulasan->get_ulasan_front();
+		$data['artikel']			= $this->Model_artikel->get_artikel_front();
 		$this->load->view('frontend/home/View_home',$data);
 	}
 

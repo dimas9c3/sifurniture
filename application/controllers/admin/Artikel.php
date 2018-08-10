@@ -81,7 +81,7 @@ class Artikel extends CI_Controller
 					);
 				}else
 				{
-		        	redirect('admin/artikel');
+		        	redirect('admin');
 		        }    
 		    }         
 

@@ -46,6 +46,14 @@ class Model_artikel extends Ci_Model
 		);
 	}
 
+	public function get_artikel_front()
+	{
+		$this->db->order_by('created_at','DESC');
+		$query 				= $this->db->get('tbl_artikel');
+
+		return $query;
+	}
+
 	function get_artikel_by_id($id_artikel)
 	{
 		$this->db->where('artikel_id',$id_artikel);
@@ -61,6 +69,14 @@ class Model_artikel extends Ci_Model
 		}
 
 		return $data;
+	}
+
+	function detail_artikel($id_artikel)
+	{
+		$this->db->where('artikel_id',$id_artikel);
+		$query 				= $this->db->get('tbl_artikel');
+
+		return $query;
 	}
 
 	function set_artikel($artikel)
