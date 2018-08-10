@@ -74,23 +74,23 @@
                     <div class="swiper-slide">
                         <div class="property">
                             <div class="image"><img src="<?php echo base_url().'assets/images/barang/'.$foto; ?>" alt="Condo with pool view" class="img-fluid">
-                                <div class="overlay d-flex align-items-center justify-content-center"><a href="<?php echo base_url().'home/detail/'.$i['barang_id']; ?>" class="btn btn-gradient gradient-custom-harga">View Details</a></div>
+                                <div class="overlay d-flex align-items-center justify-content-center"><a href="<?php echo base_url().'home/detail/'.$i['barang_id']; ?>" class="btn btn-gradient btn-sm">View Details</a></div>
                             </div>
-                            <div class="info">
-                                <div class="d-flex align-items-center justify-content-center align-content-center p-1">
-                                    <a href="<?php echo base_url().'home/detail/'.$i['barang_id']; ?>" class="no-anchor-style">
-                                        <p class="h5 text-thin text-uppercase text-center"><?php echo $nama; ?></p>
-                                    </a>
-                                </div>
-                                <div class="d-flex justify-content-center align-content-center align-items-stretch p-1 price-button price-label-atas">
-                                    <a href="<?php echo base_url().'home/detail/'.$i['barang_id']; ?>" class="no-anchor-style btn-form-control custom-price-label pt-3">
-                                        <p class="h7 text-thin text-uppercase text-center"><?php echo 'Rp. '.number_format($jual); ?></p>
-                                    </a>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-center align-content-center p-1">
-                                     <h2><a href="#" class="text-thin text-uppercase text-center btn btn-gradient "><strong><i class="fa fa-cart-plus"></i> Beli</strong></a></h2>
-                                </div>
+                            <div class="box-thumbnails">
+								<div class="thumb-product-caption">
+									<div class="thumb-product-title">
+										<a href="<?php echo base_url().'home/detail/'.$i['barang_id']; ?>">
+											<p class="mb-0"><?php echo $nama; ?></p>
+										</a>
+									</div>
+									<div class="thumb-product-price">
+										<h6 class="mb-0"><?php echo 'Rp. '.number_format($jual); ?></h6>
+									</div>
+								</div>
                             </div>
+							<div class="box-thumbnails-footer text-center">
+								<a href="#" class="btn btn-gradient btn-sm"><i class="fa fa-cart-plus"></i> Beli</a>
+							</div>
                         </div>
                     </div>
                     <?php } ?>
@@ -116,7 +116,7 @@
         </header>
         <div class="row">
           <div class="col-lg-12">
-            <div class="listing-home"><img src="<?php echo base_url();?>vendors/frontend/img/ramadhan.gif" alt="..."><a href="#" class="text no-anchor-style">
+            <div class="listing-home mb-0"><img src="<?php echo base_url();?>vendors/frontend/img/ramadhan.gif" alt="..."><a href="#" class="text no-anchor-style">
                 <h3>Ramadhan Sale</h3>
                 <p>Silahkan berbelanja ada banyak cashback menanti anda bulan ini.</p></a>
               <div class="ribbon text-center"><strong class="d-block">1</strong><small>Listings</small></div>
@@ -127,10 +127,10 @@
     </section>
 
     <!-- Custom Section-->
-    <section class="about pt-0 bg-white-3">
+    <section class="about pt-0 bg-white-3 portfolio-section">
         <header class="text-center">
-            <h2><span class="text-primary"><a href="<?php echo base_url();?>home/custom" class="btn btn-gradient "><span class="price-label"><strong>Produk Interior</strong></span></a></span></h2>
-            <div class="row">
+            <span><a href="<?php echo base_url();?>home/custom" class="btn btn-gradient"><strong>Produk Interior</strong></a></span>
+            <div class="row mt-2">
                 <div class="col-lg-8 mx-auto">
                     <p class="template-text">Inilah produk interior kami. </p>
                 </div>
@@ -145,13 +145,20 @@
                         $nm_interior        = $i['sub_1_kategori_interior_nama'];
                         $foto               = $i['sub_1_kategori_interior_foto'];
                 ?>
-                <div class="col-lg-4 col-xs-4 pr-lg-0 custom-design-atas">
-                    <div class="property">
-                        <div class="image"><a href="<?php echo base_url().'interior/kategori/'.$id_interior;?>"><img src="<?php echo base_url().'assets/images/sub_1_kategori_interior/'.$foto;?>" class="img-fluid"></a>
+                <div class="col-lg-4 col-xs-4 pr-lg-0">
+                    <div class="box-thumbnails portfolio">
+                        <div class="image mb-3">
+							<a href="<?php echo base_url().'interior/kategori/'.$id_interior;?>">
+								<img src="<?php echo base_url().'assets/images/sub_1_kategori_interior/'.$foto;?>" class="img-fluid">
+							</a>
                         </div>
                         <div class="info"><a href="<?php echo base_url().'interior/kategori/'.$id_interior;?>" class="no-anchor-style">
                             <h3 class="h4 text-thin text-center text-uppercase mb-1"><?php echo $nm_interior; ?></h3></a>
-                            <div class=" d-flex align-items-center justify-content-center"><a href="<?php echo base_url().'interior/kategori/'.$id_interior;?>" class="btn btn-gradient "><span class="price-label"><strong>Harga Mulai Rp.1.000.000</strong></span></a></div>
+                            <div class=" d-flex align-items-center justify-content-center">
+								<a href="<?php echo base_url().'interior/kategori/'.$id_interior;?>" class="btn btn-gradient">
+									<strong>Harga Mulai Rp.1.000.000</strong>
+								</a>
+							</div>
                         </div>
                     </div>
                 </div>
@@ -166,14 +173,22 @@
 
      <!-- Custom scandinavi -->
     <section class="about pt-0 bg-white-3">
-          <header class="text-center">
-            <h2><span class="text-primary"><a href="<?php echo base_url();?>home/custom" class="btn btn-gradient "><span class="price-label"><strong>Custom Design</strong></span></a></span></h2>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <p class="template-text">Tidak cocok dengan produk yang sudah ada ? Mari desain sendiri desain yang anda inginkan sendiri, furniture yang dibuat dengan custom design sesuka anda. Silahkan klik link dibawah untuk memulai custom design anda. </p>
-                </div>
-            </div>
-        </header>
+		<div class="container">
+			<header class="text-center">
+				<h2>
+					<a href="<?php echo base_url();?>home/custom" class="btn btn-gradient "><strong>Custom Design</strong></a>
+				</h2>
+				<div class="row">
+	                <div class="col-lg-8 mx-auto">
+	                    <p class="template-text">
+							Tidak cocok dengan produk yang sudah ada ? Mari desain sendiri desain yang anda inginkan
+							sendiri, furniture yang dibuat dengan custom design sesuka anda. Silahkan klik link
+							dibawah untuk memulai custom design anda.
+						</p>
+	                </div>
+	            </div>
+	        </header>
+		</div>
         <div class="container">
             <div class="row d-flex align-items-stretch">
                 <?php
@@ -185,18 +200,18 @@
                         $nm_style           = $i['style_nama'];
 
                 ?>
-                <div class="col-lg-4 col-xs-4 pr-lg-0">
+                <div class="col-md-4 mb-3">
                     <div class="property">
                         <div class="image"><a href="<?php echo base_url().'custom/buat_custom/'.$id_style;?>"><img src="<?php echo base_url().'assets/images/style/'.$foto_style;?>" alt="Condo with pool view" class="img-fluid"></a>
                         </div>
-                        <div class="info"><a href="<?php echo base_url().'custom/buat_custom/'.$id_style;?>" class="no-anchor-style">
+                        <div class="info text-center"><a href="<?php echo base_url().'custom/buat_custom/'.$id_style;?>" class="no-anchor-style">
                             <div class="d-flex align-items-center justify-content-center">
                                  <h3 class="d-flex align-items-center justify-content-center"><strong class="text-primary"><?php echo $nm_style; ?></strong></h3>
                             </div>
                             <ul class="tags list-inline">
                                 <li class="list-inline-item"><a href="<?php echo base_url().'custom/buat_custom/'.$id_style;?>"><?php echo $des_style; ?> </a></li>
                             </ul>
-                           <div class=" d-flex align-items-center justify-content-center"><a href="<?php echo base_url().'custom/buat_custom/'.$id_style;?>" class="btn btn-gradient "><span class="price-label"><strong>Custom Sekarang</strong></span></a></div>
+                           <div class=" d-flex align-items-center justify-content-center"><a href="<?php echo base_url().'custom/buat_custom/'.$id_style;?>" class="btn btn-gradient"><strong>Custom Sekarang</strong></a></div>
                         </div>
                     </div>
                 </div>
@@ -331,33 +346,7 @@
     </section>
 
     <!-- Modal diskon -->
-    <div class="modal fade" id="modal_diskon" tabindex="-1" role="dialog" aria-labelledby="ModalProduk">
-        <div class="modal-dialog modal-md" role="document">
-            <div class="modal-content modal_diskon" >
-                <div class="modal-header">
-                    <h3 class="modal-title">Penawaran menarik !</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body text-center">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <h5 class="text-thin">
-                                silahkan belanja ditoko kami!
-                            </h5>
-                            <h5 class="text-thin">Jangan sampai telat&hellip; !!</h5>
-                        </div>
-                        <div class="col-md-6">
-                            <img class="img-responsive" src="<?php echo base_url();?>vendors/frontend/img/property-single-1.jpg">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer-cst">
-                    <button type="button" id="modal_diskon_set_cookie" class="btn btn-gradient btn-sm mr-2" data-dismiss="modal">Jangan tampilkan hari ini.</button>
-                    <a class="btn btn-gradient btn-sm" data-dismiss="modal" href="#">OK</a>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Scroll Top Button        -->
     <div id="scrollTopButton"><i class="fa fa-long-arrow-up"></i></div>
@@ -429,38 +418,28 @@
       <p><img src="<?php echo base_url();?>vendors/frontend/img/template-mac.png" alt="" class="img-fluid"></p>
       <p class="text-muted text-small">Dapatkan keuntungan menarik membeli di toko kami setiap hari untuk semua produk!!</p>
     </div>
-    <!-- Javascript files-->
-    <script src="<?php echo base_url();?>vendors/frontend/vendor/jquery/jquery.min.js"></script>
-    <script src="<?php echo base_url();?>vendors/frontend/vendor/popper.js/umd/popper.min.js"> </script>
-    <script src="<?php echo base_url();?>vendors/frontend/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url();?>vendors/frontend/vendor/bootstrap-select/js/bootstrap-select.js"></script>
-    <script src="<?php echo base_url();?>vendors/frontend/vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="<?php echo base_url();?>vendors/frontend/vendor/swiper/js/swiper.js"></script>
-    <script src="<?php echo base_url();?>vendors/frontend/js/front.js?version=51"></script>
+    	<?php $this->load->view('frontend/partial/view_footer'); ?>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
-    <!---->
-    <script>
-        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-        e.src='https://www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-        ga('create','UA-XXXXX-X');ga('send','pageview');
+		<script>
+			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+			e.src='https://www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+			ga('create','UA-XXXXX-X');ga('send','pageview');
 
-        if($.cookie('modal_diskon')==null)
-        {
-            setTimeout(function() {
-            $('#modal_diskon').modal();
-            },3000);
-        }
+			if($.cookie('modal_diskon')==null)
+			{
+				setTimeout(function() {
+				$('#modal_diskon').modal();
+				},3000);
+			}
 
-        $('#modal_diskon_set_cookie').on('click',function()
-        {
-            $.cookie('modal_diskon', 'yes', { expires: 1, path: '/' });
-        })
+			$('#modal_diskon_set_cookie').on('click',function()
+			{
+				$.cookie('modal_diskon', 'yes', { expires: 1, path: '/' });
+			})
+		</script>
 
-
-    </script>
     </body>
 </html>
