@@ -375,7 +375,7 @@
         </div>
     </div>
 
-    <!-- Scroll Top Button        -->
+    <!-- Scroll Top Button -->
     <div id="scrollTopButton"><i class="fa fa-long-arrow-up"></i></div>
     <footer class="footer bg-black-3">
         <div class="container">

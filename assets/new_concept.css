@@ -23,10 +23,6 @@ a:focus, {
 	font-weight: 300;
 }
 
-.top-bar ul.list-inline {
-	float: left;
-}
-
 .top-bar ul.social-icon {
 	float: right;
 }
@@ -233,7 +229,9 @@ nav.navbar {
 }
 
 @media (min-width: 768px) {
-
+	.top-bar ul.list-inline {
+		float: left;
+	}
 }
 
 @media (min-width: 992px) {
