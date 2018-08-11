@@ -92,7 +92,7 @@
 								</div>
                             </div>
 							<div class="box-thumbnails-footer text-center">
-								<a href="#" class="btn btn-gradient btn-sm mb-1"><i class="fa fa-cart-plus"></i></a>
+								<a href="#" class="btn btn-gradient btn-sm"><i class="fa fa-cart-plus"></i></a>
                                 <a href="#" class="btn btn-gradient btn-sm"><i class="fa fa-heart"></i></a>
 							</div>
                         </div>
@@ -354,7 +354,6 @@
         </div>
     </section>
 
-    <!-- Modal diskon -->
 	<!-- Modal diskon -->
     <div class="modal fade" id="modal_diskon" tabindex="-1" role="dialog" aria-labelledby="ModalProduk">
         <div class="modal-dialog modal-md" role="document">

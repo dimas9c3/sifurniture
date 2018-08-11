@@ -1,6 +1,10 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
+<<<<<<< HEAD
 class Pengaturan extends CI_Controller
+=======
+class Pengaturan extends CI_Controller 
+>>>>>>> design
 {
 	public function __construct()
 	{
@@ -20,7 +24,14 @@ class Pengaturan extends CI_Controller
 
 	public function index()
 	{
+<<<<<<< HEAD
 		$data['title'] 				= 'Pengaturan Aplikasi';
 		$this->load->view('admin/pengaturan/View_pengaturan',$data);
 	}
 }
+=======
+		$data['title'] 				= 'Penagturan Aplikasi';
+		$this->load->view('admin/pengaturan/View_pengaturan',$data);
+	}
+}
+>>>>>>> design
