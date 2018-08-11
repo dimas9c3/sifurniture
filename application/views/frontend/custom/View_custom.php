@@ -1,17 +1,98 @@
 <?php $this->load->view('frontend/partial/View_header'); ?>
 
-    <!-- Hero Section-->
-    <section class="hero-page bg-white-custom-3">
-      <div class="container">
-        <h1 class="h2 text-primary">Custom Design</h1>
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li aria-current="page" class="breadcrumb-item active">Custom Design</li>
-          </ol>
-        </nav>
-      </div>
-    </section>
+<div class="product-page article">
+	<section class="page-heading page-heading-light">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-6">
+					<h2 class="text-primary mb-0">Custom Design</h2>
+				</div>
+				<div class="col-md-6">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="<?php echo base_url();?>home">Home</a></li>
+						<li class="breadcrumb-item active">Custom Design</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="choosing-product">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<!-- Nav -->
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+						<li class="nav-item">
+							<a href="#step1" id="step-one" aria-controls="step1" class="nav-link active" data-toggle="tab" role="tab" aria-selected="true">Step 1</a>
+						</li>
+						<li class="nav-item">
+							<a href="#step2" id="step-two" aria-controls="step2" class="nav-link" data-toggle="tab" role="tab" aria-selected="true">Step 2</a>
+						</li>
+						<li class="nav-item">
+							<a href="#step3" id="step-three" aria-controls="step3" class="nav-link" data-toggle="tab" role="tab" aria-selected="true">Step 3</a>
+						</li>
+						<li class="nav-item">
+							<a href="#step4" id="step-four" aria-controls="step4" class="nav-link" data-toggle="tab" role="tab" aria-selected="true">Step 4</a>
+						</li>
+						<li class="nav-item">
+							<a href="#step5" id="step-five" aria-controls="step5" class="nav-link" data-toggle="tab" role="tab" aria-selected="true">Step 5</a>
+						</li>
+						<li class="nav-item">
+							<a href="#step6" id="step-six" aria-controls="step6" class="nav-link" data-toggle="tab" role="tab" aria-selected="true">Step 6</a>
+						</li>
+					</ul>
+					<!-- Nav Content -->
+					<form class="" action="index.html" method="post">
+						<div class="tab-content" id="myTabContent">
+							<!-- Step 1 -->
+							<div class="tab-pane fade show active" id="step1" role="tabpanel" aria-labelledby="step-one">
+								<div class="content">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</div>
+							</div>
+
+							<!-- Step 2 -->
+							<div class="tab-pane fade" id="step2" role="tabpanel" aria-labelledby="step-two">
+								<div class="content">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</div>
+							</div>
+
+							<!-- Step 3 -->
+							<div class="tab-pane fade" id="step3" role="tabpanel" aria-labelledby="step-three">
+								<div class="content">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</div>
+							</div>
+
+							<!-- Step 4 -->
+							<div class="tab-pane fade" id="step4" role="tabpanel" aria-labelledby="step-four">
+								<div class="content">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</div>
+							</div>
+
+							<!-- Step 5 -->
+							<div class="tab-pane fade" id="step5" role="tabpanel" aria-labelledby="step-five">
+								<div class="content">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</div>
+							</div>
+
+							<!-- Step 6 -->
+							<div class="tab-pane fade" id="step6" role="tabpanel" aria-labelledby="step-six">
+								<div class="content">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
 
     <!-- Submit Section-->
     <section class="submit-property bg-white-custom-3">
@@ -53,14 +134,14 @@
                                 <label class="control-label">Pilih Style</label>
                                 <select class="form-control select2" style="width: 50%;" id="step_style" name="step_style" required>
                                     <option value="">Pilih Style</option>
-                                    <?php 
+                                    <?php
                                         foreach($style->result_array() as $i)
                                         {
                                             $id_style               = $i['style_id'];
                                             $nm_style               = $i['style_nama'];
                                     ?>
                                     <option value="<?php echo $id_style; ?>"><?php echo $nm_style; ?></option>
-                                    <?php 
+                                    <?php
                                         }
                                     ?>
                                 </select>
@@ -84,7 +165,7 @@
                             <div class="form-group">
                                 <label class="control-label">Pilih Jenis Produk</label>
                                 <select id="step_jenis" name="step_jenis" class="form-control" style="width: 50%;" required>
-                                    
+
                                 </select>
                             </div>
                             <button class="btn btn-primary nextBtn" type="button" >Next</button>
@@ -106,7 +187,7 @@
                             <div class="form-group">
                                 <label class="control-label">Pilih Material</label>
                                 <select id="step_material" name="step_jenis" class="form-control" style="width: 50%" required>
-                                    
+
                                 </select>
                             </div>
                             <button class="btn btn-primary nextBtn" type="button" >Next</button>
@@ -128,7 +209,7 @@
                             <div class="form-group">
                                 <label class="control-label">Pilih Coating Finishing</label>
                                 <select id="step_coating" name="step_coating" class="form-control" style="width: 50%;" required>
-                                    
+
                                 </select>
                             </div>
                             <button class="btn btn-primary nextBtn" type="button" >Next</button>
@@ -150,7 +231,7 @@
                             <div class="form-group">
                                 <label class="control-label">Pilih Material Jog</label>
                                 <select id="step_jog" name="step_jog" class="form-control" style="width:50%;" required>
-                                    
+
                                 </select>
                             </div>
                             <button class="btn btn-primary nextBtn" type="button" >Next</button>
@@ -172,7 +253,7 @@
                             <div class="form-group">
                                 <label class="control-label">Pilih Provinsi Anda</label>
                                 <select id="step_prov" name="step_prov" class="form-control select2" style="width: 50%;" required>
-                                    
+
                                 </select>
                             </div>
                             <div class="form-group">
@@ -209,7 +290,7 @@
         <hr class="line mt-5 mb-5">
         <section class="property-single bg-white-2 preview-design">
       <div class="container">
-        
+
         <div class="row">
           <div class="col-lg-12 ">
             <!-- Image Slider -->
@@ -460,8 +541,8 @@
                 }
             })
         })
-            
-        
+
+
     </script>
     <script>
     $(document).ready(function()

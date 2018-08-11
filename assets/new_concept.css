@@ -149,6 +149,12 @@ ul.social-media li a:hover {
 	color: #29A745;
 }
 
+.tab-content .content {
+	padding: 20px;
+	border: 1px solid #DDD;
+	border-top: none;
+}
+
 /* -----------------------------------------------------------------------
 == HEADER & MEGA MENU ==
 ------------------------------------------------------------------------*/
