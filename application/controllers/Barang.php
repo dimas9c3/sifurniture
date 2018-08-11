@@ -36,7 +36,7 @@ class Barang extends CI_Controller
 		$config['first_tag_close'] 	= '</li>';
 
 		$config['last_link'] 		= 'Last';
-		$config['last_tag_open'] 	= '<li>';
+		$config['last_tag_open'] 	= '<li class="page-item page-link">';
 		$config['last_tag_close'] 	= '</li>';
 
 		$config['next_link'] 		= 'Next';
