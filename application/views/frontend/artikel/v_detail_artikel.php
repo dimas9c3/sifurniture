@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-md-6">
-					<h2 class="text-primary mb-0">List Produk</h2>
+					<h2 class="text-primary mb-0">Artikel</h2>
 				</div>
 				<div class="col-md-6">
 					<ol class="breadcrumb">
@@ -96,6 +96,11 @@
 		</div>
 	</section>
 </div>
+
+
+
+
+
 
 <!-- Hero Section-->
 <section class="hero-page bg-white-custom-3">
