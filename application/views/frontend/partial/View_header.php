@@ -48,9 +48,9 @@
         <div class="row">
             <div class="col-lg-12 menu-center">
                 <ul class="list-inline">
-                    <li class="list-inline-item show-lg"><a href="customer-login.html" class="p-2 topbar-atas"><i class="fa fa-envelope"></i> <strong> email@email.com</strong></a></li>
-                    <li class="list-inline-item"><a href="customer-login.html" class="p-2 topbar-atas"><i class="fa fa-phone"></i> <strong> +6298292929299</strong></a></li>
-                    <li class="list-inline-item"><a href="customer-login.html" class="p-2 topbar-atas"><i class="fa fa-clock-o"></i> <strong> Senin - Jumat (08.00-17.00)</strong></a></li>
+                    <li class="list-inline-item show-lg"><a href="customer-login.html" class="p-2 topbar-atas"><i class="fa fa-envelope"></i> <strong> <?php echo $email; ?></strong></a></li>
+                    <li class="list-inline-item"><a href="customer-login.html" class="p-2 topbar-atas"><i class="fa fa-phone"></i> <strong> <?php echo $telepon; ?></strong></a></li>
+                    <li class="list-inline-item"><a href="customer-login.html" class="p-2 topbar-atas"><i class="fa fa-clock-o"></i> <strong> <?php echo $jam; ?></strong></a></li>
                 </ul>
 				<ul class="social-icon show-lg">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>

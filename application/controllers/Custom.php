@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Custom extends CI_Controller 
+class Custom extends CI_Controller
 {
 
 	public function __construct()
@@ -9,10 +9,21 @@ class Custom extends CI_Controller
 		$this->load->model('Model_custom');
 		$this->load->model('Model_barang');
 		$this->load->model('Model_ongkir');
+		$this->load->model('Model_pengaturan');
+
+		/* Setting */
+		$sett 						= $this->Model_pengaturan->get_all_setting();
+		$row 						= $sett->row_array();
+		$this->email 				= $row['theme_option_email'];
+		$this->telepon 				= $row['theme_option_telepon'];
+		$this->jam 					= $row['theme_option_operasional'];
 	}
 
 	public function index()
 	{
+		$data['email'] 				= $this->email;
+		$data['telepon']			= $this->telepon;
+		$data['jam']				= $this->jam;
 		$data['title'] 				= 'Keranjang';
 		$data['kategori_navbar'] 	= $this->Model_barang->get_kategori_navbar();
 		$data['cart']			 	= $this->cart->contents();
@@ -21,6 +32,9 @@ class Custom extends CI_Controller
 
 	public function buat_custom()
 	{
+		$data['email'] 				= $this->email;
+		$data['telepon']			= $this->telepon;
+		$data['jam']				= $this->jam;
 		$data['title']				= 'Custom Design';
 		$data['kategori_navbar'] 	= $this->Model_barang->get_kategori_navbar();
 		$data['style']				= $this->Model_custom->get_style_select_front();
@@ -29,6 +43,9 @@ class Custom extends CI_Controller
 
 	public function buat_custom_design()
 	{
+		$data['email'] 				= $this->email;
+		$data['telepon']			= $this->telepon;
+		$data['jam']				= $this->jam;
 		$data['title']					= 'Pembelian Custom Design User';
 		$data['kategori_navbar'] 	= $this->Model_barang->get_kategori_navbar();
 		$this->load->view('frontend/custom/View_custom_user',$data);

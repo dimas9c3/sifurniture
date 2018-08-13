@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Barang extends CI_Controller 
+class Barang extends CI_Controller
 {
 
 	public function __construct()
@@ -74,22 +74,22 @@ class Barang extends CI_Controller
 		$jual 				= $this->input->post('tambah_jual');
 		$diskon 			= $this->input->post('tambah_diskon');
 		$dimensi 			= $this->input->post('tambah_dimensi');
+		$warna 				= $this->input->post('tambah_warna');
 		$barang 			= array(
 			'barang_id'			=> $id_barang,
 			'sub_kategori_id'	=> $kategori,
 			'barang_nama'		=> $nm_barang,
 			'barang_harga_jual'	=> $jual,
 			'barang_diskon'		=> $diskon,
-			'barang_deskripsi'	=> $deskripsi
+			'barang_deskripsi'	=> $deskripsi,
+			'barang_dimensi'	=> $dimensi
 		);
 
 		$this->Model_barang->set_barang($barang); // Simpan data barang
 
-		$warna 				= $this->input->post('tambah_warna');
-
 		$jml_warna 			= count($warna);
 
-		if ($jml_warna>0) 
+		if ($jml_warna>0)
 		{
 			for($i=0;$i<$jml_warna;$i++)
 			{
@@ -98,31 +98,32 @@ class Barang extends CI_Controller
 					'barang_id'			=> $id_barang
 				);
 			}
-			var_dump($wrn);
 			$this->db->insert_batch('tbl_warna_barang', $wrn);
 		}
 
 		for($i=0; $i <= $jml_foto; $i++)
-	    {   
+	    {
 	    	// Fungsi simpan gambar
 			$config 					= array();
 			$config['upload_path']		= './assets/images/barang/';
-			$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp'; 
-			$config['encrypt_name'] 	= TRUE;           	
+			$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp';
+			$config['encrypt_name'] 	= TRUE;
 		    $this->upload->initialize($config);
 
 			if(!empty($_FILES['tambah_foto'.$i]['name']))
-		    {	
+		    {
 		        if ($this->upload->do_upload('tambah_foto'.$i))
 		        {
 		            $gbr = $this->upload->data();
-		            $config['image_library']='gd2';
+		            $config['image_library']='imagemagick';
+					$config["library_path"]  ='/usr/bin/convert';
 		            $config['source_image']='./assets/images/barang/'.$gbr['file_name'];
 		            $config['create_thumb']= FALSE;
-		            $config['maintain_ratio']= FALSE;
-		            $config['quality']= '85%';
-		            $config['width']= 512;
-		            $config['height']= 512;
+		            $config['maintain_ratio']=TRUE;
+					list($width, $height, $type, $attr) = getimagesize('./assets/images/barang/'.$gbr['file_name']);
+					$config['width']= $width/5;
+		           	$config['height']= $height/5;
+		            $config['quality']= '50%';
 		            $config['new_image']= './assets/images/barang/'.$gbr['file_name'];
 		            $this->image_lib->initialize($config);
 		            $this->image_lib->resize();
@@ -136,11 +137,11 @@ class Barang extends CI_Controller
 				}else
 				{
 		        	redirect('admin/barang');
-		        }    
-		    }        
+		        }
+		    }
 
 	    }
-			
+
 		$this->db->insert_batch('tbl_foto_barang', $foto); // fungsi  untuk menyimpan multi array ke database
 
 		//Menyimpan foto utama barang
@@ -149,7 +150,6 @@ class Barang extends CI_Controller
 		);
 
 		$this->Model_barang->update_barang($id_barang,$barang);
-
 		redirect('admin/barang');
 	}
 
@@ -236,24 +236,26 @@ class Barang extends CI_Controller
 		// Fungsi simpan gambar
 		$config 					= array();
 		$config['upload_path']		= './assets/images/barang/';
-		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp'; 
+		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp';
 		$config['encrypt_name'] 	= TRUE;
 		for($i=0; $i <= $jml_foto; $i++)
-	    {              	
+	    {
 		    $this->upload->initialize($config);
 
 			if(!empty($_FILES['tambah_foto'.$i]['name']))
-		    {	
+		    {
 		        if ($this->upload->do_upload('tambah_foto'.$i))
 		        {
 		            $gbr = $this->upload->data();
-		            $config['image_library']='gd2';
+					$config['image_library']='imagemagick';
+					$config["library_path"]  ='/usr/bin/convert';
 		            $config['source_image']='./assets/images/barang/'.$gbr['file_name'];
 		            $config['create_thumb']= FALSE;
-		            $config['maintain_ratio']= FALSE;
-		            $config['quality']= '100%';
-		            //$config['width']= 1200;
-		            //$config['height']= 1200;
+		            $config['maintain_ratio']=TRUE;
+					list($width, $height, $type, $attr) = getimagesize('./assets/images/barang/'.$gbr['file_name']);
+					$config['width']= $width/5;
+		           	$config['height']= $height/5;
+		            $config['quality']= '50%';
 		            $config['new_image']= './assets/images/barang/'.$gbr['file_name'];
 		            $this->load->library('image_lib', $config);
 		            $this->image_lib->resize();
@@ -266,15 +268,15 @@ class Barang extends CI_Controller
 				}else
 				{
 		        	redirect('admin/barang');
-		        }    
-		    }          
+		        }
+		    }
 
 	    }
 
 	    // Pengecekan field foto apadakah ada data yang akan diupload
 	    $tbh_foto 		= 0;
 	    for($i=0; $i <= $jml_foto; $i++)
-	    { 
+	    {
 	    	if(!empty($_FILES['tambah_foto'.$i]['name']))
 		    {
 		    	$tbh_foto 		 = ($tbh_foto+1);
@@ -284,12 +286,12 @@ class Barang extends CI_Controller
 		    }
 
 	    }
-		
+
 		if($tbh_foto>0)
 		{
 			$this->db->insert_batch('tbl_foto_barang', $foto); // fungsi  untuk menyimpan multi array ke database
 		}
-		
+
 
 		redirect('admin/barang');
 	}
@@ -300,7 +302,7 @@ class Barang extends CI_Controller
 		$data['title'] 		= 'Kategori Barang';
 		$this->load->view('admin/barang/View_kategori',$data);
 	}
-	
+
 	public function get_all_kategori()
 	{
 		$ajax 		= $this->Model_barang->get_all_kategori();
@@ -359,7 +361,7 @@ class Barang extends CI_Controller
 		$data['title'] 		= 'Sub Kategori Barang';
 		$this->load->view('admin/barang/View_sub_kategori',$data);
 	}
-	
+
 	public function get_all_sub_kategori()
 	{
 		$ajax 		= $this->Model_barang->get_all_sub_kategori();

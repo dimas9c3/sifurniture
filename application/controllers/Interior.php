@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Interior extends CI_Controller 
+class Interior extends CI_Controller
 {
 
 	public function __construct()
@@ -8,15 +8,26 @@ class Interior extends CI_Controller
 		parent::__construct();
 		$this->load->model('Model_barang');
 		$this->load->model('Model_interior');
+		$this->load->model('Model_pengaturan');
+
+		/* Setting */
+		$sett 						= $this->Model_pengaturan->get_all_setting();
+		$row 						= $sett->row_array();
+		$this->email 				= $row['theme_option_email'];
+		$this->telepon 				= $row['theme_option_telepon'];
+		$this->jam 					= $row['theme_option_operasional'];
 	}
 
 	public function index()
 	{
-		
+
 	}
 
 	public function kategori()
 	{
+		$data['email'] 				= $this->email;
+		$data['telepon']			= $this->telepon;
+		$data['jam']				= $this->jam;
 		$id_sub1 					= $this->uri->segment('3');
 		$data['title'] 				= 'List Jenis Produk Interior';
 		$data['kategori_navbar'] 	= $this->Model_barang->get_kategori_navbar();
@@ -27,6 +38,9 @@ class Interior extends CI_Controller
 
 	public function jenis_interior()
 	{
+		$data['email'] 				= $this->email;
+		$data['telepon']			= $this->telepon;
+		$data['jam']				= $this->jam;
 		$id_sub1 					= $this->uri->segment('3');
 		$id_sub2 					= $this->uri->segment('4');
 		$data['title'] 				= 'List Jenis Produk Interior';
@@ -37,6 +51,9 @@ class Interior extends CI_Controller
 
 	public function list_produk()
 	{
+		$data['email'] 				= $this->email;
+		$data['telepon']			= $this->telepon;
+		$data['jam']				= $this->jam;
 		$id_kategori 				= $this->uri->segment('3');
 		$data['title']				= 'List Produk Interior';
 		$data['kategori_navbar']	= $this->Model_barang->get_kategori_navbar();
@@ -59,7 +76,7 @@ class Interior extends CI_Controller
 		$config['next_tag_close'] 	= '</li>';
 		$config['prev_link'] 		= 'Prev';
 		$config['prev_tag_open'] 	= '<li class="page-item page-link">';
-		$config['prev_tag_close'] 	= '</li>'; 
+		$config['prev_tag_close'] 	= '</li>';
 		$config['cur_tag_open'] 	= '<li class="page-item"><a class="page-link active">';
 		$config['cur_tag_close'] 	= '</a></li>';
 		$config['num_tag_open'] 	= '<li class="page-item page-link">';
@@ -75,6 +92,9 @@ class Interior extends CI_Controller
 
 	public function filter()
 	{
+		$data['email'] 				= $this->email;
+		$data['telepon']			= $this->telepon;
+		$data['jam']				= $this->jam;
 		$id_kategori 				= $this->uri->segment('4');
 		$data['title']				= 'Produk Barang';
 		$data['kategori_navbar']	= $this->Model_barang->get_kategori_navbar();
@@ -98,7 +118,7 @@ class Interior extends CI_Controller
 		$config['next_tag_close'] 	= '</li>';
 		$config['prev_link'] 		= 'Prev';
 		$config['prev_tag_open'] 	= '<li class="page-item page-link">';
-		$config['prev_tag_close'] 	= '</li>'; 
+		$config['prev_tag_close'] 	= '</li>';
 		$config['cur_tag_open'] 	= '<li class="page-item"><a class="page-link active">';
 		$config['cur_tag_close'] 	= '</a></li>';
 		$config['num_tag_open'] 	= '<li class="page-item page-link">';
@@ -128,6 +148,9 @@ class Interior extends CI_Controller
 
 	public function detail()
 	{
+		$data['email'] 				= $this->email;
+		$data['telepon']			= $this->telepon;
+		$data['jam']				= $this->jam;
 		$id_interior 				= $this->uri->segment('3');
 		$data['title']				= 'Detail Produk Interior';
 		$data['kategori_navbar']	= $this->Model_barang->get_kategori_navbar();

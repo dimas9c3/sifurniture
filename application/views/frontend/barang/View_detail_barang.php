@@ -1,5 +1,5 @@
 <?php $this->load->view('frontend/partial/View_header'); ?>
-<?php 
+<?php
     $row                    = $detail_barang->row_array();
     $nm_kategori            = $row['kategori_nama'];
     $id_sub_kategori        = $row['sub_kategori_id'];
@@ -32,24 +32,24 @@
                 <!-- Image Slider -->
                 <div class="swiper-container gallery-top">
                     <div class="swiper-wrapper">
-                        <div style="background: url(<?php echo base_url().'assets/images/barang/'.$foto_utama; ?>); background-size: cover;" class="swiper-slide"></div>
+                        <div style="background: url(<?php echo base_url().'assets/images/barang/'.$foto_utama; ?>); background-size: cover!important;" class="swiper-slide img-responsive"></div>
                             <?php foreach($detail_foto->result_array() as $ii)
                             {
                                 $foto_nama1          = $ii['foto_barang_nama'];
                             ?>
-                            <div style="background: url(<?php echo base_url().'assets/images/barang/'.$foto_nama1; ?>); background-size: cover;" class="swiper-slide"></div>
+                            <div style="background: url(<?php echo base_url().'assets/images/barang/'.$foto_nama1; ?>); background-size: cover!important;" class="swiper-slide img-responsive"></div>
 
                             <?php } ?>
                     </div>
                 </div>
                 <div class="swiper-container gallery-thumbs">
                     <div class="swiper-wrapper">
-                        <div style="background: url(<?php echo base_url().'assets/images/barang/'.$foto_utama; ?>); background-size: cover;" class="swiper-slide"></div>
+                        <div style="background: url(<?php echo base_url().'assets/images/barang/'.$foto_utama; ?>); background-size: cover!important;" class="swiper-slide img-responsive"></div>
                             <?php foreach($detail_foto->result_array() as $iii)
                             {
                                 $foto_nama2          = $iii['foto_barang_nama'];
                             ?>
-                            <div style="background: url(<?php echo base_url().'assets/images/barang/'.$foto_nama2; ?>); background-size: cover;" class="swiper-slide"></div>
+                            <div style="background: url(<?php echo base_url().'assets/images/barang/'.$foto_nama2; ?>); background-size: cover!important;" class="swiper-slide img-responsive"></div>
                             <?php } ?>
                     </div>
                 </div>
@@ -57,9 +57,9 @@
             <div class="col-lg-4">
                 <div class="property-single-author bg-white-5">
                     <div class="d-flex align-items-center">
-                        
+
                     </div>
-                  
+
                     <div class="agent-contact">
                         <h3 class="h4 has-line">Spesifikasi Barang </h3>
                         <div class="form-group">
@@ -100,7 +100,7 @@
             <a href="<?php echo base_url();?>custom/buat_custom"><button class="btn btn-gradient">Custom</button></a>
         </div>
     </div>
-    <!-- /.container -->    
+    <!-- /.container -->
 </section>
 <!-- Similar Properties Section-->
 <section class="similar-properties bg-white-3-custom">

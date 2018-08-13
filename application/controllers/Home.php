@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller 
+class Home extends CI_Controller
 {
 
 	public function __construct()
@@ -11,6 +11,13 @@ class Home extends CI_Controller
 		$this->load->model('Model_custom');
 		$this->load->model('Model_ulasan');
 		$this->load->model('Model_artikel');
+		$this->load->model('Model_pengaturan');
+		/* Setting */
+		$sett 						= $this->Model_pengaturan->get_all_setting();
+		$row 						= $sett->row_array();
+		$this->email 				= $row['theme_option_email'];
+		$this->telepon 				= $row['theme_option_telepon'];
+		$this->jam 					= $row['theme_option_operasional'];
 	}
 
 	public function index()
@@ -18,35 +25,13 @@ class Home extends CI_Controller
 		$data['title'] 				= 'Prototype Beranda SIFURNITURE';
 		$data['populer']			= $this->Model_barang->get_barang_populer_front();
 		$data['kategori_navbar'] 	= $this->Model_barang->get_kategori_navbar();
+		$data['email'] 				= $this->email;
+		$data['telepon']			= $this->telepon;
+		$data['jam']				= $this->jam;
 		$data['interior']			= $this->Model_interior->get_interior_front();
 		$data['style']			 	= $this->Model_custom->get_style_front();
 		$data['ulasan']				= $this->Model_ulasan->get_ulasan_front();
 		$data['artikel']			= $this->Model_artikel->get_artikel_front();
 		$this->load->view('frontend/home/View_home',$data);
 	}
-
-	public function detail()
-	{
-		$data['title'] 			= 'Prototype Beranda SIFURNITURE';
-		$this->load->view('frontend/detail/View_detail',$data);
-	}
-
-	public function custom()
-	{
-		$data['title']			= 'Custom Design';
-		$this->load->view('frontend/custom/View_custom',$data);
-	}
-
-	public function about()
-	{
-		$data['title']			= 'About Us';
-		$this->load->view('frontend/about/View_about',$data);
-	}
-
-	public function step()
-	{
-		$data['title'] 			= 'Langkah Langkah Panduan Sifurnture';
-		$this->load->view('frontend/step/View_step');
-	}
-
 }

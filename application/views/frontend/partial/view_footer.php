@@ -43,7 +43,7 @@
             </div>
         </div>
     </footer>
-    
+
 <!-- Javascript files-->
 <script src="<?php echo base_url();?>vendors/frontend/vendor/jquery/jquery.min.js"></script>
 <script src="<?php echo base_url();?>vendors/frontend/vendor/popper.js/umd/popper.min.js"> </script>
@@ -54,3 +54,5 @@
 <script src="<?php echo base_url();?>vendors/frontend/vendor/swiper/js/swiper.js"></script>
 <script src="<?php echo base_url();?>vendors/frontend/js/front.js?version=51"></script>
 <script src="<?php echo base_url();?>assets/custom.js"></script>
+<!-- Sweetalert -->
+<script src="http://localhost/team_work/sifurniture/vendors/plugins/sweetalert/sweetalert.min.js"></script>
