@@ -6,19 +6,19 @@
         $id_sub_kategori        = $row['sub_kategori_id'];
         $nm_sub_kategori        = $row['sub_kategori_nama'];
     ?>
-	<div class="product-page">
+	<div class="product-page bc-right">
 		<section class="page-heading">
 			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="main-page">
-							<h2 class="text-primary">List Produk</h2>
-							<ol class="breadcrumb">
-								<li class="breadcrumb-item"><a href="<?php echo base_url();?>home">Home</a></li>
-								<li class="breadcrumb-item"><a href="#"><?php echo $nm_kategori; ?></a></li>
-								<li aria-current="page" class="breadcrumb-item active"><?php echo $nm_sub_kategori; ?></li>
-							</ol>
-						</div>
+				<div class="row align-items-center">
+					<div class="col-md-6">
+						<h2 class="text-primary mb-0">List Produk</h2>
+					</div>
+					<div class="col-md-6">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="<?php echo base_url();?>home">Home</a></li>
+							<li class="breadcrumb-item"><a href="#"><?php echo $nm_kategori; ?></a></li>
+							<li aria-current="page" class="breadcrumb-item active"><?php echo $nm_sub_kategori; ?></li>
+						</ol>
 					</div>
 				</div>
 			</div>
