@@ -155,6 +155,29 @@ ul.social-media li a:hover {
 	border-top: none;
 }
 
+.style-selected {
+	border-top: 1px solid #EEEEEE;
+	border-bottom: 1px solid #EEEEEE;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.form-control {
+	padding-right: 30px;
+}
+
+.nav-tabs .nav-item {
+    margin-bottom: -1px;
+    background: #f1f1f1;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    margin-right: 1px;
+}
+
 /* -----------------------------------------------------------------------
 == HEADER & MEGA MENU ==
 ------------------------------------------------------------------------*/
@@ -451,7 +474,8 @@ footer.footer h3 {
 	}
 
 	.share-article ul.social-media,
-	.article .breadcrumb {
+	.article .breadcrumb,
+	.bc-right .breadcrumb {
 		float: right;
 	}
 }
