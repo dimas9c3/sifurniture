@@ -7,39 +7,35 @@
                 <div class="col-lg-5 brief">
                     <div class="logo"><img src="<?php echo base_url();?>vendors/frontend/img/logo-light.png" alt="..." width="170"></div>
                         <p>property murah namun dengan bahan dan kualitas terbaik itulah kami, segera order furniture pada gerai kami di kota anda. dapatkan diskon besar besaran setiap hari.</p>
-                        <ul class="social list-inline">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        </ul>
                 </div>
                 <div class="col-lg-3 links">
                     <h3 class="h4 text-thin text-uppercase">Company</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">Properties</a></li>
-                        <li><a href="#">Landlords</a></li>
-                        <li><a href="#">Renters</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Pricing</a></li>
+						<?php $query		= $this->Model_pengaturan->get_all_setting();
+							foreach($query->result_array() as $i)
+							{
+								$id_links 			= $i['theme_option_id'];
+								$tit 				= $i['theme_option_links_title'];
+						?>
+                        	<li><a href="<?php echo site_url('home/links/').$id_links; ?>"><?php echo $tit; ?></a></li>
+						<?php } ?>
                     </ul>
                 </div>
                 <div class="col-lg-4 links">
                     <h3 class="h4 text-thin text-uppercase">Support</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">Help & FAQ</a></li>
-                        <li><a href="#">Policy Privacy</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Our Partners</a></li>
+                        <li><a href="<?php echo site_url('home/faq'); ?>">Help & FAQ</a></li>
+                        <li><a href="<?php echo site_url('home/privacy'); ?>">Policy Privacy</a></li>
+                        <li><a href="<?php echo site_url('home/contact'); ?>">Contact Us</a></li>
+                        <li><a href="<?php echo site_url('home/career'); ?>">Careers</a></li>
+                        <li><a href="<?php echo site_url('home/partner'); ?>">Our Partners</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="copyrights bg-black-5">
             <div class="container text-center">
-                <p>&copy; Copyrights 2018. <a href="#">I'Woodys</a></p>
+                <p>&copy; Copyrights 2018. <a href="#">I'Woodys.com | Furniture & Interior</a></p>
             </div>
         </div>
     </footer>

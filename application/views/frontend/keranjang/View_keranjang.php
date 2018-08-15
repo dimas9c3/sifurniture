@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-md-8" id="basket">
                         <div class="box">
-                            
+
                             <!--<p class="text-muted">You currently have 3 item(s) in your cart.</p>-->
                             <div class="table-responsive">
                                 <table class="table">
@@ -38,20 +38,15 @@
                                             $hrg_barang     = $i['price'];
                                             $subtotal       = $i['subtotal'];
 
-                                            $this->db->select('foto_barang_nama');
-                                            $this->db->from('tbl_barang');
-                                            $this->db->join('tbl_foto_barang','tbl_foto_barang.foto_barang_id=tbl_barang.foto_barang_id','INNER');
-                                            $query1         = $this->db->get();
-                                            $row            = $query1->row_array();
-                                            $foto_utama     = $row['foto_barang_nama'];
+
                                         ?>
                                         <tr>
 
-                                            <td>
+                                            <!--<td>
                                                 <a href="#">
-                                                    <img width="100px" height="100px" src="<?php echo base_url()."assets/images/barang/".$foto_utama; ?>" alt="<?php echo $nm_brg; ?>">
+                                                    <?php echo $nm_brg; ?>">
                                                 </a>
-                                            </td>
+                                            </td>-->
                                             <td><a href="#"><?php echo $nm_brg; ?></a>
                                             </td>
                                             <td>
@@ -85,7 +80,7 @@
                                     </button>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <!-- /.box -->
                     </div>
@@ -114,7 +109,7 @@
                                             <th>
                                                 <select class="form-control select2" id="kabupaten" name="kabupaten" required>
                                                     <option value="" selected>Pilih Kabupaten</option>
-                                                
+
                                                 </select>
                                             </th>
                                         </tr>
@@ -218,97 +213,7 @@
         </div>
     </section>
 
-    <!-- Scroll Top Button        -->
-    <div id="scrollTopButton"><i class="fa fa-long-arrow-up"></i></div>
-    <footer class="footer bg-black-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 brief">
-                    <div class="logo"><img src="<?php echo base_url();?>vendors/frontend/img/logo-light.png" alt="..." width="170"></div>
-                        <p>property murah namun dengan bahan dan kualitas terbaik itulah kami, segera order furniture pada gerai kami di kota anda. dapatkan diskon besar besaran setiap hari.</p>
-                        <ul class="social list-inline">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        </ul>
-                </div>
-                <div class="col-lg-2 links">
-                    <h3 class="h4 text-thin text-uppercase">Company</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Properties</a></li>
-                        <li><a href="#">Landlords</a></li>
-                        <li><a href="#">Renters</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Pricing</a></li>
-                    </ul>
-                </div>
-          <div class="col-lg-2 links">
-            <h3 class="h4 text-thin text-uppercase">Support</h3>
-            <ul class="list-unstyled">
-              <li><a href="#">Help & FAQ</a></li>
-              <li><a href="#">Policy Privacy</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Our Partners</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-4 newsletter">
-            <h3 class="h4 text-thin text-uppercase">Newsletter</h3>
-            <p>property murah namun dengan bahan dan kualitas terbaik itulah kami, segera order furniture pada gerai kami di kota anda. dapatkan diskon besar besaran setiap hari.</p>
-            <form class="newsletter-form">
-              <div class="form-group">
-                <input type="email" name="email" placeholder="Enter your email address" class="form-control newsletter-form">
-                <button type="submit" class="btn btn-gradient submit"><i class="icon-email-plane"></i></button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="copyrights bg-black-5">
-        <div class="container text-center">
-          <p>&copy; Copyrights 2018. Template by <a href="https://bootstrapious.com/">dimas9c3@gmail.com</a></p>
-        </div>
-      </div>
-    </footer>
-   <button type="button" data-toggle="collapse" data-target="#style-switch" id="style-switch-button" class="btn btn-primary btn-sm hidden-xs hidden-sm"><!--<i class="fa fa-cog fa-2x"></i>--><span> Diskon <br>Up to 50%</span></button>
-    <div id="style-switch" class="collapse">
-      <h4 class="text-uppercase">Dapatkan diskon menarik setiap hari!!</h4>
-      <!--<form class="mb-3">
-        <select name="colour" id="colour" class="form-control">
-          <option value="">select colour variant</option>
-          <option value="red">red</option>
-          <option value="pink">pink</option>
-          <option value="green">green</option>
-          <option value="violet">violet</option>
-          <option value="sea">sea</option>
-          <option value="default">blue</option>
-        </select>
-      </form>-->
-      <p><img src="<?php echo base_url();?>vendors/frontend/img/template-mac.png" alt="" class="img-fluid"></p>
-      <p class="text-muted text-small">Dapatkan keuntungan menarik membeli di toko kami setiap hari untuk semua produk!!</p>
-    </div>
-    <!-- Javascript files-->
-    <script src="<?php echo base_url();?>vendors/frontend/vendor/jquery/jquery.min.js"></script>
-    <script src="<?php echo base_url();?>vendors/frontend/vendor/popper.js/umd/popper.min.js"> </script>
-    <script src="<?php echo base_url();?>vendors/frontend/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url();?>vendors/frontend/vendor/bootstrap-select/js/bootstrap-select.js"></script>
-    <script src="<?php echo base_url();?>vendors/frontend/vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="<?php echo base_url();?>vendors/frontend/vendor/swiper/js/swiper.js"></script>
-    <script src="<?php echo base_url();?>vendors/frontend/js/front.js?version=51"></script>
-    <!-- Datatables-->
-    <script src="<?php echo base_url().'vendors/plugins/datatables/js/jquery.dataTables.min.js'?>"></script>
-    <script src="<?php echo base_url().'vendors/plugins/datatables/js/dataTables.bootstrap.min.js'?>"></script>
-    <!---->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
+    <?php $this->load->view('frontend/partial/view_footer'); ?>
     <script>
      $(document).ready(function()
     {

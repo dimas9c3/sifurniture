@@ -1,5 +1,5 @@
 <?php $this->load->view('frontend/partial/View_header'); ?>
-<?php 
+<?php
     $row                    = $detail->row_array();
     $id_kategori            = $row['kategori_interior_id'];
     $nm_kategori            = $row['kategori_interior_nama'];
@@ -100,7 +100,7 @@
             <p class="template-text">Ingin custom design ? klik link dibawah</p>
         </div>
     </div>
-    <!-- /.container -->    
+    <!-- /.container -->
 </section>
 <!-- Similar Properties Section-->
 <section class="similar-properties bg-white-3-custom">
@@ -176,81 +176,7 @@
         </div>
     </div>
 </section>
-<!-- Footer Section -->
-<footer class="footer bg-black-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 brief">
-                <div class="logo"><img src="<?php echo base_url();?>vendors/frontend/img/logo-light.png" alt="..." width="170"></div>
-                    <p>property murah namun dengan bahan dan kualitas terbaik itulah kami, segera order furniture pada gerai kami di kota anda. dapatkan diskon besar besaran setiap hari.</p>
-                    <ul class="social list-inline">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    </ul>
-            </div>
-            <div class="col-lg-2 links">
-                <h3 class="h4 text-thin text-uppercase">Company</h3>
-                <ul class="list-unstyled">
-                    <li><a href="#">Properties</a></li>
-                    <li><a href="#">Landlords</a></li>
-                    <li><a href="#">Renters</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Pricing</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-2 links">
-                <h3 class="h4 text-thin text-uppercase">Support</h3>
-                <ul class="list-unstyled">
-                    <li><a href="#">Help & FAQ</a></li>
-                    <li><a href="#">Policy Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Our Partners</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-4 newsletter">
-                <h3 class="h4 text-thin text-uppercase">Newsletter</h3>
-                <p>property murah namun dengan bahan dan kualitas terbaik itulah kami, segera order furniture pada gerai kami di kota anda. dapatkan diskon besar besaran setiap hari.</p>
-                <form class="newsletter-form">
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Enter your email address" class="form-control">
-                        <button type="submit" class="btn btn-gradient submit"><i class="icon-email-plane"></i></button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- /.container -->
-    <div class="copyrights bg-black-5">
-        <div class="container text-center">
-            <p>&copy; Copyrights 2017. Template by <a href="https://bootstrapious.com">dimas9c3@gmail.com</a></p>
-        </div>
-    </div>
-</footer>
-<!-- Javascript files-->
-<script src="<?php echo base_url();?>vendors/frontend/vendor/jquery/jquery.min.js"></script>
-<script src="<?php echo base_url();?>vendors/frontend/vendor/popper.js/umd/popper.min.js"> </script>
-<script src="<?php echo base_url();?>vendors/frontend/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url();?>vendors/frontend/vendor/bootstrap-select/js/bootstrap-select.js"></script>
-<script src="<?php echo base_url();?>vendors/frontend/vendor/jquery.cookie/jquery.cookie.js"> </script>
-<script src="<?php echo base_url();?>vendors/frontend/vendor/swiper/js/swiper.js"></script>
-<script src="<?php echo base_url();?>vendors/frontend/js/front.js"></script>
-<script src="<?php echo base_url();?>vendors/frontend/js/swiper-thumbs.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
-<script src="<?php echo base_url();?>vendors/frontend/js/property-single-map.js"></script>
-<!-- Sweetalert -->
-<script src="<?php echo base_url().'vendors/plugins/sweetalert/sweetalert.min.js'?>"></script>
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
-<script>
-    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-    e.src='//www.google-analytics.com/analytics.js';
-    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-    ga('create','UA-XXXXX-X');ga('send','pageview');
-</script>
+<?php $this->load->view('frontend/partial/view_footer'); ?>
 <script type="text/javascript">
     $('#button_keranjang').on('click',function()
     {

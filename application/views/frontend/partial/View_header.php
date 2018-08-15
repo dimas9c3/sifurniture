@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Prototype Beranda SIFURNITURE</title>
+    <title><?php echo $title; ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -30,7 +30,7 @@
 	<!-- New Concept -->
     <link rel="stylesheet" href="<?php echo base_url();?>assets/new_concept.css">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="<?php echo base_url();?>vendors/frontend/img/favicon.ico">
+    <link rel="shortcut icon" href="<?php echo base_url();?>vendors/frontend/img/iwoodys-logo.png">
     <!-- Modernizr-->
     <script src="<?php echo base_url();?>vendors/frontend/js/modernizr.custom.js"></script>
     <!-- Sweetalert -->
@@ -121,11 +121,11 @@
 
             <li class="nav-item"><a href="<?php echo base_url();?>custom/buat_custom" class="nav-link">Custom Design</a></li>
 
-            <li class="nav-item"><a href="#" class="nav-link search-btn">Cari</a></li>
+            <!--<li class="nav-item"><a href="#" class="nav-link search-btn">Cari</a></li>-->
 
             <li class="nav-item"><a href="<?php echo base_url();?>auth" class="nav-link"><i class="fa fa-key"></i> Login</a></li>
 
-            <li class="nav-item"><a href="<?php echo base_url();?>keranjang" class="nav-link"><i class="fa fa-cart-plus"></i> Keranjang Belanja</a></li>
+            <li class="nav-item"><a href="<?php echo base_url();?>keranjang" class="nav-link"><i class="fa fa-cart-plus"></i> Cart</a></li>
 
             </ul>
           </div>

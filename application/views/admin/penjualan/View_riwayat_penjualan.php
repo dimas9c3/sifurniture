@@ -1,4 +1,4 @@
-<?php   
+<?php
     $this->load->view('admin/partial/View_header');
     $this->load->view('admin/partial/View_sidebar_left');
 ?>
@@ -43,10 +43,10 @@
                                         </tr>
                                     </thead>
                                     <tbody id="content_data">
-                                    
+
                                     </tbody>
                                     <tfoot id="tabel_footer">
-                                       
+
                                     </tfoot>
                                 </table>
                             </div>
@@ -149,7 +149,7 @@
 <script>
 $(document).ready(function()
 {
-    
+
 
     $('#content_data').on('click','.item-tambah',function()
     {
@@ -159,13 +159,13 @@ $(document).ready(function()
 
     function total_pembelian()
     {
-        var id_customer        = '<?php 
+        var id_customer        = '<?php
         $users  = $data['tbl_pengguna']= $this->ion_auth->user()->result();
         foreach($users as $value)
         {
             $username       = $value->email;
             $id_customer    = $value->id;
-        } 
+        }
             echo $id_customer;
         ?>';
 
@@ -178,7 +178,7 @@ $(document).ready(function()
             success         : function(data)
             {
                 var html    = '';
-                
+
                 html+='<th colspan="8" style="text-align: right;">Total Pembayaran</th>'+
                 '<th style="text-align:center;"> '+data.total+'</th>';
 
@@ -221,7 +221,7 @@ $(document).ready(function()
                         });
                     }
                 })
-                    
+
             }
         });
     })
@@ -259,7 +259,7 @@ $(document).ready(function()
                         });
                     }
                 })
-                    
+
             }
         });
     })
@@ -268,13 +268,13 @@ $(document).ready(function()
     var tabel_data =  $('#tabel_data').DataTable
     ({
             //"processing": true,
-            //"order":[[1,'asc']], 
-            //"serverSide": true, 
-            /*"columnDefs": 
+            //"order":[[1,'asc']],
+            //"serverSide": true,
+            /*"columnDefs":
             [
                 { "orderable": false, "targets": 7}
             ],*/
-            ajax            : 
+            ajax            :
             {
                 url         : '<?php echo base_url();?>admin/penjualan/get_riwayat_penjualan_all',
                 type        : 'POST',
@@ -285,7 +285,7 @@ $(document).ready(function()
             pageLength      : 25,
             lengthChange    : true,
             searching       : true,
-            search          : 
+            search          :
             {
                 smart       : false,
                 regex       : true,
@@ -294,8 +294,8 @@ $(document).ready(function()
             aaSorting       : [],
             ordering        : true,
             info            : true,
-            /*dom             : 'Bfrtip',
-            buttons: 
+            dom             : 'Bfrtip',
+            buttons:
             [
                 {
                     extend: 'excelHtml5',
@@ -304,7 +304,7 @@ $(document).ready(function()
                     text: 'EXCEL',
                     exportOptions:
                     {
-                        columns: [0,1,2,3]
+                        columns: [0,1,2,3,4,5,6,7,8,9,10]
                     },
                     footer: true
                 },
@@ -316,34 +316,34 @@ $(document).ready(function()
                     text: 'PDF',
                     exportOptions:
                     {
-                        columns: [0,1,2,3]
+                        columns: [0,1,2,3,4,5,6,7,8,9,10]
                     },
                     footer: true
                 },
 
-                { 
+                {
                     extend: 'print',
-                    customize: function ( win ) 
+                    customize: function ( win )
                     {
                         $(win.document.body)
                             .css( 'font-size', '8pt' )
                            // .prepend(
                              //   '<img src="http://datatables.net/media/images/logo-fade.png" style="position:absolute; top:0; left:0;" />'
                             //);
-     
+
                         $(win.document.body).find( 'table' )
                             .addClass( 'compact' )
                             .css( 'font-size', 'inherit' );
                     },
                     text: 'PRINT',
-                    exportOptions: 
+                    exportOptions:
                     {
-                        columns: [0,1,2,3]
+                        columns: [0,1,2,3,4,5,6,7,8,9,10]
                     },
                     footer: true
                 }
-                                
-            ]*/
+
+            ]
     })
 
     <?php if($this->session->flashdata('msg')=='sukses_simpan'):?>

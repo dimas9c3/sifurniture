@@ -16,6 +16,7 @@ class Interior extends CI_Controller
 		$this->email 				= $row['theme_option_email'];
 		$this->telepon 				= $row['theme_option_telepon'];
 		$this->jam 					= $row['theme_option_operasional'];
+		$this->wa 					= $row['theme_option_whatsapp'];
 	}
 
 	public function index()
@@ -51,6 +52,7 @@ class Interior extends CI_Controller
 
 	public function list_produk()
 	{
+		$data['wa'] 				= $this->wa;
 		$data['email'] 				= $this->email;
 		$data['telepon']			= $this->telepon;
 		$data['jam']				= $this->jam;
@@ -60,25 +62,32 @@ class Interior extends CI_Controller
 
 		$config['base_url'] 		= base_url().'interior/list_produk/'.$id_kategori;
 		$config['total_rows'] 		= $this->Model_interior->count_interior_by_id_kategori($id_kategori);
-		$config['per_page'] 		= 2;
+		$config['per_page'] 		= 8;
 		$config['uri_segment'] 		= 4;
 		$config['query_string_segment'] = 'start';
-		$config['full_tag_open'] 	= '<ul class="pagination m-0">';
+
+		$config['full_tag_open'] 	= '<ul class="pagination pull-right m-0">';
 		$config['full_tag_close'] 	= '</ul>';
+
 		$config['first_link'] 		= 'First';
-		$config['first_tag_open'] 	= '<li>';
+		$config['first_tag_open'] 	= '<li class="page-item page-link">';
 		$config['first_tag_close'] 	= '</li>';
+
 		$config['last_link'] 		= 'Last';
-		$config['last_tag_open'] 	= '<li>';
+		$config['last_tag_open'] 	= '<li class="page-item page-link">';
 		$config['last_tag_close'] 	= '</li>';
+
 		$config['next_link'] 		= 'Next';
 		$config['next_tag_open'] 	= '<li class="page-item page-link">';
 		$config['next_tag_close'] 	= '</li>';
+
 		$config['prev_link'] 		= 'Prev';
 		$config['prev_tag_open'] 	= '<li class="page-item page-link">';
 		$config['prev_tag_close'] 	= '</li>';
-		$config['cur_tag_open'] 	= '<li class="page-item"><a class="page-link active">';
+
+		$config['cur_tag_open'] 	= '<li class="page-item page-link active"><a class="active">';
 		$config['cur_tag_close'] 	= '</a></li>';
+
 		$config['num_tag_open'] 	= '<li class="page-item page-link">';
 		$config['num_tag_close'] 	= '</li>';
 		$pagination = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
@@ -92,6 +101,7 @@ class Interior extends CI_Controller
 
 	public function filter()
 	{
+		$data['wa'] 				= $this->wa;
 		$data['email'] 				= $this->email;
 		$data['telepon']			= $this->telepon;
 		$data['jam']				= $this->jam;
@@ -102,25 +112,32 @@ class Interior extends CI_Controller
 
 		$config['base_url'] 		= base_url().'interior/filter/'.$jenis_filter.'/'.$id_kategori;
 		$config['total_rows'] 		= $this->Model_interior->count_interior_by_id_kategori($id_kategori);
-		$config['per_page'] 		= 2;
+		$config['per_page'] 		= 8;
 		$config['uri_segment'] 		= 5;
 		$config['query_string_segment'] = 'start';
-		$config['full_tag_open'] 	= '<ul class="pagination m-0">';
+
+		$config['full_tag_open'] 	= '<ul class="pagination pull-right m-0">';
 		$config['full_tag_close'] 	= '</ul>';
+
 		$config['first_link'] 		= 'First';
-		$config['first_tag_open'] 	= '<li>';
+		$config['first_tag_open'] 	= '<li class="page-item page-link">';
 		$config['first_tag_close'] 	= '</li>';
+
 		$config['last_link'] 		= 'Last';
-		$config['last_tag_open'] 	= '<li>';
+		$config['last_tag_open'] 	= '<li class="page-item page-link">';
 		$config['last_tag_close'] 	= '</li>';
+
 		$config['next_link'] 		= 'Next';
 		$config['next_tag_open'] 	= '<li class="page-item page-link">';
 		$config['next_tag_close'] 	= '</li>';
+
 		$config['prev_link'] 		= 'Prev';
 		$config['prev_tag_open'] 	= '<li class="page-item page-link">';
 		$config['prev_tag_close'] 	= '</li>';
-		$config['cur_tag_open'] 	= '<li class="page-item"><a class="page-link active">';
+
+		$config['cur_tag_open'] 	= '<li class="page-item page-link active"><a class="active">';
 		$config['cur_tag_close'] 	= '</a></li>';
+
 		$config['num_tag_open'] 	= '<li class="page-item page-link">';
 		$config['num_tag_close'] 	= '</li>';
 		$pagination = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;

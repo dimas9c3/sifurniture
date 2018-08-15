@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Custom extends CI_Controller 
+class Custom extends CI_Controller
 {
 
 	public function __construct()
@@ -53,22 +53,23 @@ class Custom extends CI_Controller
 
 		$config 					= array();
 		$config['upload_path']		= './assets/images/custom/';
-		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp'; 
-		$config['encrypt_name'] 	= TRUE;           	
+		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp';
+		$config['encrypt_name'] 	= TRUE;
 		$this->upload->initialize($config);
 
 			if(!empty($_FILES['tambah_foto']['name']))
-		    {	
+		    {
 		        if ($this->upload->do_upload('tambah_foto'))
 		        {
 		            $gbr = $this->upload->data();
-		            $config['image_library']='gd2';
+		            $config['image_library']='imagemagick';
 		            $config['source_image']='./assets/images/custom/'.$gbr['file_name'];
 		            $config['create_thumb']= FALSE;
-		            $config['maintain_ratio']= FALSE;
-		            $config['quality']= '85%';
-		            $config['width']= 512;
-		            $config['height']= 512;
+					$config['maintain_ratio']=TRUE;
+					list($width, $height, $type, $attr) = getimagesize('./assets/images/custom/'.$gbr['file_name']);
+					$config['width']= $width/5;
+		           	$config['height']= $height/5;
+		            $config['quality']= '50%';
 		            $config['new_image']= './assets/images/custom/'.$gbr['file_name'];
 		            $this->image_lib->initialize($config);
 		            $this->image_lib->resize();
@@ -91,7 +92,7 @@ class Custom extends CI_Controller
 				{
 		        	redirect('admin/custom');
 		        }
-		    }    
+		    }
 
 		redirect('admin/custom');
 	}
@@ -108,25 +109,26 @@ class Custom extends CI_Controller
 
 		$config 					= array();
 		$config['upload_path']		= './assets/images/custom/';
-		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp'; 
-		$config['encrypt_name'] 	= TRUE;           	
+		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp';
+		$config['encrypt_name'] 	= TRUE;
 		$this->upload->initialize($config);
 
 			if(!empty($_FILES['tambah_foto']['name']))
-		    {	
+		    {
 		        if ($this->upload->do_upload('tambah_foto'))
 		        {
 		        	$old_photo  		= './assets/images/custom/'.$this->input->post('foto_edit');
 		        	unlink($old_photo);
 
 		            $gbr = $this->upload->data();
-		            $config['image_library']='gd2';
+		            $config['image_library']='imagemagick';
 		            $config['source_image']='./assets/images/custom/'.$gbr['file_name'];
 		            $config['create_thumb']= FALSE;
-		            $config['maintain_ratio']= FALSE;
-		            $config['quality']= '85%';
-		            $config['width']= 512;
-		            $config['height']= 512;
+					$config['maintain_ratio']=TRUE;
+ 				   list($width, $height, $type, $attr) = getimagesize('./assets/images/custom/'.$gbr['file_name']);
+ 				   $config['width']= $width/5;
+ 				   $config['height']= $height/5;
+ 				   $config['quality']= '50%';
 		            $config['new_image']= './assets/images/custom/'.$gbr['file_name'];
 		            $this->image_lib->initialize($config);
 		            $this->image_lib->resize();
@@ -158,7 +160,7 @@ class Custom extends CI_Controller
 				);
 		    }
 
-		$this->Model_custom->update_custom($id_custom,$custom); // Update data custom    
+		$this->Model_custom->update_custom($id_custom,$custom); // Update data custom
 
 		redirect('admin/custom');
 	}
@@ -208,12 +210,12 @@ class Custom extends CI_Controller
 
 		$config 					= array();
 		$config['upload_path']		= './assets/images/style/';
-		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp'; 
-		$config['encrypt_name'] 	= TRUE;           	
+		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp';
+		$config['encrypt_name'] 	= TRUE;
 		$this->upload->initialize($config);
 
 			if(!empty($_FILES['style_foto']['name']))
-		    {	
+		    {
 		        if ($this->upload->do_upload('style_foto'))
 		        {
 		            $gbr = $this->upload->data();
@@ -244,8 +246,8 @@ class Custom extends CI_Controller
 		    	$style 					= array(
 					'style_nama'		=> $nm_style,
 					'style_deskripsi'	=> $deskripsi
-				);	
-		    }    
+				);
+		    }
 
 		$ajax 					= $this->Model_custom->set_style($style);
 
@@ -260,8 +262,8 @@ class Custom extends CI_Controller
 
 		$config 					= array();
 		$config['upload_path']		= './assets/images/style/';
-		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp'; 
-		$config['encrypt_name'] 	= TRUE;           	
+		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp';
+		$config['encrypt_name'] 	= TRUE;
 		$this->upload->initialize($config);
 
 			if(!empty($_FILES['style_foto_edit']['name']))
@@ -298,8 +300,8 @@ class Custom extends CI_Controller
 		    	$style 					= array(
 					'style_nama'		=> $nm_style,
 					'style_deskripsi'	=> $deskripsi
-				);	
-		    }    
+				);
+		    }
 
 		$ajax 					= $this->Model_custom->update_style($id_style,$style);
 

@@ -51,6 +51,6 @@ var appMaster = {
 
 $(document).ready(function() {
 
-	appMaster.choosingTab();
+//	appMaster.choosingTab();
 
 });

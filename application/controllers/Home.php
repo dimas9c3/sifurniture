@@ -18,11 +18,16 @@ class Home extends CI_Controller
 		$this->email 				= $row['theme_option_email'];
 		$this->telepon 				= $row['theme_option_telepon'];
 		$this->jam 					= $row['theme_option_operasional'];
+		$this->faq 					= $row['theme_option_faq'];
+		$this->privacy 				= $row['theme_option_privacy'];
+		$this->career 				= $row['theme_option_career'];
+		$this->partner 				= $row['theme_option_partner'];
+		$this->contact 				= $row['theme_option_contact'];
 	}
 
 	public function index()
 	{
-		$data['title'] 				= 'Prototype Beranda SIFURNITURE';
+		$data['title'] 				= 'IWoody'.'s | Furniture dan Interior';
 		$data['populer']			= $this->Model_barang->get_barang_populer_front();
 		$data['kategori_navbar'] 	= $this->Model_barang->get_kategori_navbar();
 		$data['email'] 				= $this->email;
@@ -32,6 +37,95 @@ class Home extends CI_Controller
 		$data['style']			 	= $this->Model_custom->get_style_front();
 		$data['ulasan']				= $this->Model_ulasan->get_ulasan_front();
 		$data['artikel']			= $this->Model_artikel->get_artikel_front();
+		$data['banner']				= $this->Model_pengaturan->get_all_banner_front();
+		$data['iklan']				= $this->Model_pengaturan->get_all_iklan_front();
 		$this->load->view('frontend/home/View_home',$data);
+	}
+
+	public function faq()
+	{
+		$data['title'] 				= 'IWoody'.'s | Help & Faq';
+		$data['kategori_navbar'] 	= $this->Model_barang->get_kategori_navbar();
+		$data['email'] 				= $this->email;
+		$data['telepon']			= $this->telepon;
+		$data['jam']				= $this->jam;
+		$data['faq']				= $this->faq;
+
+		$this->load->view('frontend/links/v_faq',$data);
+	}
+
+	public function privacy()
+	{
+		$data['title'] 				= 'IWoody'.'s | Privacy & Police';
+		$data['kategori_navbar'] 	= $this->Model_barang->get_kategori_navbar();
+		$data['email'] 				= $this->email;
+		$data['telepon']			= $this->telepon;
+		$data['jam']				= $this->jam;
+		$data['faq']				= $this->faq;
+		$data['privacy']			= $this->privacy;
+
+		$this->load->view('frontend/links/v_privacy',$data);
+	}
+
+	public function career()
+	{
+		$data['title'] 				= 'IWoody'.'s | Careers';
+		$data['kategori_navbar'] 	= $this->Model_barang->get_kategori_navbar();
+		$data['email'] 				= $this->email;
+		$data['telepon']			= $this->telepon;
+		$data['jam']				= $this->jam;
+		$data['faq']				= $this->faq;
+		$data['privacy']			= $this->privacy;
+		$data['career'] 			= $this->career;
+
+		$this->load->view('frontend/links/v_career',$data);
+	}
+
+	public function partner()
+	{
+		$data['title'] 				= 'IWoody'.'s | Partners';
+		$data['kategori_navbar'] 	= $this->Model_barang->get_kategori_navbar();
+		$data['email'] 				= $this->email;
+		$data['telepon']			= $this->telepon;
+		$data['jam']				= $this->jam;
+		$data['faq']				= $this->faq;
+		$data['privacy']			= $this->privacy;
+		$data['career'] 			= $this->career;
+		$data['partner']			= $this->partner;
+
+		$this->load->view('frontend/links/v_partner',$data);
+	}
+
+	public function contact()
+	{
+		$data['title'] 				= 'IWoody'.'s | Contact';
+		$data['kategori_navbar'] 	= $this->Model_barang->get_kategori_navbar();
+		$data['email'] 				= $this->email;
+		$data['telepon']			= $this->telepon;
+		$data['jam']				= $this->jam;
+		$data['faq']				= $this->faq;
+		$data['privacy']			= $this->privacy;
+		$data['career'] 			= $this->career;
+		$data['partner']			= $this->partner;
+		$data['contact']			= $this->contact;
+
+		$this->load->view('frontend/links/v_contact',$data);
+	}
+
+	public function links()
+	{
+		$id_links 					= $this->uri->segment('3');
+		$data['title'] 				= 'IWoody'.'s | Links';
+		$data['kategori_navbar'] 	= $this->Model_barang->get_kategori_navbar();
+		$data['email'] 				= $this->email;
+		$data['telepon']			= $this->telepon;
+		$data['jam']				= $this->jam;
+		$data['faq']				= $this->faq;
+		$data['privacy']			= $this->privacy;
+		$data['career'] 			= $this->career;
+		$data['partner']			= $this->partner;
+		$data['links'] 				= $this->Model_pengaturan->get_setting_by_id($id_links);
+
+		$this->load->view('frontend/links/v_links',$data);
 	}
 }

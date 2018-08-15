@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Auth extends CI_Controller {
+class Administrator extends CI_Controller {
 
 	public function __construct()
 	{
@@ -8,14 +8,6 @@ class Auth extends CI_Controller {
 		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
 		$this->lang->load('auth');
 		$this->load->model('Model_barang');
-		$this->load->model('Model_pengaturan');
-
-		/* Setting */
-		$sett 						= $this->Model_pengaturan->get_all_setting();
-		$row 						= $sett->row_array();
-		$this->email 				= $row['theme_option_email'];
-		$this->telepon 				= $row['theme_option_telepon'];
-		$this->jam 					= $row['theme_option_operasional'];
 	}
 
 	public function index()
@@ -24,7 +16,7 @@ class Auth extends CI_Controller {
 		if (!$this->ion_auth->logged_in())
 		{
 			// redirect them to the login page
-			redirect('auth/login', 'refresh');
+			redirect('Administrator/login', 'refresh');
 		}
 		elseif($this->ion_auth->logged_in() AND $this->ion_auth->is_admin())
 		{
@@ -38,17 +30,14 @@ class Auth extends CI_Controller {
 			// set the flash data error message if there is one
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
-			redirect('auth/login');
+			redirect('administrator/login');
 		}
 	}
 
 	// log the user in
 	public function login()
 	{
-		$this->data['email'] 				= $this->email;
-		$this->data['telepon']				= $this->telepon;
-		$this->data['jam']					= $this->jam;
-		$this->data['kategori_navbar']	 	= $this->Model_barang->get_kategori_navbar();
+
 		if($this->ion_auth->logged_in() AND $this->ion_auth->is_admin())
 		{
 			redirect('admin');
@@ -83,7 +72,7 @@ class Auth extends CI_Controller {
 				// if the login was un-successful
 				// redirect them back to the login page
 				$this->session->set_flashdata('message', $this->ion_auth->errors());
-				redirect('auth/login', 'refresh'); // use redirects instead of loading views for compatibility with MY_Controller libraries
+				redirect('Administrator/login', 'refresh'); // use redirects instead of loading views for compatibility with MY_Controller libraries
 			}
 		}
 		else
@@ -102,7 +91,7 @@ class Auth extends CI_Controller {
 				'type' => 'password',
 			);
 
-			$this->_render_page('auth/View_login',$this->data);
+			$this->_render_page('admin/View_login',$this->data);
 		}
 	}
 

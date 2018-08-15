@@ -156,10 +156,31 @@
                     </ul>
                 </li>
 
-               <li>
-                    <a href="<?php echo base_url();?>admin/pengaturan">
-                        <i class="fa fa-gear"></i> <span>Pengaturan</span>
+				<li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-link"></i>
+                        <span>Pengaturan</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
                     </a>
+                    <ul class="treeview-menu">
+						<li>
+		                     <a href="<?php echo base_url();?>admin/pengaturan">
+		                        <i class="fa fa-gear"></i> <span>Pengaturan Umum</span>
+		                     </a>
+		                </li>
+						 <li>
+ 		                    <a href="<?php echo base_url();?>admin/pengaturan/pengaturan_lanjutan">
+ 		                         <i class="fa fa-gear"></i> <span>Pengaturan Lanjutan</span>
+ 		                    </a>
+ 		                 </li>
+						 <li>
+ 						   <a href="<?php echo base_url();?>admin/pengaturan/pengaturan_gambar">
+ 								<i class="fa fa-gear"></i> <span>Pengaturan Gambar</span>
+ 						   </a>
+ 						</li>
+                    </ul>
                 </li>
         </ul>
         <!-- / .sidebar-menu -->

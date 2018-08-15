@@ -1,31 +1,23 @@
 <?php $this->load->view('frontend/partial/View_header'); ?>
-<?php
-    $row                    = $detail->row_array();
-    $id_artikel             = $row['artikel_id'];
-    $judul                  = $row['artikel_judul'];
-    $isi                    = $row['artikel_isi'];
-    $foto                   = $row['artikel_foto'];
-?>
 
 <div class="product-page article">
 	<section class="page-heading page-heading-light">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-md-6">
-					<h2 class="text-primary mb-0">Artikel</h2>
+					<h2 class="text-primary mb-0">Pusat Bantuan</h2>
 				</div>
 				<div class="col-md-6">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="<?php echo base_url();?>home">Home</a></li>
-						<li class="breadcrumb-item"><a href="#">Artikel</a></li>
-						<li class="breadcrumb-item active"><?php echo $judul; ?></li>
+						<li class="breadcrumb-item"><a href="<?php echo base_url();?>">Home</a></li>
+						<li class="breadcrumb-item active"><a href="#">Our Partners</a></li>
 					</ol>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="featured-image pt-0">
+	<!--<section class="featured-image pt-0">
 		<!--
 		* Pilih model full width atau boxed
 		* Full width (tanpa container)
@@ -35,19 +27,18 @@
 		<div class="container">
 			<div class="row">
 				<div class="col"> -->
-					<img class="img-responsive" src="<?php echo site_url('assets/images/artikel/').$foto; ?>" alt="<?php echo $judul; ?>">
+					<img class="img-responsive" src="">
 				<!-- </div>
 			</div>
 		</div>
-		-->
-	</section>
+	</section>-->
 
 	<section class="main-article">
 		<div class="container">
 			<div class="row">
 				<div class="col">
 					<div class="header-article">
-						<h2><?php echo $judul; ?></h2>
+						<h2><?php echo $title; ?></h2>
 						<ul class="meta-post">
 							<!--<li>Terposting pada 25 Agustus 2018</li>-->
 							<li>Oleh Administrator</li>
@@ -59,7 +50,7 @@
 						</ul>
 					</div>
 					<div class="content-article mt-4">
-						<?php echo $isi; ?>
+						<?php echo $partner; ?>
 					</div>
 				</div>
 			</div>

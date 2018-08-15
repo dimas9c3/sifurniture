@@ -55,6 +55,7 @@
 	                    $nm_barang          = $i['barang_nama'];
 	                    $hrg_jual           = $i['barang_harga_jual'];
 	                    $diskon             = $i['barang_diskon']." %";
+						$hrg_akhir_2        =  $i['barang_harga_jual']-($i['barang_harga_jual']*($i['barang_diskon']/100));
 	                    $hrg_akhir          = "Rp. ".number_format($i['barang_harga_jual']-($i['barang_harga_jual']*($i['barang_diskon']/100)));
 	                    $foto_utama         = $i['foto_barang_nama'];
 	                ?>
@@ -74,7 +75,7 @@
 								</div>
 						</a>
 								<div class="footer-product-thumbnails text-center">
-									<button type="button" id="button_keranjang<?php echo $id_barang; ?>" data-id="<?php echo $id_barang; ?>" data-nama="<?php echo $nm_barang; ?>" data-harga="<?php echo $hrg_akhir; ?>" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-cart-plus"></i></button>
+									<button type="button" id="button_keranjang<?php echo $id_barang; ?>" data-id="<?php echo $id_barang; ?>" data-nama="<?php echo $nm_barang; ?>" data-harga="<?php echo $hrg_akhir_2; ?>" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-cart-plus"></i></button>
 									<button type="button" id="button_favorit<?php echo $id_barang; ?>" data-id="<?php echo $id_barang; ?>" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-heart"></i></button>
 									<button type="button" onclick="window.location.href='<?php echo base_url();?>custom/buat_custom'" class="btn btn-sm btn-gradient btn-sm" name="button">Custom</button>
 								</div>

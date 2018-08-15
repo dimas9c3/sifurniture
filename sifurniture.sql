@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 08, 2018 at 07:16 PM
+-- Generation Time: Aug 14, 2018 at 06:56 PM
 -- Server version: 5.7.23-0ubuntu0.18.04.1
 -- PHP Version: 7.2.8-1+ubuntu18.04.1+deb.sury.org+1
 
@@ -91,7 +91,29 @@ CREATE TABLE `tbl_artikel` (
 --
 
 INSERT INTO `tbl_artikel` (`artikel_id`, `artikel_judul`, `artikel_isi`, `artikel_foto`, `artikel_dilihat`, `created_at`) VALUES
-(3, 'asdasd', '<p>sadsadsad</p>\r\n', 'ec3da9e3b0bbd13f40ff183e279b2e1f.jpeg', 0, '2018-08-06 14:09:37');
+(3, 'Artikel 1 Meja', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci. Donec pellentesque egestas eros. Integer cursus, augue in cursus faucibus, eros pede bibendum sem, in tempus tellus justo quis ligula. Etiam eget tortor. Vestibulum rutrum, est ut placerat elementum, lectus nisl aliquam velit, tempor aliquam eros nunc nonummy metus. In eros metus, gravida a, gravida sed, lobortis id, turpis. Ut ultrices, ipsum at venenatis fringilla, sem nulla lacinia tellus, eget aliquet turpis mauris non enim. Nam turpis. Suspendisse lacinia. Curabitur ac tortor ut ipsum egestas elementum. Nunc imperdiet gravida mauris.</p>\r\n', 'ec3da9e3b0bbd13f40ff183e279b2e1f.jpeg', 0, '2018-08-06 14:09:37'),
+(4, 'Artikel 2 Meja', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci. Donec pellentesque egestas eros. Integer cursus, augue in cursus faucibus, eros pede bibendum sem, in tempus tellus justo quis ligula. Etiam eget tortor. Vestibulum rutrum, est ut placerat elementum, lectus nisl aliquam velit, tempor aliquam eros nunc nonummy metus. In eros metus, gravida a, gravida sed, lobortis id, turpis. Ut ultrices, ipsum at venenatis fringilla, sem nulla lacinia tellus, eget aliquet turpis mauris non enim. Nam turpis. Suspendisse lacinia. Curabitur ac tortor ut ipsum egestas elementum. Nunc imperdiet gravida mauris.</p>\r\n', '8cd24aecaa287a89f700eff316f5057b.png', 0, '2018-08-10 07:41:40');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_banner`
+--
+
+CREATE TABLE `tbl_banner` (
+  `banner_id` int(11) NOT NULL,
+  `banner_item` varchar(65) DEFAULT NULL,
+  `banner_status` int(11) NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_banner`
+--
+
+INSERT INTO `tbl_banner` (`banner_id`, `banner_item`, `banner_status`, `created_at`) VALUES
+(4, '5145c888135b128b1462eaa4dd468b48.jpg', 1, '2018-08-14 08:13:26'),
+(6, '921afd8f71cc05df35d802ff690cbe21.jpg', 1, '2018-08-14 08:16:02');
 
 -- --------------------------------------------------------
 
@@ -118,26 +140,11 @@ CREATE TABLE `tbl_barang` (
 --
 
 INSERT INTO `tbl_barang` (`barang_id`, `sub_kategori_id`, `barang_nama`, `barang_diskon`, `barang_harga_beli`, `barang_harga_jual`, `barang_berat`, `barang_deskripsi`, `barang_dimensi`, `foto_barang_id`, `created_at`) VALUES
-('BRG1', 5, 'Meja Makan Gloosy', 1, 0, 1000000, 0, '<p>1</p>\r\n', NULL, 23, '2018-07-03 18:10:05'),
-('BRG10', 5, '1', 1, 0, 1000000, 0, '<p>1</p>\r\n', NULL, 32, '2018-07-09 10:14:26'),
-('BRG11', 2, 'sad', 1, 0, 1, 0, '<p>sda</p>\r\n', NULL, 33, '2018-07-09 10:17:22'),
-('BRG12', 5, '1', 1, 0, 1000000, 0, '<p>1</p>\r\n', NULL, 34, '2018-07-09 10:18:18'),
-('BRG13', 5, '1', 1, 0, 1000000, 0, '<p>1</p>\r\n', NULL, 35, '2018-07-09 10:20:06'),
-('BRG14', 5, '1', 1, 0, 1, 0, '<p>1</p>\r\n', NULL, 36, '2018-07-09 10:21:21'),
-('BRG15', 5, 'sda', 1, 0, 1000000, 0, '<p>sd</p>\r\n', NULL, 37, '2018-07-09 10:30:25'),
-('BRG16', 2, 'asd', 1, 0, 1, 0, '<p>asd</p>\r\n', NULL, 38, '2018-07-09 10:32:05'),
-('BRG17', 5, '1', 1, 0, 1, 0, '<p>111</p>\r\n', NULL, 39, '2018-07-09 10:38:05'),
-('BRG18', 5, 'MEJA', 1, 0, 1000000, 0, '<p>1w</p>\r\n', NULL, 40, '2018-07-09 10:38:53'),
-('BRG19', 2, 'asd', 1, 0, 111, 0, '<p>asd</p>\r\n', NULL, NULL, '2018-08-06 06:28:10'),
-('BRG2', 2, '11', 0, 0, 1000000, 0, '<p>1</p>\r\n', NULL, 24, '2018-07-03 18:10:40'),
-('BRG20', 4, 'sOSLO', 1, 0, 1, 0, '<p>asdsd</p>\r\n', '20m x22m x21m', 42, '2018-08-06 06:31:18'),
-('BRG3', 5, 'c', 25, 0, 1000000, 0, '<p>q</p>\r\n', NULL, 25, '2018-07-09 09:59:59'),
-('BRG4', 2, '1', 45, 0, 1000000, 0, '<p>1</p>\r\n', NULL, 26, '2018-07-09 10:01:23'),
-('BRG5', 4, '1', 1, 0, 1000000, 0, '<p>1</p>\r\n', NULL, 27, '2018-07-09 10:02:48'),
-('BRG6', 2, '1', 15, 0, 1000000, 0, '<p>1</p>\r\n', NULL, 28, '2018-07-09 10:03:59'),
-('BRG7', 5, '1', 11, 0, 1000000, 0, '<p>1</p>\r\n', NULL, 29, '2018-07-09 10:05:15'),
-('BRG8', 4, '1', 1, 0, 1, 0, '<p>1</p>\r\n', '20m X 10m X 5m', 30, '2018-07-09 10:05:48'),
-('BRG9', 5, '1', 1, 0, 1, 0, '<p>1</p>\r\n', NULL, 31, '2018-07-09 10:13:14');
+('BRG1', 5, 'Meja Makan Cantik', 10, 0, 100000, 0, '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci.&nbsp;</p>\r\n', '20m X 10m X 5m', 44, '2018-08-11 16:26:40'),
+('BRG3', 5, 'Meja Makan Gloosy', 10, 0, 1000000, 0, '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor.&nbsp;</p>\r\n', '20m X 10m X 5m', 47, '2018-08-14 09:12:40'),
+('BRG4', 5, 'Meja Makan Rose', 10, 0, 1000000, 0, '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor.&nbsp;</p>\r\n', '20m X 10m X 5m', 48, '2018-08-14 09:14:26'),
+('BRG5', 5, 'Meja Makan Blue', 10, 0, 100000, 0, '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor.&nbsp;</p>\r\n', '20m X 10m X 5m', 49, '2018-08-14 09:14:52'),
+('BRG6', 5, 'Meja Makan Dua', 10, 0, 100000, 0, '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor.&nbsp;</p>\r\n', '20m X 10m X 5m', 50, '2018-08-14 09:15:37');
 
 -- --------------------------------------------------------
 
@@ -186,7 +193,72 @@ INSERT INTO `tbl_barang_dilihat` (`barang_dilihat_id`, `barang_id`, `barang_dili
 (51, 'BRG20', '2018-08-06', '2018-08-06 13:57:40'),
 (52, 'BRG18', '2018-08-06', '2018-08-06 13:57:44'),
 (53, 'BRG8', '2018-08-06', '2018-08-06 15:02:26'),
-(54, 'BRG20', '2018-08-06', '2018-08-06 15:02:39');
+(54, 'BRG20', '2018-08-06', '2018-08-06 15:02:39'),
+(55, 'BRG8', '2018-08-10', '2018-08-10 07:15:50'),
+(56, 'BRG12', '2018-08-10', '2018-08-10 07:18:03'),
+(57, 'BRG17', '2018-08-10', '2018-08-10 07:18:29'),
+(58, 'BRG1', '2018-08-11', '2018-08-11 15:34:10'),
+(59, 'BRG1', '2018-08-11', '2018-08-11 15:34:32'),
+(60, 'BRG1', '2018-08-11', '2018-08-11 15:35:16'),
+(61, 'BRG1', '2018-08-11', '2018-08-11 15:37:40'),
+(62, 'BRG1', '2018-08-11', '2018-08-11 16:27:41'),
+(63, 'BRG1', '2018-08-11', '2018-08-11 16:28:45'),
+(64, 'BRG1', '2018-08-11', '2018-08-11 16:29:02'),
+(65, 'BRG1', '2018-08-11', '2018-08-11 16:29:41'),
+(66, 'BRG1', '2018-08-11', '2018-08-11 16:30:25'),
+(67, 'BRG1', '2018-08-11', '2018-08-11 16:32:53'),
+(68, 'BRG1', '2018-08-11', '2018-08-11 16:35:40'),
+(69, 'BRG1', '2018-08-11', '2018-08-11 16:36:09'),
+(70, 'BRG1', '2018-08-11', '2018-08-11 16:36:39'),
+(71, 'BRG1', '2018-08-11', '2018-08-11 16:37:03'),
+(72, 'BRG1', '2018-08-11', '2018-08-11 16:38:02'),
+(73, 'BRG1', '2018-08-11', '2018-08-11 16:38:45'),
+(74, 'BRG1', '2018-08-11', '2018-08-11 16:39:02'),
+(75, 'BRG1', '2018-08-11', '2018-08-11 16:39:29'),
+(76, 'BRG1', '2018-08-11', '2018-08-11 16:40:20'),
+(77, 'BRG1', '2018-08-11', '2018-08-11 16:41:08'),
+(78, 'BRG1', '2018-08-11', '2018-08-11 16:48:37'),
+(79, 'BRG1', '2018-08-11', '2018-08-11 16:49:27'),
+(80, 'BRG1', '2018-08-12', '2018-08-12 10:19:05'),
+(81, 'BRG1', '2018-08-12', '2018-08-12 10:22:33'),
+(82, 'BRG1', '2018-08-12', '2018-08-12 10:22:36'),
+(83, 'BRG1', '2018-08-12', '2018-08-12 10:23:10'),
+(84, 'BRG1', '2018-08-12', '2018-08-12 10:25:29'),
+(85, 'BRG1', '2018-08-12', '2018-08-12 10:26:32'),
+(86, 'BRG1', '2018-08-12', '2018-08-12 10:26:37'),
+(87, 'BRG1', '2018-08-12', '2018-08-12 10:26:40'),
+(88, 'BRG1', '2018-08-12', '2018-08-12 10:27:31'),
+(89, 'BRG1', '2018-08-12', '2018-08-12 10:27:34'),
+(90, 'BRG1', '2018-08-12', '2018-08-12 10:51:07'),
+(91, 'BRG1', '2018-08-13', '2018-08-13 03:13:22'),
+(92, 'BRG1', '2018-08-13', '2018-08-13 03:14:02'),
+(93, 'BRG1', '2018-08-13', '2018-08-13 03:24:31'),
+(94, 'BRG1', '2018-08-13', '2018-08-13 03:25:17'),
+(95, 'BRG1', '2018-08-13', '2018-08-13 03:26:13'),
+(96, 'BRG1', '2018-08-13', '2018-08-13 03:26:25'),
+(97, 'BRG1', '2018-08-13', '2018-08-13 14:20:48'),
+(98, 'BRG1', '2018-08-13', '2018-08-13 14:21:29'),
+(99, 'BRG1', '2018-08-13', '2018-08-13 14:22:34'),
+(100, 'BRG1', '2018-08-13', '2018-08-13 14:22:56'),
+(101, 'BRG1', '2018-08-13', '2018-08-13 14:23:07'),
+(102, 'BRG1', '2018-08-13', '2018-08-13 14:25:01'),
+(103, 'BRG1', '2018-08-13', '2018-08-13 14:25:14'),
+(104, 'BRG1', '2018-08-13', '2018-08-13 14:25:47'),
+(105, 'BRG1', '2018-08-13', '2018-08-13 14:26:12'),
+(106, 'BRG1', '2018-08-13', '2018-08-13 14:26:37'),
+(107, 'BRG1', '2018-08-13', '2018-08-13 14:26:41'),
+(108, 'BRG1', '2018-08-13', '2018-08-13 14:26:52'),
+(109, 'BRG1', '2018-08-13', '2018-08-13 14:27:25'),
+(110, 'BRG1', '2018-08-13', '2018-08-13 14:27:48'),
+(111, 'BRG1', '2018-08-13', '2018-08-13 14:29:03'),
+(112, 'BRG1', '2018-08-13', '2018-08-13 14:30:23'),
+(113, 'BRG1', '2018-08-13', '2018-08-13 14:34:58'),
+(114, 'BRG6', '2018-08-14', '2018-08-14 09:24:08'),
+(115, 'BRG4', '2018-08-14', '2018-08-14 09:24:26'),
+(116, 'BRG3', '2018-08-14', '2018-08-14 09:24:29'),
+(117, 'BRG5', '2018-08-14', '2018-08-14 09:57:15'),
+(118, 'BRG5', '2018-08-14', '2018-08-14 09:57:24'),
+(119, 'BRG4', '2018-08-14', '2018-08-14 09:57:29');
 
 -- --------------------------------------------------------
 
@@ -283,7 +355,12 @@ INSERT INTO `tbl_favorit` (`favorit_id`, `barang_id`, `customer_id`, `created_at
 (2, 'BRG11', 6, '2018-08-06 14:04:10'),
 (3, 'BRG8', 1, '2018-08-06 15:20:01'),
 (4, 'BRG8', 1, '2018-08-06 15:20:05'),
-(5, 'BRG8', 1, '2018-08-06 15:20:21');
+(5, 'BRG8', 1, '2018-08-06 15:20:21'),
+(6, 'BRG1', 1, '2018-08-13 14:00:37'),
+(7, 'BRG3', 1, '2018-08-14 10:13:34'),
+(8, 'BRG6', 6, '2018-08-14 10:24:01'),
+(9, 'BRG4', 6, '2018-08-14 10:24:10'),
+(10, 'BRG1', 6, '2018-08-14 10:39:07');
 
 -- --------------------------------------------------------
 
@@ -303,26 +380,13 @@ CREATE TABLE `tbl_foto_barang` (
 --
 
 INSERT INTO `tbl_foto_barang` (`foto_barang_id`, `barang_id`, `foto_barang_nama`, `created_at`) VALUES
-(23, 'BRG1', 'e408699e5b014e575ef6c588d0e25c74.jpg', '2018-07-03 18:10:05'),
-(24, 'BRG2', 'a06676df298b29d223c0ccbc420d18d4.jpg', '2018-07-03 18:10:41'),
-(25, 'BRG3', '5f9500d9af976a46d6788a7660d73339.png', '2018-07-09 10:00:00'),
-(26, 'BRG4', 'ab126fb34b645549a9a75bd5f174a1f1.png', '2018-07-09 10:01:23'),
-(27, 'BRG5', '6561d6424b6e1c0b3285044b6cf9ee46.png', '2018-07-09 10:02:48'),
-(28, 'BRG6', '3b1688245d4a59df845ddf52ea947f9a.png', '2018-07-09 10:03:59'),
-(29, 'BRG7', '0a8b3e6056656bf1b59a29b26a1e93de.png', '2018-07-09 10:05:15'),
-(30, 'BRG8', '9f11cf77253b6d47bff0e2f465187636.png', '2018-07-09 10:05:49'),
-(31, 'BRG9', '2f17f16be4ea4c3294f0f58fe27c05ea.png', '2018-07-09 10:13:15'),
-(32, 'BRG10', 'c72328a7da8d726f1e8647393cd80dc4.png', '2018-07-09 10:14:26'),
-(33, 'BRG11', 'f2c9fcaa1301784b79661094fc1b5018.png', '2018-07-09 10:17:22'),
-(34, 'BRG12', '13ec20c0d4e0ac946406039d6aa5dfb6.png', '2018-07-09 10:18:18'),
-(35, 'BRG13', '30c67ead0d8e2de20c8f3ed6f6739668.png', '2018-07-09 10:20:06'),
-(36, 'BRG14', '52afa40b0f6cfc1b6b8f808f464fc3c9.png', '2018-07-09 10:21:22'),
-(37, 'BRG15', 'fc3a5b0284aec9d14527d866f00ab010.png', '2018-07-09 10:30:25'),
-(38, 'BRG16', 'df20b5fe83c9df3565e1bfaad8c07fc9.png', '2018-07-09 10:32:06'),
-(39, 'BRG17', 'b8f2ae778336fc5b9e50a03bf65d0b2e.jpg', '2018-07-09 10:38:06'),
-(40, 'BRG18', 'ea231b6b44a49549cbcc48d39b75bc04.png', '2018-07-09 10:38:54'),
-(41, 'BRG21', 'fc232c2b574999c3460ccae81109030d.jpeg', '2018-08-06 06:30:23'),
-(42, 'BRG20', 'c5c98769a1bbcc6ee391970d79310114.jpeg', '2018-08-06 06:31:18');
+(44, 'BRG1', '35a78973e09115a4af48c1f172d1dc6b.jpg', '2018-08-11 16:26:59'),
+(45, 'BRG1', '26b42bfd2434e9a174d257e4bdf8665f.jpg', '2018-08-11 16:26:59'),
+(46, 'BRG1', 'e93cd801cf9d52aba4ac3df3a12a1a70.jpg', '2018-08-11 16:26:59'),
+(47, 'BRG3', 'de490900511584984d098140bf5c9554.jpg', '2018-08-14 09:12:45'),
+(48, 'BRG4', 'e7e978851cc547e0a61dee59d6efeab2.jpg', '2018-08-14 09:14:28'),
+(49, 'BRG5', '0dbb87be766ecb90e2f2e19eb8310b17.jpg', '2018-08-14 09:14:54'),
+(50, 'BRG6', '98295eeb199a83f9008b34036c6dd247.jpg', '2018-08-14 09:15:42');
 
 -- --------------------------------------------------------
 
@@ -387,6 +451,27 @@ CREATE TABLE `tbl_grup_pengguna` (
 INSERT INTO `tbl_grup_pengguna` (`id`, `user_id`, `group_id`) VALUES
 (1, 1, 1),
 (7, 6, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_iklan`
+--
+
+CREATE TABLE `tbl_iklan` (
+  `iklan_id` int(11) NOT NULL,
+  `iklan_item` varchar(65) DEFAULT NULL,
+  `iklan_text` text,
+  `iklan_status` int(11) NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_iklan`
+--
+
+INSERT INTO `tbl_iklan` (`iklan_id`, `iklan_item`, `iklan_text`, `iklan_status`, `created_at`) VALUES
+(1, '2ed5f2185cc0186d1d151f43b5c692b4.jpg', 'sa', 1, '2018-08-14 08:48:34');
 
 -- --------------------------------------------------------
 
@@ -561,8 +646,8 @@ CREATE TABLE `tbl_ongkir` (
 --
 
 INSERT INTO `tbl_ongkir` (`ongkir_id`, `id_prov`, `ongkir_nama`, `ongkir_tarif`, `created_at`) VALUES
-(1, '33', 'SOLO', 100000, '2018-07-04 04:10:41'),
-(2, '34', 'JOGJA', 200000, '2018-07-28 13:37:45');
+(1, '33', 'SOLO', 10000011, '2018-07-04 04:10:41'),
+(2, '34', 'JOGJA111343434333', 2147483647, '2018-07-28 13:37:45');
 
 -- --------------------------------------------------------
 
@@ -598,8 +683,8 @@ CREATE TABLE `tbl_pengguna` (
 --
 
 INSERT INTO `tbl_pengguna` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `gender`, `address`, `notifikasi_daftar`) VALUES
-(1, '127.0.0.1', 'admin@admin.com', '$2y$08$WmGkJQwG6eBSUrURn6EWXOfm32pw9FvXD96z.taHBBFzUkzKuhoIy', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1533625156, 1, 'Admin', 'istrator', 'ADMIN', '0', NULL, NULL, 0),
-(6, '::1', 'user1@user.com', '$2y$08$VmTeTaIP0hSb5mITjE64yup5UvjqslFhi1Zq7ljbTLmA.qmZ1sfF6', NULL, 'user1@user.com', NULL, NULL, NULL, NULL, 1530206634, 1533566376, 1, 'Dimas', 'Hermawan', NULL, '089', NULL, NULL, 1);
+(1, '127.0.0.1', 'admin@admin.com', '$2y$08$WmGkJQwG6eBSUrURn6EWXOfm32pw9FvXD96z.taHBBFzUkzKuhoIy', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1534240842, 1, 'Admin', 'istrator', 'ADMIN', '0', NULL, NULL, 0),
+(6, '::1', 'user1@user.com', '$2y$08$VmTeTaIP0hSb5mITjE64yup5UvjqslFhi1Zq7ljbTLmA.qmZ1sfF6', NULL, 'user1@user.com', NULL, NULL, NULL, NULL, 1530206634, 1534242223, 1, 'Dimas', 'Hermawan', NULL, '089', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -616,16 +701,6 @@ CREATE TABLE `tbl_penjualan` (
   `penjualan_status` int(11) NOT NULL DEFAULT '1',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_penjualan`
---
-
-INSERT INTO `tbl_penjualan` (`penjualan_id`, `customer_id`, `ongkir_id`, `penjualan_alamat`, `penjualan_transfer`, `penjualan_status`, `created_at`) VALUES
-('PJN1', 6, 1, 'ds', '999ad33eba3fed6bde091c4edeac7b96.png', 0, '2018-07-06 07:23:21'),
-('PJN2', 6, 1, 'ds', 'd3696dc18e3b43c66f0b7bdfd6196f46.png', 0, '2018-07-06 12:42:36'),
-('PJN3', 6, 1, 'ds', 'ea77856faeec380559a95d91e7ac4364.png', 0, '2018-07-07 03:19:14'),
-('PJN4', 6, 2, 'asle', NULL, 1, '2018-08-05 17:04:08');
 
 -- --------------------------------------------------------
 
@@ -689,9 +764,9 @@ CREATE TABLE `tbl_style_custom` (
 --
 
 INSERT INTO `tbl_style_custom` (`style_id`, `style_nama`, `style_deskripsi`, `style_foto`, `created_at`) VALUES
-(2, 'SCANDINAVIAN', 'Tidak cocok dengan produk yang sudah ada ? Mari desain sendiri desain yang anda inginkan sendiri, furniture yang dibuat dengan custom design sesuka anda. Silahkan klik link dibawah untuk memulai custom design anda.', '8a1272fd5cac0f8f897704677edf9e36.jpg', '2018-07-27 07:09:44'),
-(3, 'CREDENZIA', 'Tidak cocok dengan produk yang sudah ada ? Mari desain sendiri desain yang anda inginkan sendiri, furniture yang dibuat dengan custom design sesuka anda. Silahkan klik link dibawah untuk memulai custom design anda.', '499552548dc8d9310f12bba1b5fc316e.jpg', '2018-07-27 08:16:43'),
-(4, 'RETRO', 'Tidak cocok dengan produk yang sudah ada ? Mari desain sendiri desain yang anda inginkan sendiri, furniture yang dibuat dengan custom design sesuka anda. Silahkan klik link dibawah untuk memulai custom design anda.', '6753a8431a8bb71cf902195ba699d6f3.jpg', '2018-07-27 08:16:55');
+(2, 'SCANDINAVIAN', 'Tidak cocok dengan produk yang sudah ada ? Mari desain sendiri desain yang anda inginkan sendiri, furniture yang dibuat dengan custom design sesuka anda. Silahkan klik link dibawah untuk memulai custom design anda.', '036a8591ce70b20af0d2c2b5a28682b9.jpg', '2018-07-27 07:09:44'),
+(3, 'CREDENZIA', 'Tidak cocok dengan produk yang sudah ada ? Mari desain sendiri desain yang anda inginkan sendiri, furniture yang dibuat dengan custom design sesuka anda. Silahkan klik link dibawah untuk memulai custom design anda.', 'cfe399197cfa536b2d7ebdb621d8397f.jpg', '2018-07-27 08:16:43'),
+(4, 'RETRO', 'Tidak cocok dengan produk yang sudah ada ? Mari desain sendiri desain yang anda inginkan sendiri, furniture yang dibuat dengan custom design sesuka anda. Silahkan klik link dibawah untuk memulai custom design anda.', '4283adc6517179941efa2ff17146d247.jpg', '2018-07-27 08:16:55');
 
 -- --------------------------------------------------------
 
@@ -711,9 +786,9 @@ CREATE TABLE `tbl_sub_1_kategori_interior` (
 --
 
 INSERT INTO `tbl_sub_1_kategori_interior` (`sub_1_kategori_interior_id`, `sub_1_kategori_interior_nama`, `sub_1_kategori_interior_foto`, `created_at`) VALUES
-('SKS1', 'BEDROOM', '11f8d850291aa4a3b674dbed769fbbed.jpg', '2018-07-09 13:31:43'),
-('SKS2', 'LIVING ROOM', 'f5da72fe752621098a81d61dd210b628.jpg', '2018-07-09 13:43:45'),
-('SKS3', 'DINING CHAIR', 'ed6960c76b706c7ac9a73c8b9b56f76d.jpg', '2018-07-09 13:44:07');
+('SKS1', 'BEDROOM', '3e06452e55ebe45bbad7aafc0b04d9ab.jpg', '2018-07-09 13:31:43'),
+('SKS2', 'LIVING ROOM', '712e43d495bbca49364acb0cb5b8afd8.jpg', '2018-07-09 13:43:45'),
+('SKS3', 'DINING CHAIR', 'c970b46050c2f60e58b15626c4dec901.jpg', '2018-07-09 13:44:07');
 
 -- --------------------------------------------------------
 
@@ -761,6 +836,41 @@ INSERT INTO `tbl_sub_kategori_barang` (`sub_kategori_id`, `kategori_id`, `sub_ka
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_theme_option`
+--
+
+CREATE TABLE `tbl_theme_option` (
+  `theme_option_id` int(11) NOT NULL,
+  `theme_option_email` varchar(65) DEFAULT NULL,
+  `theme_option_email_pass` varchar(65) DEFAULT NULL,
+  `theme_option_whatsapp` varchar(25) DEFAULT NULL,
+  `theme_option_telepon` varchar(15) DEFAULT NULL,
+  `theme_option_operasional` text,
+  `theme_option_alamat` text,
+  `theme_option_rekening` text,
+  `theme_option_faq` text,
+  `theme_option_contact` text,
+  `theme_option_privacy` text,
+  `theme_option_career` text,
+  `theme_option_partner` text,
+  `theme_option_links` text,
+  `theme_option_links_title` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_theme_option`
+--
+
+INSERT INTO `tbl_theme_option` (`theme_option_id`, `theme_option_email`, `theme_option_email_pass`, `theme_option_whatsapp`, `theme_option_telepon`, `theme_option_operasional`, `theme_option_alamat`, `theme_option_rekening`, `theme_option_faq`, `theme_option_contact`, `theme_option_privacy`, `theme_option_career`, `theme_option_partner`, `theme_option_links`, `theme_option_links_title`) VALUES
+(1, 'iwoodys@iwoodys.com', 'password', '6282139414263', '(0271)897718', 'Senin-Minggu (09.00 - 21.00)', 'Solo', 'MANDIRI (08282828)', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', 'Properties'),
+(3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', 'Landlords'),
+(4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', 'Renters'),
+(5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', 'Services'),
+(6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', 'Pricing');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_ulasan`
 --
 
@@ -779,7 +889,7 @@ CREATE TABLE `tbl_ulasan` (
 --
 
 INSERT INTO `tbl_ulasan` (`ulasan_id`, `penjualan_id`, `customer_id`, `ulasan_rating`, `ulasan_isi`, `ulasan_tampil`, `created_at`) VALUES
-(1, 'PJN3', '6', 5, 'adsad\r\n', 1, '2018-07-14 23:30:37');
+(1, 'PJN3', '6', 5, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n', 1, '2018-07-14 23:30:37');
 
 -- --------------------------------------------------------
 
@@ -822,7 +932,27 @@ CREATE TABLE `tbl_warna_barang` (
 INSERT INTO `tbl_warna_barang` (`warna_barang_id`, `warna_id`, `barang_id`, `created_at`) VALUES
 (4, 1, 'BRG20', '2018-08-06 06:31:18'),
 (5, 2, 'BRG20', '2018-08-06 06:31:18'),
-(6, 3, 'BRG20', '2018-08-06 06:31:18');
+(6, 3, 'BRG20', '2018-08-06 06:31:18'),
+(7, 1, 'BRG1', '2018-08-11 15:33:58'),
+(8, 2, 'BRG1', '2018-08-11 15:33:58'),
+(9, 3, 'BRG1', '2018-08-11 15:33:58'),
+(10, 1, 'BRG1', '2018-08-11 16:26:40'),
+(11, 2, 'BRG1', '2018-08-11 16:26:40'),
+(12, 3, 'BRG1', '2018-08-11 16:26:40'),
+(13, 1, 'BRG2', '2018-08-13 14:29:56'),
+(14, 2, 'BRG2', '2018-08-13 14:29:56'),
+(15, 1, 'BRG3', '2018-08-14 09:12:40'),
+(16, 2, 'BRG3', '2018-08-14 09:12:40'),
+(17, 3, 'BRG3', '2018-08-14 09:12:40'),
+(18, 1, 'BRG4', '2018-08-14 09:14:26'),
+(19, 2, 'BRG4', '2018-08-14 09:14:26'),
+(20, 3, 'BRG4', '2018-08-14 09:14:26'),
+(21, 1, 'BRG5', '2018-08-14 09:14:52'),
+(22, 2, 'BRG5', '2018-08-14 09:14:52'),
+(23, 3, 'BRG5', '2018-08-14 09:14:52'),
+(24, 1, 'BRG6', '2018-08-14 09:15:37'),
+(25, 2, 'BRG6', '2018-08-14 09:15:37'),
+(26, 3, 'BRG6', '2018-08-14 09:15:37');
 
 --
 -- Indexes for dumped tables
@@ -839,6 +969,12 @@ ALTER TABLE `provinsi`
 --
 ALTER TABLE `tbl_artikel`
   ADD PRIMARY KEY (`artikel_id`);
+
+--
+-- Indexes for table `tbl_banner`
+--
+ALTER TABLE `tbl_banner`
+  ADD PRIMARY KEY (`banner_id`);
 
 --
 -- Indexes for table `tbl_barang`
@@ -902,6 +1038,12 @@ ALTER TABLE `tbl_grup_pengguna`
   ADD UNIQUE KEY `uc_users_groups` (`user_id`,`group_id`),
   ADD KEY `fk_users_groups_users1_idx` (`user_id`),
   ADD KEY `fk_users_groups_groups1_idx` (`group_id`);
+
+--
+-- Indexes for table `tbl_iklan`
+--
+ALTER TABLE `tbl_iklan`
+  ADD PRIMARY KEY (`iklan_id`);
 
 --
 -- Indexes for table `tbl_interior`
@@ -1000,6 +1142,12 @@ ALTER TABLE `tbl_sub_kategori_barang`
   ADD PRIMARY KEY (`sub_kategori_id`);
 
 --
+-- Indexes for table `tbl_theme_option`
+--
+ALTER TABLE `tbl_theme_option`
+  ADD PRIMARY KEY (`theme_option_id`);
+
+--
 -- Indexes for table `tbl_ulasan`
 --
 ALTER TABLE `tbl_ulasan`
@@ -1025,12 +1173,17 @@ ALTER TABLE `tbl_warna_barang`
 -- AUTO_INCREMENT for table `tbl_artikel`
 --
 ALTER TABLE `tbl_artikel`
-  MODIFY `artikel_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `artikel_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `tbl_banner`
+--
+ALTER TABLE `tbl_banner`
+  MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `tbl_barang_dilihat`
 --
 ALTER TABLE `tbl_barang_dilihat`
-  MODIFY `barang_dilihat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `barang_dilihat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 --
 -- AUTO_INCREMENT for table `tbl_coating_custom`
 --
@@ -1045,12 +1198,12 @@ ALTER TABLE `tbl_detail_penjualan`
 -- AUTO_INCREMENT for table `tbl_favorit`
 --
 ALTER TABLE `tbl_favorit`
-  MODIFY `favorit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `favorit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `tbl_foto_barang`
 --
 ALTER TABLE `tbl_foto_barang`
-  MODIFY `foto_barang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `foto_barang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 --
 -- AUTO_INCREMENT for table `tbl_foto_interior`
 --
@@ -1066,6 +1219,11 @@ ALTER TABLE `tbl_grup`
 --
 ALTER TABLE `tbl_grup_pengguna`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `tbl_iklan`
+--
+ALTER TABLE `tbl_iklan`
+  MODIFY `iklan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tbl_jenis_custom`
 --
@@ -1117,6 +1275,11 @@ ALTER TABLE `tbl_style_custom`
 ALTER TABLE `tbl_sub_kategori_barang`
   MODIFY `sub_kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
+-- AUTO_INCREMENT for table `tbl_theme_option`
+--
+ALTER TABLE `tbl_theme_option`
+  MODIFY `theme_option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
 -- AUTO_INCREMENT for table `tbl_ulasan`
 --
 ALTER TABLE `tbl_ulasan`
@@ -1130,7 +1293,7 @@ ALTER TABLE `tbl_warna`
 -- AUTO_INCREMENT for table `tbl_warna_barang`
 --
 ALTER TABLE `tbl_warna_barang`
-  MODIFY `warna_barang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `warna_barang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

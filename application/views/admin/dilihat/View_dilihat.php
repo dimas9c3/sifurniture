@@ -1,4 +1,4 @@
-<?php   
+<?php
     $this->load->view('admin/partial/View_header');
     $this->load->view('admin/partial/View_sidebar_left');
 ?>
@@ -36,7 +36,7 @@
                                         </tr>
                                     </thead>
                                     <tbody id="content_data">
-                                    
+
                                     </tbody>
                                 </table>
                             </div>
@@ -100,7 +100,7 @@ $(document).ready(function()
                         });
                     }
                 })
-                    
+
             }
         });
     })
@@ -109,13 +109,13 @@ $(document).ready(function()
     var tabel_data =  $('#tabel_data').DataTable
     ({
             //"processing": true,
-            //"order":[[1,'asc']], 
-            //"serverSide": true, 
-           "columnDefs": 
+            //"order":[[1,'asc']],
+            //"serverSide": true,
+           "columnDefs":
             [
                 { "orderable": false, "targets": 0}
             ],
-            ajax            : 
+            ajax            :
             {
                 url         : '<?php echo base_url();?>admin/dilihat/get_all_barang_dilihat',
                 type        : 'POST',
@@ -126,7 +126,7 @@ $(document).ready(function()
             pageLength      : 25,
             lengthChange    : true,
             searching       : true,
-            search          : 
+            search          :
             {
                 smart       : false,
                 regex       : true,
@@ -135,8 +135,8 @@ $(document).ready(function()
             aaSorting       : [],
             ordering        : true,
             info            : true,
-            /*dom             : 'Bfrtip',
-            buttons: 
+            dom             : 'Bfrtip',
+            buttons:
             [
                 {
                     extend: 'excelHtml5',
@@ -145,7 +145,7 @@ $(document).ready(function()
                     text: 'EXCEL',
                     exportOptions:
                     {
-                        columns: [0,1,2,3]
+                        columns: [0,1,2]
                     },
                     footer: true
                 },
@@ -157,34 +157,34 @@ $(document).ready(function()
                     text: 'PDF',
                     exportOptions:
                     {
-                        columns: [0,1,2,3]
+                        columns: [0,1,2]
                     },
                     footer: true
                 },
 
-                { 
+                {
                     extend: 'print',
-                    customize: function ( win ) 
+                    customize: function ( win )
                     {
                         $(win.document.body)
                             .css( 'font-size', '8pt' )
                            // .prepend(
                              //   '<img src="http://datatables.net/media/images/logo-fade.png" style="position:absolute; top:0; left:0;" />'
                             //);
-     
+
                         $(win.document.body).find( 'table' )
                             .addClass( 'compact' )
                             .css( 'font-size', 'inherit' );
                     },
                     text: 'PRINT',
-                    exportOptions: 
+                    exportOptions:
                     {
-                        columns: [0,1,2,3]
+                        columns: [0,1,2]
                     },
                     footer: true
                 }
-                                
-            ]*/
+
+            ]
     })
 })
 </script>

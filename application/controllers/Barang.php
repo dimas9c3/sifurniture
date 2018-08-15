@@ -38,7 +38,7 @@ class Barang extends CI_Controller
 
 		$config['base_url'] 		= base_url().'barang/kategori/'.$id_subkategori;
 		$config['total_rows'] 		= $this->Model_barang->count_barang_by_subkategori($id_subkategori);
-		$config['per_page'] 		= 2;
+		$config['per_page'] 		= 8;
 		$config['uri_segment'] 		= 4;
 		$config['query_string_segment'] = 'start';
 
@@ -103,7 +103,7 @@ class Barang extends CI_Controller
 
 		$config['base_url'] 		= base_url().'barang/filter/'.$jenis_filter.'/'.$id_subkategori;
 		$config['total_rows'] 		= $this->Model_barang->count_barang_by_subkategori($id_subkategori);
-		$config['per_page'] 		= 2;
+		$config['per_page'] 		= 8;
 		$config['uri_segment'] 		= 5;
 		$config['query_string_segment'] = 'start';
 

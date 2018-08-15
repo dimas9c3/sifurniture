@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Interior extends CI_Controller 
+class Interior extends CI_Controller
 {
 
 	public function __construct()
@@ -64,26 +64,27 @@ class Interior extends CI_Controller
 		$this->Model_interior->set_interior($interior); // Simpan data Interior
 
 		for($i=0; $i <= $jml_foto; $i++)
-	    {   
+	    {
 	    	// Fungsi simpan gambar
 			$config 					= array();
 			$config['upload_path']		= './assets/images/interior/';
-			$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp'; 
-			$config['encrypt_name'] 	= TRUE;           	
+			$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp';
+			$config['encrypt_name'] 	= TRUE;
 		    $this->upload->initialize($config);
 
 			if(!empty($_FILES['tambah_foto'.$i]['name']))
-		    {	
+		    {
 		        if ($this->upload->do_upload('tambah_foto'.$i))
 		        {
 		            $gbr = $this->upload->data();
-		            $config['image_library']='gd2';
+		           	$config['image_library']='imagemagick';
 		            $config['source_image']='./assets/images/interior/'.$gbr['file_name'];
 		            $config['create_thumb']= FALSE;
-		            $config['maintain_ratio']= FALSE;
-		            $config['quality']= '85%';
-		            $config['width']= 512;
-		            $config['height']= 512;
+					$config['maintain_ratio']=TRUE;
+ 				   list($width, $height, $type, $attr) = getimagesize('./assets/images/interior/'.$gbr['file_name']);
+ 				   	$config['width']= $width/5;
+ 				   	$config['height']= $height/5;
+ 				   	$config['quality']= '50%';
 		            $config['new_image']= './assets/images/interior/'.$gbr['file_name'];
 		            $this->image_lib->initialize($config);
 		            $this->image_lib->resize();
@@ -97,9 +98,9 @@ class Interior extends CI_Controller
 				}else
 				{
 		        	redirect('admin/interior');
-		        }    
+		        }
 		    }
-		}  
+		}
 
 		    $this->db->insert_batch('tbl_foto_interior', $foto); // fungsi  untuk menyimpan multi array ke database
 
@@ -110,7 +111,7 @@ class Interior extends CI_Controller
 
 			$this->Model_interior->update_interior($id_interior,$interior);
 
-			redirect('admin/interior');        
+			redirect('admin/interior');
 
 	}
 
@@ -145,7 +146,7 @@ class Interior extends CI_Controller
 		$data['title'] 		= 'Kategori Utama Interior';
 		$this->load->view('admin/interior/View_kategori_interior',$data);
 	}
-	
+
 	public function get_all_kategori_interior()
 	{
 		$ajax 		= $this->Model_interior->get_all_kategori_interior();
@@ -176,22 +177,23 @@ class Interior extends CI_Controller
 		// Fungsi simpan gambar
 		$config 					= array();
 		$config['upload_path']		= './assets/images/kategori_interior/';
-		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp'; 
-		$config['encrypt_name'] 	= TRUE;           	
+		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp';
+		$config['encrypt_name'] 	= TRUE;
 		$this->upload->initialize($config);
 
 			if(!empty($_FILES['tambah_foto']['name']))
-		    {	
+		    {
 		        if ($this->upload->do_upload('tambah_foto'))
 		        {
 		            $gbr = $this->upload->data();
-		            $config['image_library']='gd2';
+		            $config['image_library']='imagemagick';
 		            $config['source_image']='./assets/images/kategori_interior/'.$gbr['file_name'];
 		            $config['create_thumb']= FALSE;
-		            $config['maintain_ratio']= FALSE;
-		            $config['quality']= '85%';
-		            $config['width']= 512;
-		            $config['height']= 512;
+					$config['maintain_ratio']=TRUE;
+					list($width, $height, $type, $attr) = getimagesize('./assets/images/kategori_interior/'.$gbr['file_name']);
+					$config['width']= $width/5;
+		           	$config['height']= $height/5;
+		            $config['quality']= '50%';
 		            $config['new_image']= './assets/images/kategori_interior/'.$gbr['file_name'];
 		            $this->image_lib->initialize($config);
 		            $this->image_lib->resize();
@@ -208,9 +210,9 @@ class Interior extends CI_Controller
 				}else
 				{
 		        	redirect('admin/interior/kategori_interior');
-		        }    
-		    }          
-		
+		        }
+		    }
+
 	}
 
 	public function delete_kategori_interior()
@@ -234,8 +236,8 @@ class Interior extends CI_Controller
 		// Fungsi simpan gambar
 		$config 					= array();
 		$config['upload_path']		= './assets/images/kategori_interior/';
-		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp'; 
-		$config['encrypt_name'] 	= TRUE;           	
+		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp';
+		$config['encrypt_name'] 	= TRUE;
 		$this->upload->initialize($config);
 
 			if(!empty($_FILES['edit_foto']['name']))
@@ -247,13 +249,14 @@ class Interior extends CI_Controller
 		        if ($this->upload->do_upload('edit_foto'))
 		        {
 		            $gbr = $this->upload->data();
-		            $config['image_library']='gd2';
+		            $config['image_library']='imagemagick';
 		            $config['source_image']='./assets/images/kategori_interior/'.$gbr['file_name'];
 		            $config['create_thumb']= FALSE;
-		            $config['maintain_ratio']= FALSE;
-		            $config['quality']= '85%';
-		            $config['width']= 512;
-		            $config['height']= 512;
+					$config['maintain_ratio']=TRUE;
+					list($width, $height, $type, $attr) = getimagesize('./assets/images/kategori_interior/'.$gbr['file_name']);
+					$config['width']= $width/5;
+		           	$config['height']= $height/5;
+		            $config['quality']= '50%';
 		            $config['new_image']= './assets/images/kategori_interior/'.$gbr['file_name'];
 		            $this->image_lib->initialize($config);
 		            $this->image_lib->resize();
@@ -274,8 +277,8 @@ class Interior extends CI_Controller
 						'kategori_interior_nama'			=> $nm_kategori);
 					$ajax 				= $this->Model_interior->update_kategori_interior($id_kategori,$kategori);
 					echo json_encode($ajax);
-		        }    
-		    }          
+		        }
+		    }
 	}
 
 	/* ==== Class Sub 1 Kategori Interior === */
@@ -284,7 +287,7 @@ class Interior extends CI_Controller
 		$data['title'] 		= 'Sub 1 Kategori Interior';
 		$this->load->view('admin/interior/View_sub_1_kategori_interior',$data);
 	}
-	
+
 	public function get_all_sub_1_kategori_interior()
 	{
 		$ajax 		= $this->Model_interior->get_all_sub_1_kategori_interior();
@@ -313,22 +316,23 @@ class Interior extends CI_Controller
 		// Fungsi simpan gambar
 		$config 					= array();
 		$config['upload_path']		= './assets/images/sub_1_kategori_interior/';
-		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp'; 
-		$config['encrypt_name'] 	= TRUE;           	
+		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp';
+		$config['encrypt_name'] 	= TRUE;
 		$this->upload->initialize($config);
 
 			if(!empty($_FILES['tambah_foto']['name']))
-		    {	
+		    {
 		        if ($this->upload->do_upload('tambah_foto'))
 		        {
 		            $gbr = $this->upload->data();
-		            $config['image_library']='gd2';
+		            $config['image_library']='imagemagick';
 		            $config['source_image']='./assets/images/sub_1_kategori_interior/'.$gbr['file_name'];
 		            $config['create_thumb']= FALSE;
-		            $config['maintain_ratio']= FALSE;
-		            $config['quality']= '85%';
-		            $config['width']= 512;
-		            $config['height']= 512;
+					$config['maintain_ratio']=TRUE;
+					list($width, $height, $type, $attr) = getimagesize('./assets/images/sub_1_kategori_interior/'.$gbr['file_name']);
+					$config['width']= $width/5;
+		           	$config['height']= $height/5;
+		            $config['quality']= '50%';
 		            $config['new_image']= './assets/images/sub_1_kategori_interior/'.$gbr['file_name'];
 		            $this->image_lib->initialize($config);
 		            $this->image_lib->resize();
@@ -343,9 +347,9 @@ class Interior extends CI_Controller
 				}else
 				{
 		        	redirect('admin/interior/sub_1_kategori_interior');
-		        }    
-		    }          
-		
+		        }
+		    }
+
 	}
 
 	public function delete_sub_1_kategori_interior()
@@ -368,8 +372,8 @@ class Interior extends CI_Controller
 		// Fungsi simpan gambar
 		$config 					= array();
 		$config['upload_path']		= './assets/images/sub_1_kategori_interior/';
-		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp'; 
-		$config['encrypt_name'] 	= TRUE;           	
+		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp';
+		$config['encrypt_name'] 	= TRUE;
 		$this->upload->initialize($config);
 
 			if(!empty($_FILES['edit_foto']['name']))
@@ -380,13 +384,14 @@ class Interior extends CI_Controller
 		        if ($this->upload->do_upload('edit_foto'))
 		        {
 		            $gbr = $this->upload->data();
-		            $config['image_library']='gd2';
+		            $config['image_library']='imagemagick';
 		            $config['source_image']='./assets/images/sub_1_kategori_interior/'.$gbr['file_name'];
 		            $config['create_thumb']= FALSE;
-		            $config['maintain_ratio']= FALSE;
-		            $config['quality']= '85%';
-		            $config['width']= 512;
-		            $config['height']= 512;
+					$config['maintain_ratio']=TRUE;
+					list($width, $height, $type, $attr) = getimagesize('./assets/images/sub_1_kategori_interior/'.$gbr['file_name']);
+					$config['width']= $width/5;
+		           	$config['height']= $height/5;
+		            $config['quality']= '50%';
 		            $config['new_image']= './assets/images/sub_1_kategori_interior/'.$gbr['file_name'];
 		            $this->image_lib->initialize($config);
 		            $this->image_lib->resize();
@@ -403,8 +408,8 @@ class Interior extends CI_Controller
 						'sub_1_kategori_interior_nama'		=> $nm_sub_1_kategori);
 					$ajax 				= $this->Model_interior->update_sub_1_kategori_interior($id_sub_1_kategori,$sub_1_kategori);
 					echo json_encode($ajax);
-		        }    
-		    }          
+		        }
+		    }
 	}
 
 
@@ -415,7 +420,7 @@ class Interior extends CI_Controller
 		$data['title'] 		= 'Sub 2 Kategori Interior';
 		$this->load->view('admin/interior/View_sub_2_kategori_interior',$data);
 	}
-	
+
 	public function get_all_sub_2_kategori_interior()
 	{
 		$ajax 		= $this->Model_interior->get_all_sub_2_kategori_interior();
@@ -444,22 +449,23 @@ class Interior extends CI_Controller
 		// Fungsi simpan gambar
 		$config 					= array();
 		$config['upload_path']		= './assets/images/sub_2_kategori_interior/';
-		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp'; 
-		$config['encrypt_name'] 	= TRUE;           	
+		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp';
+		$config['encrypt_name'] 	= TRUE;
 		$this->upload->initialize($config);
 
 			if(!empty($_FILES['tambah_foto']['name']))
-		    {	
+		    {
 		        if ($this->upload->do_upload('tambah_foto'))
 		        {
 		            $gbr = $this->upload->data();
-		            $config['image_library']='gd2';
+		            $config['image_library']='imagemagick';
 		            $config['source_image']='./assets/images/sub_2_kategori_interior/'.$gbr['file_name'];
 		            $config['create_thumb']= FALSE;
-		            $config['maintain_ratio']= FALSE;
-		            $config['quality']= '85%';
-		            $config['width']= 512;
-		            $config['height']= 512;
+					$config['maintain_ratio']=TRUE;
+					list($width, $height, $type, $attr) = getimagesize('./assets/images/sub_2_kategori_interior/'.$gbr['file_name']);
+					$config['width']= $width/5;
+		           	$config['height']= $height/5;
+		            $config['quality']= '50%';
 		            $config['new_image']= './assets/images/sub_2_kategori_interior/'.$gbr['file_name'];
 		            $this->image_lib->initialize($config);
 		            $this->image_lib->resize();
@@ -474,9 +480,9 @@ class Interior extends CI_Controller
 				}else
 				{
 		        	redirect('admin/interior/sub_2_kategori_interior');
-		        }    
-		    }          
-		
+		        }
+		    }
+
 	}
 
 	public function delete_sub_2_kategori_interior()
@@ -499,8 +505,8 @@ class Interior extends CI_Controller
 		// Fungsi simpan gambar
 		$config 					= array();
 		$config['upload_path']		= './assets/images/sub_2_kategori_interior/';
-		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp'; 
-		$config['encrypt_name'] 	= TRUE;           	
+		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp';
+		$config['encrypt_name'] 	= TRUE;
 		$this->upload->initialize($config);
 
 			if(!empty($_FILES['edit_foto'.$i]['name']))
@@ -511,13 +517,14 @@ class Interior extends CI_Controller
 		        if ($this->upload->do_upload('edit_foto'.$i))
 		        {
 		            $gbr = $this->upload->data();
-		            $config['image_library']='gd2';
+		            $config['image_library']='imagemagick';
 		            $config['source_image']='./assets/images/sub_2_kategori_interior/'.$gbr['file_name'];
 		            $config['create_thumb']= FALSE;
-		            $config['maintain_ratio']= FALSE;
-		            $config['quality']= '85%';
-		            $config['width']= 512;
-		            $config['height']= 512;
+					$config['maintain_ratio']=TRUE;
+					list($width, $height, $type, $attr) = getimagesize('./assets/images/sub_2_kategori_interior/'.$gbr['file_name']);
+					$config['width']= $width/5;
+		           	$config['height']= $height/5;
+		            $config['quality']= '50%';
 		            $config['new_image']= './assets/images/sub_2_kategori_interior/'.$gbr['file_name'];
 		            $this->image_lib->initialize($config);
 		            $this->image_lib->resize();
@@ -534,8 +541,8 @@ class Interior extends CI_Controller
 						'sub_2_kategori_interior_nama'		=> $nm_sub_2_kategori);
 					$ajax 				= $this->Model_interior->update_sub_2_kategori_interior($id_sub_2_kategori,$sub_2_kategori);
 					echo json_encode($ajax);
-		        }    
-		    }          
+		        }
+		    }
 	}
 
 }

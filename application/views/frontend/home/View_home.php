@@ -3,46 +3,23 @@
     <section class="hero-section bg-white-3">
         <div class="swiper-container hero-slider">
             <div class="swiper-wrapper">
-
+				<?php foreach ($banner->result_array() as $i)
+				{
+					$banner 		= $i['banner_item'];
+				?>
                 <div class="swiper-slide">
-                    <div style="background: url(<?php echo base_url();?>vendors/frontend/img/hero-bg-2.jpg);" class="hero-content has-overlay-dark">
+                    <div style="background: url(<?php echo base_url('assets/images/banner/').$banner; ?>);" class="hero-content has-overlay-dark">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-8">
-                                    <h1>Temukan furniture impian anda</h1>
-                                    <p class="template-text">property murah namun dengan bahan dan kualitas terbaik itulah kami, segera order furniture pada gerai kami di kota anda. dapatkan diskon besar besaran setiap hari.</p><a href="#" class="btn btn-gradient">Learn More</a>
+                                    <!--<h1>Temukan furniture impian anda</h1>
+                                    <p class="template-text">property murah namun dengan bahan dan kualitas terbaik itulah kami, segera order furniture pada gerai kami di kota anda. dapatkan diskon besar besaran setiap hari.</p><a href="#" class="btn btn-gradient">Learn More</a>-->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="swiper-slide">
-                    <div style="background: url(<?php echo base_url();?>vendors/frontend/img/hero-bg-2.jpg);" class="hero-content has-overlay-dark">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <h1>Temukan furniture impian anda</h1>
-                                    <p class="template-text">property murah namun dengan bahan dan kualitas terbaik itulah kami, segera order furniture pada gerai kami di kota anda. dapatkan diskon besar besaran setiap hari.</p><a href="#" class="btn btn-gradient">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide">
-                    <div style="background: url(<?php echo base_url();?>vendors/frontend/img/hero-bg-2.jpg);" class="hero-content has-overlay-dark">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <h1>Temukan furniture impian anda</h1>
-                                    <p class="template-text">property murah namun dengan bahan dan kualitas terbaik itulah kami, segera order furniture pada gerai kami di kota anda. dapatkan diskon besar besaran setiap hari.</p><a href="#" class="btn btn-gradient">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+				<?php } ?>
             </div>
             <!-- Add Pagination-->
             <div class="swiper-pagination"></div>
@@ -68,9 +45,14 @@
 
                     <?php foreach($populer->result_array() as $i)
                     {
-                        $foto           = $i['foto_barang_nama'];
-                        $nama           = $i['barang_nama'];
-                        $jual           = $i['barang_harga_jual'];
+						$id_barang          = $i['barang_id'];
+					   	$nm_barang          = $i['barang_nama'];
+					   	$hrg_jual           = $i['barang_harga_jual'];
+					   	//$diskon             = $i['barang_diskon']." %";
+					   	//$hrg_akhir_2        =  $i['barang_harga_jual']-($i['barang_harga_jual']*($i['barang_diskon']/100));
+						$hrg_akhir_2          = $i['barang_harga_jual'];
+					   	$hrg_akhir          = "Rp. ".number_format($i['barang_harga_jual']);
+						$foto           = $i['foto_barang_nama'];
                     ?>
                     <div class="swiper-slide">
                         <div class="property">
@@ -83,17 +65,17 @@
 								<div class="thumb-product-caption">
 									<div class="thumb-product-title">
 										<a href="<?php echo base_url().'barang/detail/'.$i['barang_id']; ?>">
-											<p class="mb-0"><?php echo $nama; ?></p>
+											<p class="mb-0"><?php echo $nm_barang; ?></p>
 										</a>
 									</div>
 									<div class="thumb-product-price">
-										<h6 class="mb-0"><?php echo 'Rp. '.number_format($jual); ?></h6>
+										<h6 class="mb-0"><?php echo $hrg_akhir; ?></h6>
 									</div>
 								</div>
                             </div>
 							<div class="box-thumbnails-footer text-center">
-								<a href="#" class="btn btn-gradient btn-sm"><i class="fa fa-cart-plus"></i></a>
-                                <a href="#" class="btn btn-gradient btn-sm"><i class="fa fa-heart"></i></a>
+								<button type="button" id="button_keranjang<?php echo $id_barang; ?>" data-id="<?php echo $id_barang; ?>" data-nama="<?php echo $nm_barang; ?>" data-harga="<?php echo $hrg_akhir_2; ?>" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-cart-plus"></i></button>
+								<button type="button" id="button_favorit<?php echo $id_barang; ?>" data-id="<?php echo $id_barang; ?>" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-heart"></i></button>
 							</div>
                         </div>
                     </div>
@@ -107,11 +89,11 @@
         </div>
     </section>
 
-    <!-- Listings Section -->
+    <!-- Listings Section
     <section class="listings-home pt-0 bg-white-3">
       <div class="container">
         <header class="text-center">
-          <h2> <span class="text-primary">Promo & Trending Bulan Ini</span></h2>
+          <h2> <span class="text-primary">Promo & Event</span></h2>
           <div class="row">
             <div class="col-lg-8 mx-auto">
               <p class="template-text">Ini adalah bagian promo dan event pada website anda.</p>
@@ -119,13 +101,17 @@
           </div>
         </header>
         <div class="row">
-          <div class="col-lg-12">
-            <div class="listing-home mb-0"><img src="<?php echo base_url();?>vendors/frontend/img/ramadhan.gif" alt="..."><a href="#" class="text no-anchor-style">
-                <h3>Ramadhan Sale</h3>
-                <p>Silahkan berbelanja ada banyak cashback menanti anda bulan ini.</p></a>
-              <div class="ribbon text-center"><strong class="d-block">1</strong><small>Listings</small></div>
-            </div>
-          </div>
+			<?php foreach($iklan->result_array() as $i)
+			{
+				$iklan 				= $i['iklan_item'];
+				$text 				= $i['iklan_text'];
+			?>
+          	<div class="col-md-12">
+            	<div class="listing-home mb-0"><img class="img-responsive img-iklan" src="<?php echo base_url('assets/images/iklan/').$iklan;?>" alt="..."><a href="#" class="text no-anchor-style">
+                <p class="text-primary"><?php echo $text; ?></p>
+            	</div>
+          	</div>
+			<?php } ?>
         </div>
       </div>
     </section>
@@ -405,6 +391,57 @@
 				$.cookie('modal_diskon', 'yes', { expires: 1, path: '/' });
 			})
 		</script>
+		<script type="text/javascript">
+			$(document).ready(function()
+		{
+			<?php foreach($populer->result_array() as $i)
+	        {
+	            $id_brg             = $i['barang_id'];
+	    	?>
+	    	$('#button_keranjang<?php echo $id_brg; ?>').on('click',function()
+		    {
+		        $.ajax
+		        ({
+		            url             : '<?php echo base_url();?>keranjang/tambah_keranjang',
+		            type            : 'POST',
+		            data            : {id_brg:$(this).attr('data-id'),nm_brg:$(this).attr('data-nama'),hrg_brg:$(this).attr('data-harga')},
+		            dataType        : 'JSON',
+		            success         : function(data)
+		            {
+		                swal({
+		                    title: "Barang Berhasil Dimasukkan Ke Keranjang",
+		                    type: "success",
+		                    showCancelButton: true,
+		                    confirmButtonColor: "#DD6B55",
+		                    confirmButtonText: "Ke Keranjang",
+		                    cancelButtonText: "Lanjut Belanja",
+		                    closeOnConfirm: false,
+		                    closeOnCancel: true
+		                }, function (isConfirm) {
+		                    if (isConfirm) {
+		                        window.location.href='<?php echo base_url();?>keranjang';
+		                    }
+		                });
+		            }
+		        })
+		    })
 
+		    $('#button_favorit<?php echo $id_brg; ?>').on('click',function()
+		    {
+		        $.ajax
+		        ({
+		            url             : '<?php echo base_url();?>user/barang/tambah_favorit',
+		            type            : 'POST',
+		            data            : {id_brg:$(this).attr('data-id')},
+		            dataType        : 'JSON',
+		            success         : function(data)
+		            {
+		                alert('Produk Berhasil Ditambahkan Ke Favorit Anda');
+		            }
+		        })
+		    })
+			<?php } ?>
+		})
+		</script>
     </body>
 </html>

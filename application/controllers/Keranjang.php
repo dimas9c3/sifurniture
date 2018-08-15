@@ -42,7 +42,7 @@ class Keranjang extends CI_Controller
         );
 
         $ajax 			= $this->cart->insert($keranjang);
-        echo json_encode($ajax);
+        echo json_encode($keranjang);
 	}
 
 }
