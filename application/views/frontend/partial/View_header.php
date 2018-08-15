@@ -17,8 +17,6 @@
     <link rel="stylesheet" href="<?php echo base_url();?>vendors/frontend/vendor/bootstrap-select/css/bootstrap-select.css">
     <!-- Google fonts - Poppins-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="<?php echo base_url();?>vendors/plugins/OwlCarousel2/owl.carousel.min.css">
     <!-- swiper carousel-->
     <link rel="stylesheet" href="<?php echo base_url();?>vendors/frontend/vendor/swiper/css/swiper.css">
     <!-- Gallery-->
@@ -35,6 +33,10 @@
     <script src="<?php echo base_url();?>vendors/frontend/js/modernizr.custom.js"></script>
     <!-- Sweetalert -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>vendors/plugins/sweetalert/sweetalert.css">
+    <!-- OWL CAROUSEL -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('vendors/plugins/owl/dist/assets/owl.carousel.min.css');?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('vendors/plugins/owl/dist/assets/owl.theme.default.min.css');?>">
+
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->

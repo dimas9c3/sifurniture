@@ -1,33 +1,22 @@
 <?php $this->load->view('frontend/partial/View_header'); ?>
-    <!-- Hero Section-->
-    <section class="hero-section bg-white-3">
-        <div class="swiper-container hero-slider">
-            <div class="swiper-wrapper">
-				<?php foreach ($banner->result_array() as $i)
-				{
-					$banner 		= $i['banner_item'];
-				?>
-                <div class="swiper-slide">
-                    <div style="background: url(<?php echo base_url('assets/images/banner/').$banner; ?>);" class="hero-content has-overlay-dark">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <!--<h1>Temukan furniture impian anda</h1>
-                                    <p class="template-text">property murah namun dengan bahan dan kualitas terbaik itulah kami, segera order furniture pada gerai kami di kota anda. dapatkan diskon besar besaran setiap hari.</p><a href="#" class="btn btn-gradient">Learn More</a>-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-				<?php } ?>
-            </div>
-            <!-- Add Pagination-->
-            <div class="swiper-pagination"></div>
+    <!-- Banner Depan-->
+    <section class="featured-image pt-0">
+        <div class="owl-carousel owl-theme" id="banner">
 
-        </div>
+            <?php foreach ($banner->result_array() as $i)
+            {
+                $banner         = $i['banner_item'];
+            ?>
+                    <img src="<?php echo base_url('assets/images/banner/').$banner; ?>" class="banner-slider">
+                            
+            <?php } ?>
+
+        </div>   
     </section>
+    <!-- End Banner Depan -->
 
-     <section class="ready-product pt-0 bg-white-3">
+    <!-- Produk Populer -->
+    <section class="ready-product pt-0 bg-white-3">
         <div class="container">
             <header class="text-center">
                 <h2><span class="text-primary">Populer bulan ini</span></h2>
@@ -38,53 +27,53 @@
                 </div>
             </header>
 
-            <!-- Produk Populer -->
-
-            <div class="swiper-container apartments-slider">
-                <div class="swiper-wrapper pt-2 pb-5">
-
-                    <?php foreach($populer->result_array() as $i)
-                    {
-						$id_barang          = $i['barang_id'];
-					   	$nm_barang          = $i['barang_nama'];
-					   	$hrg_jual           = $i['barang_harga_jual'];
-					   	//$diskon             = $i['barang_diskon']." %";
-					   	//$hrg_akhir_2        =  $i['barang_harga_jual']-($i['barang_harga_jual']*($i['barang_diskon']/100));
-						$hrg_akhir_2          = $i['barang_harga_jual'];
-					   	$hrg_akhir          = "Rp. ".number_format($i['barang_harga_jual']);
-						$foto           = $i['foto_barang_nama'];
-                    ?>
-                    <div class="swiper-slide">
-                        <div class="property">
-                            <div class="image"><img src="<?php echo base_url().'assets/images/barang/'.$foto; ?>" alt="Condo with pool view" class="img-fluid">
-
-                                <div class="overlay d-flex align-items-center justify-content-center"><a href="<?php echo base_url().'barang/detail/'.$i['barang_id']; ?>" class="btn btn-gradient btn-sm">View Details</a></div>
-
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <a href="">
+                        <div class="main-product-thumb">
+                            <div class="product-thumbnail">
+                                <figure>
+                                    <img class="img-responsive" src="<?php echo base_url().'assets/images/barang/de490900511584984d098140bf5c9554.jpg' ?>" alt="">
+                                    <figcaption class="text-center">
+                                        <h6 class="product-thumbnails-title">Meja Makan Glossy</h6>
+                                        <h5 class="product-thumbnails-price">Rp. 1.000.000
+                                            <span><del>&nbsp; 1.500.000</del></span>
+                                        </h5>
+                                    </figcaption>
+                                </figure>
                             </div>
-                            <div class="box-thumbnails">
-								<div class="thumb-product-caption">
-									<div class="thumb-product-title">
-										<a href="<?php echo base_url().'barang/detail/'.$i['barang_id']; ?>">
-											<p class="mb-0"><?php echo $nm_barang; ?></p>
-										</a>
-									</div>
-									<div class="thumb-product-price">
-										<h6 class="mb-0"><?php echo $hrg_akhir; ?></h6>
-									</div>
-								</div>
-                            </div>
-							<div class="box-thumbnails-footer text-center">
-								<button type="button" id="button_keranjang<?php echo $id_barang; ?>" data-id="<?php echo $id_barang; ?>" data-nama="<?php echo $nm_barang; ?>" data-harga="<?php echo $hrg_akhir_2; ?>" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-cart-plus"></i></button>
-								<button type="button" id="button_favorit<?php echo $id_barang; ?>" data-id="<?php echo $id_barang; ?>" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-heart"></i></button>
-							</div>
-                        </div>
+                    </a>
+                    <div class="footer-product-thumbnails text-center">
+                        <button type="button" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-cart-plus"></i></button>
+                        <button type="button" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-heart"></i></button>
+                        <button type="button" onclick="window.location.href='<?php echo base_url();?>custom/buat_custom'" class="btn btn-sm btn-gradient btn-sm" name="button">Custom</button>
                     </div>
-                    <?php } ?>
-
                 </div>
-            <!-- Add Pagination-->
-            <div class="swiper-pagination">       </div>
             </div>
+
+            <div class="col-md-3 col-6">
+                    <a href="">
+                        <div class="main-product-thumb">
+                            <div class="product-thumbnail">
+                                <figure>
+                                    <img class="img-responsive" src="<?php echo base_url().'assets/images/barang/de490900511584984d098140bf5c9554.jpg' ?>" alt="">
+                                    <figcaption class="text-center">
+                                        <h6 class="product-thumbnails-title">Meja Makan</h6>
+                                        <h5 class="product-thumbnails-price">Rp. 1.000.000
+                                            <span><del>&nbsp; 1.500.000</del></span>
+                                        </h5>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                    </a>
+                    <div class="footer-product-thumbnails text-center">
+                        <button type="button" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-cart-plus"></i></button>
+                        <button type="button" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-heart"></i></button>
+                        <button type="button" onclick="window.location.href='<?php echo base_url();?>custom/buat_custom'" class="btn btn-sm btn-gradient btn-sm" name="button">Custom</button>
+                    </div>
+                </div>
+            </div>
+                    
 
         </div>
     </section>
@@ -394,6 +383,23 @@
 		<script type="text/javascript">
 			$(document).ready(function()
 		{
+            $("#banner").owlCarousel(
+                {
+                    autoplay:true,
+                    autoplayTimeout:5000,
+                    loop:true,
+                    items:1
+                });
+
+            $("#pop-product").owlCarousel(
+                {
+                    //autoplay:true,
+                    autoplayTimeout:5000,
+                    loop:true,
+                    autoWidth:true,
+                    items:1
+                });
+
 			<?php foreach($populer->result_array() as $i)
 	        {
 	            $id_brg             = $i['barang_id'];

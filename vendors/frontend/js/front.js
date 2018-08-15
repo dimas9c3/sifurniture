@@ -4,7 +4,7 @@ $(function () {
     // For demo purposes, can be deleted
     // ------------------------------------------------------ //
 
-    var stylesheet = $('link#theme-stylesheet');
+    /*var stylesheet = $('link#theme-stylesheet');
     $( "<link id='new-stylesheet' rel='stylesheet'>" ).insertAfter(stylesheet);
     var alternateColour = $('link#new-stylesheet');
 
@@ -35,7 +35,7 @@ $(function () {
         if ($('.label-template-checkbox input').is(':checked')) {
             $(this).parent('.label-template-checkbox').toggleClass('active');
         }
-    });
+    });*/
 
 
     // ------------------------------------------------------- //
@@ -252,7 +252,7 @@ $(function () {
     // ------------------------------------------------------- //
     // Hero Slider
     // ------------------------------------------------------ //
-    var swiper = new Swiper('.hero-slider', {
+    /*var swiper = new Swiper('.hero-slider', {
          autoplay: {
                 delay: 10000,
                 disableOnInteraction: false,
@@ -264,7 +264,7 @@ $(function () {
                 return '<span class="' + className + '">' + (index + 1) + '</span>';
             },
         }
-    });
+    });*/
 
 
     // ------------------------------------------------------- //
