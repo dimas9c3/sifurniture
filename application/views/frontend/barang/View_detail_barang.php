@@ -13,6 +13,81 @@
     $foto_utama             = $row['foto_barang_nama'];
     $dimensi                = $row['barang_dimensi'];
 ?>
+
+<section class="page-heading page-heading-light single-product-heading">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-md-6">
+				<h2 class="text-primary mb-0">Custom Design</h2>
+			</div>
+			<div class="col-md-6">
+				<ol class="breadcrumb">
+	                <li class="breadcrumb-item"><a href="<?php echo base_url();?>">Home</a></li>
+	                <li class="breadcrumb-item"><a href="#"><?php echo $nm_kategori; ?></a></li>
+	                <li class="breadcrumb-item"><a href="<?php echo base_url().'barang/kategori/'.$id_sub_kategori; ?>"><?php echo $nm_sub_kategori; ?></a></li>
+	                <li aria-current="page" class="breadcrumb-item active"><?php echo $nm_barang; ?></li>
+	            </ol>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="single-product pt-5 pb-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="gallery-product">
+					<ul class="bubble">
+						<li class="bubble-item discount-bubble">12% OFF</li>
+					</ul>
+					<div id="sync1" class="owl-carousel owl-theme single-display">
+						<div class="item"><img src="<?php echo base_url('assets/images/barang/0dbb87be766ecb90e2f2e19eb8310b17.jpg'); ?>" alt=""></div>
+						<div class="item"><img src="<?php echo base_url('assets/images/barang/0dbb87be766ecb90e2f2e19eb8310b17.jpg'); ?>" alt=""></div>
+						<div class="item"><img src="<?php echo base_url('assets/images/barang/0dbb87be766ecb90e2f2e19eb8310b17.jpg'); ?>" alt=""></div>
+						<div class="item"><img src="<?php echo base_url('assets/images/barang/0dbb87be766ecb90e2f2e19eb8310b17.jpg'); ?>" alt=""></div>
+					</div>
+					<div id="sync2" class="owl-carousel owl-theme gallery-display">
+						<div class="item"><img src="<?php echo base_url('assets/images/barang/0dbb87be766ecb90e2f2e19eb8310b17.jpg'); ?>" alt=""></div>
+						<div class="item"><img src="<?php echo base_url('assets/images/barang/0dbb87be766ecb90e2f2e19eb8310b17.jpg'); ?>" alt=""></div>
+						<div class="item"><img src="<?php echo base_url('assets/images/barang/0dbb87be766ecb90e2f2e19eb8310b17.jpg'); ?>" alt=""></div>
+						<div class="item"><img src="<?php echo base_url('assets/images/barang/0dbb87be766ecb90e2f2e19eb8310b17.jpg'); ?>" alt=""></div>
+						<div class="item"><img src="<?php echo base_url('assets/images/barang/0dbb87be766ecb90e2f2e19eb8310b17.jpg'); ?>" alt=""></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<h3>Lorem Ipsum Dolor Sit Amet</h3>
+				<div class="divider-short"></div>
+				<div class="price-product">
+					<h3 class="mb-0">Rp 1.400.000</h3>
+				</div>
+				<div class="form-group">
+					<label for="product-color" class="pl-0">Pilih Warna</label>
+					<select class="form-control" id="product-color" name="product-color">
+						<option value="Hijau">Hijau</option>
+						<option value="Merah">Merah</option>
+						<option value="Kuning">Kuning</option>
+					</select>
+				</div>
+				<div class="product-description">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+						exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+						aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+						fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+						sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+				</div>
+				<hr>
+				<button type="button" id="button_keranjang" data-id="<?php echo $id_barang; ?>" data-nama="<?php echo $nm_barang; ?>" data-harga="<?php echo $hrg_akhir; ?>" class="btn btn-gradient mt-1">Masukkan Keranjang</button>
+				<button onclick="window.location.href='<?php echo base_url();?>custom/buat_custom'" class="btn btn-warning align-items-center mt-1">Custom</button>
+			</div>
+		</div>
+	</div>
+</section>
+
+<?php /*
 <!-- Property Single Section-->
 <section class="property-single bg-white-2">
     <div class="container">
@@ -90,8 +165,10 @@
 	</div>
     <!-- /.container -->
 </section>
+*/ ?>
+
 <!-- Similar Properties Section-->
-<section class="similar-properties bg-white-3-custom">
+<section class="similar-properties bg-white-3-custom pt-5">
     <div class="container">
         <div class="container">
             <header>

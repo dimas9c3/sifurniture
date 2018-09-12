@@ -12,10 +12,10 @@
                  <img src="<?php echo base_url('assets/images/banner/Header3.jpg'); ?>" class="banner-slider">
 
                   <img src="<?php echo base_url('assets/images/banner/Headforder.jpg'); ?>" class="banner-slider">
-                        
+
         <?php // } ?>
 
-    </div>   
+    </div>
 </section>
 <!-- End Banner Depan -->
 
@@ -76,7 +76,7 @@
                     <button type="button" onclick="window.location.href='<?php echo base_url();?>custom/buat_custom'" class="btn btn-sm btn-gradient btn-sm" name="button">Custom</button>
                 </div>
             </div>
-        </div>          
+        </div>
 </section>
 <!-- End Of Populer Produk -->
 
@@ -137,7 +137,7 @@
                     <button type="button" onclick="window.location.href='<?php echo base_url();?>custom/buat_custom'" class="btn btn-sm btn-gradient btn-sm" name="button">Custom</button>
                 </div>
             </div>
-        </div>          
+        </div>
 </section>
 <!-- End Of Populer Produk -->
 
@@ -197,9 +197,11 @@
                     <div class="info"><a href="<?php echo base_url().'interior/kategori/'.$id_interior;?>" class="no-anchor-style">
                         <h3 class="h4 text-thin text-center text-uppercase mb-1"><?php echo $nm_interior; ?></h3></a>
                         <div class=" d-flex align-items-center justify-content-center">
-							<a href="<?php echo base_url().'interior/kategori/'.$id_interior;?>" class="btn btn-gradient">
+							<?php /*
+							<a href="<?php echo base_url().'interior/kategori/'.$id_interior;?>" class="btn btn-sm btn-gradient">
 								<strong>Harga Mulai Rp.1.000.000</strong>
 							</a>
+							*/ ?>
 						</div>
                     </div>
                 </div>
@@ -427,7 +429,7 @@ $(document).ready(function()
 {
     if($.cookie('modal_diskon')==null)
     {
-        setTimeout(function() 
+        setTimeout(function()
         {
             $('#modal_diskon').modal();
         },3000);

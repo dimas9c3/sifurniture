@@ -60,8 +60,8 @@
                     $foto_utama         = $i['foto_barang_nama'];
                 ?>
 				<div class="col-md-3 col-6">
-					<a href="<?php echo base_url().'barang/detail/'.$id_barang;?>">
-						<div class="main-product-thumb">
+					<div class="main-product-thumb">
+						<a href="<?php echo base_url().'barang/detail/'.$id_barang;?>">
 							<div class="product-thumbnail">
 								<figure>
 									<img class="img-responsive" src="<?php echo base_url().'assets/images/barang/'.$foto_utama; ?>" alt="">
@@ -70,19 +70,23 @@
 										<h5 class="product-thumbnails-price"><?php echo $hrg_akhir; ?>
 											<span><del>&nbsp; <?php echo "Rp. ".number_format($hrg_jual); ?></del></span>
 										</h5>
+										<ul class="bubble">
+											<li class="bubble-item discount-bubble">12% OFF</li>
+										</ul>
 									</figcaption>
 								</figure>
 							</div>
-					</a>
-							<div class="footer-product-thumbnails text-center">
-								<button type="button" id="button_keranjang<?php echo $id_barang; ?>" data-id="<?php echo $id_barang; ?>" data-nama="<?php echo $nm_barang; ?>" data-harga="<?php echo $hrg_akhir_2; ?>" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-cart-plus"></i></button>
-								<button type="button" id="button_favorit<?php echo $id_barang; ?>" data-id="<?php echo $id_barang; ?>" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-heart"></i></button>
-								<button type="button" onclick="window.location.href='<?php echo base_url();?>custom/buat_custom'" class="btn btn-sm btn-gradient btn-sm" name="button">Custom</button>
-							</div>
+						</a>
+						<div class="footer-product-thumbnails text-center">
+							<button type="button" id="button_keranjang<?php echo $id_barang; ?>" data-id="<?php echo $id_barang; ?>" data-nama="<?php echo $nm_barang; ?>" data-harga="<?php echo $hrg_akhir_2; ?>" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-cart-plus"></i></button>
+							<button type="button" id="button_favorit<?php echo $id_barang; ?>" data-id="<?php echo $id_barang; ?>" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-heart"></i></button>
+							<button type="button" onclick="window.location.href='<?php echo base_url();?>custom/buat_custom'" class="btn btn-sm btn-gradient btn-sm" name="button">Custom</button>
 						</div>
+					</div>
 				</div>
-				<?php } ?>
-			<div class="row align-items-center">
+			<?php } ?>
+			</div>
+			<div class="row align-items-center mb-2">
 				<div class="col-md-6">
 					Showing <span class="text-primary"><?php echo $no; ?> </span> of  <span class="text-primary"><?php echo $total_row; ?></span>
 				</div>
