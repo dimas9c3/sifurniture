@@ -54,12 +54,12 @@
                     <li class="list-inline-item"><a href="customer-login.html" class="p-2 topbar-atas"><i class="fa fa-phone"></i> <strong> <?php echo $telepon; ?></strong></a></li>
                     <li class="list-inline-item"><a href="customer-login.html" class="p-2 topbar-atas"><i class="fa fa-clock-o"></i> <strong> <?php echo $jam; ?></strong></a></li>
                 </ul>
-				<ul class="social-icon show-lg">
+				<!--<ul class="social-icon show-lg">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                     <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                </ul>
+                </ul>-->
             </div>
         </div>
     </div>

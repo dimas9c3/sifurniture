@@ -19,6 +19,7 @@ class Model_user extends Ci_Model
 				$row[]		= $i['email'];
 				$row[]		= $i['first_name'].' '.$i['last_name'];
 				$row[]		= $i['phone'];
+				$row[]		= $i['address'];
 				$row[]		= ' ';
 
 				$data[] 	= $row;
@@ -27,6 +28,7 @@ class Model_user extends Ci_Model
 		{
 			$data 			= array();
 			$row 			= array();
+			$row[]			= ' ';
 			$row[]			= ' ';
 			$row[]			= ' ';
 			$row[]			= ' ';

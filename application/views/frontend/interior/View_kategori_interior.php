@@ -46,8 +46,74 @@
         </div>
       </div>
     </section>
+    <section class="product-filter">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2">
+                    <p class="mb-0 filter-title">Sorting Produk :</p>
+                </div>
+                <div class="col-md-8">
+                    <form method="post" enctype="multipart/form-data" class="form-filter">
+                        <select id="propertyFilter" name="filter_barang" class="selectpicker" required>
+                            <option value="#" disabled selected>Pilih Jenis Filter</option>
+                            <option value="1">Harga Tinggi Ke Rendah</option>
+                            <option value="2">Harga Rendah Ke Tinggi</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-list pt-5">
+        <div class="container">
+            <div class="row">
+                <?php
+                $no         = 0;
+                foreach($barang->result_array() as $i)
+                {
+                    $no++;
+                    $id_barang          = $i['barang_id'];
+                    $nm_barang          = $i['barang_nama'];
+                    $hrg_jual           = $i['barang_harga_jual'];
+                    $diskon             = $i['barang_diskon']." %";
+                    $hrg_akhir_2        =  $i['barang_harga_jual']-($i['barang_harga_jual']*($i['barang_diskon']/100));
+                    $hrg_akhir          = "Rp. ".number_format($i['barang_harga_jual']-($i['barang_harga_jual']*($i['barang_diskon']/100)));
+                    $foto_utama         = $i['foto_barang_nama'];
+                ?>
+                <div class="col-md-3 col-6">
+                    <a href="<?php echo base_url().'barang/detail/'.$id_barang;?>">
+                        <div class="main-product-thumb">
+                            <div class="product-thumbnail">
+                                <figure>
+                                    <img class="img-responsive" src="<?php echo base_url().'assets/images/barang/'.$foto_utama; ?>" alt="">
+                                    <figcaption class="text-center">
+                                        <h6 class="product-thumbnails-title"> <?php echo $nm_barang; ?></h6>
+                                        <h5 class="product-thumbnails-price"><?php echo $hrg_akhir; ?>
+                                            <span><del>&nbsp; <?php echo "Rp. ".number_format($hrg_jual); ?></del></span>
+                                        </h5>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                    </a>
+                            <div class="footer-product-thumbnails text-center">
+                                <button type="button" id="button_keranjang<?php echo $id_barang; ?>" data-id="<?php echo $id_barang; ?>" data-nama="<?php echo $nm_barang; ?>" data-harga="<?php echo $hrg_akhir_2; ?>" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-cart-plus"></i></button>
+                                <button type="button" id="button_favorit<?php echo $id_barang; ?>" data-id="<?php echo $id_barang; ?>" class="btn btn-sm btn-gradient btn-sm" name="button"><i class="fa fa-heart"></i></button>
+                                <button type="button" onclick="window.location.href='<?php echo base_url();?>custom/buat_custom'" class="btn btn-sm btn-gradient btn-sm" name="button">Custom</button>
+                            </div>
+                        </div>
+                </div>
+                <?php } ?>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    Showing <span class="text-primary"><?php echo $no; ?> </span> of  <span class="text-primary"><?php echo $total_row; ?></span>
+                </div>
+                <div class="col-md-6">
+                    <?php echo $page; ?>
+                </div>
+            </div>
+        </div>
+    </section>
 <?php $this->load->view('frontend/partial/view_footer'); ?>
   </body>
-
-<!-- Mirrored from demo.bootstrapious.com/real-estate/1-0/property.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Mar 2018 01:08:56 GMT -->
 </html>

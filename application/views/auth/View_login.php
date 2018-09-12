@@ -60,6 +60,9 @@
                 <input type="number"  maxlength="20" name="phone" id="phone" class="form-control" placeholder="Ketik Nomor Telepon Anda" required>
               </div>
               <div class="form-group">
+                <textarea class="form-control" name="address" id="address" rows="5" placeholder="Input Alamat Lengkap Anda"></textarea>
+              </div>
+              <div class="form-group">
                 <input type="password" name="password" id="password" placeholder="Ketik Password Anda. Minimal 8 Karakter" class="form-control">
               </div>
               <div class="form-group">

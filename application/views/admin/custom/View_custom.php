@@ -870,7 +870,7 @@ $(document).ready(function()
         $.ajax
         ({
             url             : '<?php echo base_url();?>admin/custom/get_select_style_ajax',
-            type            : 'AJAX',
+            type            : 'GET',
             dataType        : 'JSON',
             success         : function(data)
             {
@@ -890,7 +890,7 @@ $(document).ready(function()
         $.ajax
         ({
             url             : '<?php echo base_url();?>admin/custom/get_select_jenis_ajax',
-            type            : 'AJAX',
+            type            : 'GET',
             dataType        : 'JSON',
             success         : function(data)
             {
@@ -910,7 +910,7 @@ $(document).ready(function()
         $.ajax
         ({
             url             : '<?php echo base_url();?>admin/custom/get_select_material_ajax',
-            type            : 'AJAX',
+            type            : 'GET',
             dataType        : 'JSON',
             success         : function(data)
             {
@@ -930,7 +930,7 @@ $(document).ready(function()
         $.ajax
         ({
             url             : '<?php echo base_url();?>admin/custom/get_select_coating_ajax',
-            type            : 'AJAX',
+            type            : 'GET',
             dataType        : 'JSON',
             success         : function(data)
             {
@@ -950,7 +950,7 @@ $(document).ready(function()
         $.ajax
         ({
             url             : '<?php echo base_url();?>admin/custom/get_select_jog_ajax',
-            type            : 'AJAX',
+            type            : 'GET',
             dataType        : 'JSON',
             success         : function(data)
             {

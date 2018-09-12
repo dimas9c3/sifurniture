@@ -21,6 +21,7 @@ class Model_ulasan extends Ci_Model
 				$row[]		= $i['penjualan_id'];
 				$row[]		= $i['ulasan_rating'];
 				$row[]		= $i['ulasan_isi'];
+				$row[]		= $i['ulasan_foto'];
 				$tpl 		= $i['ulasan_tampil'];
 
 				if($tpl==0)
@@ -32,7 +33,8 @@ class Model_ulasan extends Ci_Model
 				}elseif($tpl==1)
 				{
 					$aksi 	=
-					"<a href='".base_url().'user/pembelian/detail_pembelian/'.$i['penjualan_id']."'><button type='button' data='".$i['penjualan_id']."' data-placement='top' title='Edit data' class='btn btn-success btn-sm item-tambah'><span> Detail Pembelian</span></button></a>
+					"<button type='button' data='".$i['ulasan_id']."' data-placement='top' title='Edit data' class='btn btn-primary btn-sm item-foto'><span> Tambah Foto</span></button>
+					<a href='".base_url().'user/pembelian/detail_pembelian/'.$i['penjualan_id']."'><button type='button' data='".$i['penjualan_id']."' data-placement='top' title='Edit data' class='btn btn-success btn-sm item-tambah'><span> Detail Pembelian</span></button></a>
 					<button type='button' data='".$i['ulasan_id']."' data-placement='top' title='Edit data' class='btn btn-danger btn-sm item-hapus'><span> Hapus Ulasan</span></button>"; 
 				}
 				$row[]		= $aksi;
@@ -44,6 +46,7 @@ class Model_ulasan extends Ci_Model
 		{
 			$data 			= array();
 			$row 			= array();
+			$row[]			= ' ';
 			$row[]			= ' ';
 			$row[]			= ' ';
 			$row[]			= ' ';

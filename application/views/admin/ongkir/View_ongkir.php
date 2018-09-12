@@ -203,7 +203,7 @@ $(document).ready(function()
         $.ajax
         ({
             url             : '<?php echo base_url();?>admin/ongkir/get_select_provinsi',
-            type            : 'AJAX',
+            type            : 'GET',
             dataType        : 'JSON',
             success         : function(data)
             {

@@ -91,11 +91,17 @@
                             <div class="box-header">
                                 <h3 class="text-primary">Pesanan Anda</h3>
                             </div>
-                            <p class="text-muted">Silahkan Pilih Ongkir Anda</p>
+                            <p class="text-muted">Pemesanan Produk</p>
 
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
+                                         <tr>
+                                            <td>Catatan Untuk Penjual</td>
+                                            <th>
+                                            <textarea name="catatan" id="catatan" class="form-control" rows="5"></textarea>
+                                            </th>
+                                        </tr>
                                         <tr>
                                             <td>Provinsi</td>
                                             <th>
@@ -215,7 +221,7 @@
 
     <?php $this->load->view('frontend/partial/view_footer'); ?>
     <script>
-     $(document).ready(function()
+    $(document).ready(function()
     {
         select_prov();
 
@@ -224,7 +230,7 @@
             $.ajax
             ({
                 url             : '<?php echo base_url();?>custom/get_prov_select',
-                type            : 'AJAX',
+                type            : 'GET',
                 dataType        : 'JSON',
                 success         : function(data)
                 {

@@ -51,6 +51,7 @@ class Pembelian extends CI_Controller {
 	{
 		$ongkir 		= $this->input->post('kabupaten');
 		$alamat 		= $this->input->post('alamat');
+		$catatan 		= $this->input->post('catatan');
 		$users			= $data['tbl_pengguna']= $this->ion_auth->user()->result();
 		foreach($users as $value)
 		{
@@ -71,7 +72,8 @@ class Pembelian extends CI_Controller {
 	    		'penjualan_id'			=> $id_penjualan,
 	    		'customer_id'			=> $id_customer,
 	    		'ongkir_id'				=> $ongkir,
-	    		'penjualan_alamat'		=> $alamat
+	    		'penjualan_alamat'		=> $alamat,
+	    		'penjualan_catatan'		=> $catatan
 	    	);
 
 	    	$set_pembelian 			= $this->Model_penjualan->set_pembelian_user($pembelian);

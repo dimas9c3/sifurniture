@@ -160,7 +160,7 @@ $(document).ready(function()
         $.ajax
         ({
             url             : '<?php echo base_url();?>admin/barang/get_select_kategori_ajax',
-            type            : 'AJAX',
+            type            : 'GET',
             dataType        : 'JSON',
             success         : function(data)
             {

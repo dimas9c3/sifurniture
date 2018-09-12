@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 14, 2018 at 06:56 PM
+-- Generation Time: Sep 12, 2018 at 09:18 PM
 -- Server version: 5.7.23-0ubuntu0.18.04.1
 -- PHP Version: 7.2.8-1+ubuntu18.04.1+deb.sury.org+1
 
@@ -106,14 +106,6 @@ CREATE TABLE `tbl_banner` (
   `banner_status` int(11) NOT NULL DEFAULT '1',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_banner`
---
-
-INSERT INTO `tbl_banner` (`banner_id`, `banner_item`, `banner_status`, `created_at`) VALUES
-(4, '5145c888135b128b1462eaa4dd468b48.jpg', 1, '2018-08-14 08:13:26'),
-(6, '921afd8f71cc05df35d802ff690cbe21.jpg', 1, '2018-08-14 08:16:02');
 
 -- --------------------------------------------------------
 
@@ -258,7 +250,14 @@ INSERT INTO `tbl_barang_dilihat` (`barang_dilihat_id`, `barang_id`, `barang_dili
 (116, 'BRG3', '2018-08-14', '2018-08-14 09:24:29'),
 (117, 'BRG5', '2018-08-14', '2018-08-14 09:57:15'),
 (118, 'BRG5', '2018-08-14', '2018-08-14 09:57:24'),
-(119, 'BRG4', '2018-08-14', '2018-08-14 09:57:29');
+(119, 'BRG4', '2018-08-14', '2018-08-14 09:57:29'),
+(120, 'BRG4', '2018-08-14', '2018-08-14 12:04:59'),
+(121, 'BRG3', '2018-08-14', '2018-08-14 12:05:09'),
+(122, 'BRG3', '2018-08-14', '2018-08-14 12:06:08'),
+(123, 'BRG3', '2018-08-16', '2018-08-16 14:49:12'),
+(124, 'BRG1', '2018-09-10', '2018-09-10 10:57:52'),
+(125, 'BRG4', '2018-09-12', '2018-09-12 11:25:01'),
+(126, 'BRG5', '2018-09-12', '2018-09-12 11:28:05');
 
 -- --------------------------------------------------------
 
@@ -331,7 +330,8 @@ INSERT INTO `tbl_detail_penjualan` (`detail_penjualan_id`, `penjualan_id`, `bara
 (7, 'PJN2', 'BRG1', 1, 990000, '2018-07-06 12:42:36'),
 (8, 'PJN3', 'BRG1', 1, 990000, '2018-07-07 03:19:14'),
 (9, 'PJN3', 'BRG2', 1, 1000000, '2018-07-07 03:19:14'),
-(13, 'PJN4', 'BRG18', 1, 990000, '2018-08-05 17:04:08');
+(13, 'PJN4', 'BRG18', 1, 990000, '2018-08-05 17:04:08'),
+(14, 'PJN1', 'BRG4', 1, 900000, '2018-08-16 14:47:36');
 
 -- --------------------------------------------------------
 
@@ -450,7 +450,8 @@ CREATE TABLE `tbl_grup_pengguna` (
 
 INSERT INTO `tbl_grup_pengguna` (`id`, `user_id`, `group_id`) VALUES
 (1, 1, 1),
-(7, 6, 2);
+(7, 6, 2),
+(8, 7, 2);
 
 -- --------------------------------------------------------
 
@@ -683,8 +684,9 @@ CREATE TABLE `tbl_pengguna` (
 --
 
 INSERT INTO `tbl_pengguna` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `gender`, `address`, `notifikasi_daftar`) VALUES
-(1, '127.0.0.1', 'admin@admin.com', '$2y$08$WmGkJQwG6eBSUrURn6EWXOfm32pw9FvXD96z.taHBBFzUkzKuhoIy', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1534240842, 1, 'Admin', 'istrator', 'ADMIN', '0', NULL, NULL, 0),
-(6, '::1', 'user1@user.com', '$2y$08$VmTeTaIP0hSb5mITjE64yup5UvjqslFhi1Zq7ljbTLmA.qmZ1sfF6', NULL, 'user1@user.com', NULL, NULL, NULL, NULL, 1530206634, 1534242223, 1, 'Dimas', 'Hermawan', NULL, '089', NULL, NULL, 1);
+(1, '127.0.0.1', 'admin@admin.com', '$2y$08$WmGkJQwG6eBSUrURn6EWXOfm32pw9FvXD96z.taHBBFzUkzKuhoIy', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1536751536, 1, 'Admin', 'istrator', 'ADMIN', '0', NULL, NULL, 0),
+(6, '::1', 'user1@user.com', '$2y$08$VmTeTaIP0hSb5mITjE64yup5UvjqslFhi1Zq7ljbTLmA.qmZ1sfF6', NULL, 'user1@user.com', NULL, NULL, NULL, NULL, 1530206634, 1534430836, 1, 'Dimas', 'Hermawan', NULL, '089', NULL, NULL, 1),
+(7, '::1', 'user2@user.com', '$2y$08$V6oM/46cM8a1j4hWPr0WOugJLfQLY7OSfLGR2ANYstULPvW3pqjWG', NULL, 'user2@user.com', NULL, NULL, NULL, NULL, 1535611268, NULL, 1, 'coba2', 'coba2', NULL, '08918181818', NULL, 'Solo', 1);
 
 -- --------------------------------------------------------
 
@@ -698,9 +700,17 @@ CREATE TABLE `tbl_penjualan` (
   `ongkir_id` int(11) DEFAULT NULL,
   `penjualan_alamat` text,
   `penjualan_transfer` varchar(65) DEFAULT NULL,
+  `penjualan_catatan` text,
   `penjualan_status` int(11) NOT NULL DEFAULT '1',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_penjualan`
+--
+
+INSERT INTO `tbl_penjualan` (`penjualan_id`, `customer_id`, `ongkir_id`, `penjualan_alamat`, `penjualan_transfer`, `penjualan_catatan`, `penjualan_status`, `created_at`) VALUES
+('PJN1', 6, 2, 'qwwewq', NULL, NULL, 1, '2018-08-16 14:47:36');
 
 -- --------------------------------------------------------
 
@@ -788,7 +798,9 @@ CREATE TABLE `tbl_sub_1_kategori_interior` (
 INSERT INTO `tbl_sub_1_kategori_interior` (`sub_1_kategori_interior_id`, `sub_1_kategori_interior_nama`, `sub_1_kategori_interior_foto`, `created_at`) VALUES
 ('SKS1', 'BEDROOM', '3e06452e55ebe45bbad7aafc0b04d9ab.jpg', '2018-07-09 13:31:43'),
 ('SKS2', 'LIVING ROOM', '712e43d495bbca49364acb0cb5b8afd8.jpg', '2018-07-09 13:43:45'),
-('SKS3', 'DINING CHAIR', 'c970b46050c2f60e58b15626c4dec901.jpg', '2018-07-09 13:44:07');
+('SKS3', 'DINING CHAIR', 'c970b46050c2f60e58b15626c4dec901.jpg', '2018-07-09 13:44:07'),
+('SKS4', 'Interior 2', 'fe9b34c902653b1f0152bba45b2f53a8.jpg', '2018-08-23 03:17:37'),
+('SKS5', 'Interior 3', '098082f8e82ba5508f3f21800e80300b.jpg', '2018-08-23 03:17:50');
 
 -- --------------------------------------------------------
 
@@ -880,6 +892,7 @@ CREATE TABLE `tbl_ulasan` (
   `customer_id` varchar(15) DEFAULT NULL,
   `ulasan_rating` int(11) NOT NULL DEFAULT '5',
   `ulasan_isi` text NOT NULL,
+  `ulasan_foto` varchar(65) DEFAULT NULL,
   `ulasan_tampil` int(11) NOT NULL DEFAULT '0',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -888,8 +901,8 @@ CREATE TABLE `tbl_ulasan` (
 -- Dumping data for table `tbl_ulasan`
 --
 
-INSERT INTO `tbl_ulasan` (`ulasan_id`, `penjualan_id`, `customer_id`, `ulasan_rating`, `ulasan_isi`, `ulasan_tampil`, `created_at`) VALUES
-(1, 'PJN3', '6', 5, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n', 1, '2018-07-14 23:30:37');
+INSERT INTO `tbl_ulasan` (`ulasan_id`, `penjualan_id`, `customer_id`, `ulasan_rating`, `ulasan_isi`, `ulasan_foto`, `ulasan_tampil`, `created_at`) VALUES
+(1, 'PJN3', '6', 5, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n', NULL, 0, '2018-07-14 23:30:37');
 
 -- --------------------------------------------------------
 
@@ -1178,12 +1191,12 @@ ALTER TABLE `tbl_artikel`
 -- AUTO_INCREMENT for table `tbl_banner`
 --
 ALTER TABLE `tbl_banner`
-  MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbl_barang_dilihat`
 --
 ALTER TABLE `tbl_barang_dilihat`
-  MODIFY `barang_dilihat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
+  MODIFY `barang_dilihat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
 --
 -- AUTO_INCREMENT for table `tbl_coating_custom`
 --
@@ -1193,7 +1206,7 @@ ALTER TABLE `tbl_coating_custom`
 -- AUTO_INCREMENT for table `tbl_detail_penjualan`
 --
 ALTER TABLE `tbl_detail_penjualan`
-  MODIFY `detail_penjualan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `detail_penjualan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `tbl_favorit`
 --
@@ -1218,7 +1231,7 @@ ALTER TABLE `tbl_grup`
 -- AUTO_INCREMENT for table `tbl_grup_pengguna`
 --
 ALTER TABLE `tbl_grup_pengguna`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `tbl_iklan`
 --
@@ -1258,7 +1271,7 @@ ALTER TABLE `tbl_ongkir`
 -- AUTO_INCREMENT for table `tbl_pengguna`
 --
 ALTER TABLE `tbl_pengguna`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `tbl_percobaan_login`
 --

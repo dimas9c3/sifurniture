@@ -30,6 +30,7 @@
                                             <th>Email</th>
                                             <th>Nama</th>
                                             <th>Telepon</th>
+                                            <th>Alamat</th>
                                             <th style="min-width: 15%;">Aksi</th>
                                         </tr>
                                     </thead>
@@ -133,7 +134,7 @@ $(document).ready(function()
             aaSorting       : [],
             ordering        : true,
             info            : true,
-            /*dom             : 'Bfrtip',
+            dom             : 'Bfrtip',
             buttons: 
             [
                 {
@@ -143,7 +144,7 @@ $(document).ready(function()
                     text: 'EXCEL',
                     exportOptions:
                     {
-                        columns: [0,1,2,3]
+                        columns: [0,1,2,3,4]
                     },
                     footer: true
                 },
@@ -155,7 +156,7 @@ $(document).ready(function()
                     text: 'PDF',
                     exportOptions:
                     {
-                        columns: [0,1,2,3]
+                        columns: [0,1,2,3,4]
                     },
                     footer: true
                 },
@@ -177,12 +178,12 @@ $(document).ready(function()
                     text: 'PRINT',
                     exportOptions: 
                     {
-                        columns: [0,1,2,3]
+                        columns: [0,1,2,3,4]
                     },
                     footer: true
                 }
                                 
-            ]*/
+            ]
     })
 })
 </script>

@@ -34,6 +34,7 @@
                                             <th>Nomor Transaksi</th>
                                             <th>Rating</th>
                                             <th>Isi</th>
+                                            <th>Foto Ulasan</th>
                                             <th style="min-width: 15%;">Aksi</th>
                                         </tr>
                                     </thead>

@@ -114,7 +114,7 @@ $(document).ready(function()
         $.ajax
         ({
             url             : '<?php echo base_url();?>admin/interior/get_select_kategori_interior_ajax',
-            type            : 'AJAX',
+            type            : 'GET',
             dataType        : 'JSON',
             success         : function(data)
             {

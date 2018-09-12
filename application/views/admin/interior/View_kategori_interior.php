@@ -194,7 +194,7 @@ $(document).ready(function()
         $.ajax
         ({
             url             : '<?php echo base_url();?>admin/interior/get_select_sub_1_kategori_ajax',
-            type            : 'AJAX',
+            type            : 'GET',
             dataType        : 'JSON',
             success         : function(data)
             {
@@ -214,7 +214,7 @@ $(document).ready(function()
         $.ajax
         ({
             url             : '<?php echo base_url();?>admin/interior/get_select_sub_2_kategori_ajax',
-            type            : 'AJAX',
+            type            : 'GET',
             dataType        : 'JSON',
             success         : function(data)
             {

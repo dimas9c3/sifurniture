@@ -589,7 +589,7 @@
 			$.ajax
 			({
 				url             : '<?php echo base_url();?>custom/get_prov_select',
-				type            : 'AJAX',
+				type            : 'GET',
 				dataType        : 'JSON',
 				success         : function(data)
 				{

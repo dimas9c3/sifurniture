@@ -104,6 +104,8 @@ class Barang extends CI_Controller
 		for($i=0; $i <= $jml_foto; $i++)
 	    {
 	    	// Fungsi simpan gambar
+
+	    	
 			$config 					= array();
 			$config['upload_path']		= './assets/images/barang/';
 			$config['allowed_types'] 	= 'gif|jpg|png|jpeg|bmp';

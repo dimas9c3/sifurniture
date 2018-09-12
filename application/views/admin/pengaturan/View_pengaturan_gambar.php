@@ -82,6 +82,38 @@
 	 	</div>
 	 	<!-- ./row -->
 
+        <!-- Modal Tambah Banner -->
+        <div class="modal fade" id="modal_tambah" tabindex="-1" role="dialog" aria-labelledby="ModalProduk">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content modal_diskon" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <form action="<?php echo site_url('admin/pengaturan/simpan_iklan'); ?>" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="form-group">
+                          <label for="">Gambar</label>
+                          <input type="file" class="form-control" id="tambah_foto" name="tambah_foto">
+                          <p class="help-block">Pilih Gambar Yang Akan Dijadikan Banner</p>
+                        </div>
+                        <div class="form-group">
+                          <label for="">Text</label>
+                          <textarea name="iklan" rows="8" class="form-control"></textarea>
+                          <p class="help-block">Text Iklan</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-primary pull-left" data-dismiss="modal" href="#">Tutup</a>
+                        <button type="submit" class="btn btn-primary pull-right" name="button">Simpan</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL TAMBAH BANNER -->
+        
+        <!-- Modal Tambah Iklan -->
 		<div class="modal fade" id="modal_tambah_iklan" tabindex="-1" role="dialog" aria-labelledby="ModalProduk">
         <div class="modal-dialog modal-md" role="document">
             <div class="modal-content modal_diskon" >
@@ -93,7 +125,7 @@
 						<div class="form-group">
 						  <label for="">Gambar</label>
 						  <input type="file" class="form-control" id="tambah_foto" name="tambah_foto">
-						  <p class="help-block">Pilih Gambar Yang Akan Dijadikan Banner</p>
+						  <p class="help-block">Pilih Gambar Yang Akan Dijadikan Promo dan Event</p>
 						</div>
 						<div class="form-group">
 						  <label for="">Text</label>
@@ -110,8 +142,7 @@
             </div>
         </div>
     </div>
-
-
+    <!-- END MODAL TAMBAH IKLAN -->
 
    	</section>
    	<!-- /.content -->

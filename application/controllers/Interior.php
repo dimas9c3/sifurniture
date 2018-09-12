@@ -34,6 +34,44 @@ class Interior extends CI_Controller
 		$data['kategori_navbar'] 	= $this->Model_barang->get_kategori_navbar();
 		$data['sub1']				= $this->Model_interior->get_sub1_by_id($id_sub1);
 		$data['list']				= $this->Model_interior->get_kategori_interior_by_id_sub1($id_sub1);
+
+		$config['base_url'] 		= base_url().'barang/kategori/5';
+		$config['total_rows'] 		= $this->Model_barang->count_barang_by_subkategori('5');
+		$config['per_page'] 		= 8;
+		$config['uri_segment'] 		= 4;
+		$config['query_string_segment'] = 'start';
+
+		$config['full_tag_open'] 	= '<ul class="pagination pull-right m-0">';
+		$config['full_tag_close'] 	= '</ul>';
+
+		$config['first_link'] 		= 'First';
+		$config['first_tag_open'] 	= '<li class="page-item page-link">';
+		$config['first_tag_close'] 	= '</li>';
+
+		$config['last_link'] 		= 'Last';
+		$config['last_tag_open'] 	= '<li class="page-item page-link">';
+		$config['last_tag_close'] 	= '</li>';
+
+		$config['next_link'] 		= 'Next';
+		$config['next_tag_open'] 	= '<li class="page-item page-link">';
+		$config['next_tag_close'] 	= '</li>';
+
+		$config['prev_link'] 		= 'Prev';
+		$config['prev_tag_open'] 	= '<li class="page-item page-link">';
+		$config['prev_tag_close'] 	= '</li>';
+
+		$config['cur_tag_open'] 	= '<li class="page-item page-link active"><a class="active">';
+		$config['cur_tag_close'] 	= '</a></li>';
+
+		$config['num_tag_open'] 	= '<li class="page-item page-link">';
+		$config['num_tag_close'] 	= '</li>';
+		$pagination = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+		$this->pagination->initialize($config);
+
+		$data['page']				= $this->pagination->create_links();
+		$data['total_row'] 			= $this->Model_barang->count_barang_by_subkategori('5');
+		$data['barang']				= $this->Model_barang->get_barang_by_subkategori_front('5',$config['per_page'],$pagination);
+
 		$this->load->view('frontend/interior/View_kategori_interior',$data);
 	}
 

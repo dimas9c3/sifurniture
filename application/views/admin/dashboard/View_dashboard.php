@@ -17,7 +17,10 @@
 
     <!-- Main content -->
     <section class="content container-fluid">
-       
+        <div class="callout callout-info">
+            <h2>Selamat Datang di Admin Panel</h2>
+        </div>
+
     </section>
     <!-- /.content -->
 </div>
